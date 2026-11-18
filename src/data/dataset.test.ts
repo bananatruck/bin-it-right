@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { createMatcher } from '@/engine'
 import { dataset, rawDataset } from './index'
+import { DatasetSchema } from './schema'
 import { validateDataset } from './validate'
 
 const root = join(import.meta.dirname, '..', '..')
@@ -18,6 +19,10 @@ function clone(): { rules: Array<Record<string, unknown>> } & Record<string, unk
 describe('the real Long Beach dataset', () => {
   it('passes every provenance check against the saved City pages', () => {
     expect(validateDataset(rawDataset, readSnapshot)).toEqual([])
+  })
+
+  it('parses to exactly the raw JSON, so the app can use it without runtime parsing', () => {
+    expect(DatasetSchema.parse(rawDataset)).toEqual(rawDataset)
   })
 
   it('fails if any rule lacks a source', () => {
