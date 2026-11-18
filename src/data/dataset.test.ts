@@ -77,6 +77,34 @@ describe('the real Long Beach dataset', () => {
     expect(stale).toEqual([])
   })
 
+  describe('keeps the conditions the City attaches to a destination (round 2 review)', () => {
+    const rule = (id: string) => {
+      const found = dataset.rules.find((entry) => entry.id === id)
+      if (found === undefined) throw new Error(`missing rule ${id}`)
+      return found
+    }
+    const destination = (id: string) => {
+      const found = dataset.destinations.find((entry) => entry.id === id)
+      if (found === undefined) throw new Error(`missing destination ${id}`)
+      return found
+    }
+    const texts = (quotes: ReadonlyArray<{ text: string }>) => quotes.map((quote) => quote.text).join(' ')
+
+    it('sends fluorescent bulbs to the retail locations, not the battery drop-off address', () => {
+      const bulbs = destination(rule('fluorescent-bulbs').destination)
+      expect(texts(bulbs.action)).not.toContain('2929 E. Willow')
+      expect(texts(bulbs.action)).toContain('Home Depot accepts compact fluorescent bulbs')
+    })
+
+    it('says used motor oil must be in the containers provided', () => {
+      expect(texts(rule('used-motor-oil-filters').tips)).toContain('MUST be in the containers provided')
+    })
+
+    it('gives the tire drop-off days with the hours', () => {
+      expect(texts(rule('tires').tips)).toContain('every 2nd and 4th* Saturday of the month')
+    })
+  })
+
   it('builds a matcher with no term claimed by two rules', () => {
     expect(() => createMatcher(dataset)).not.toThrow()
   })

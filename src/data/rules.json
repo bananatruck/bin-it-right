@@ -1311,7 +1311,7 @@
       {
         "sourceId": "lb-tires",
         "lang": "en",
-        "text": "EDCO Recycling & Transfer Collection Center 2755 California Ave. Signal Hill, CA 90755 9:00 am to 2:00 pm"
+        "text": "Drop off used tires every 2nd and 4th* Saturday of the month at the following collection sites: EDCO Recycling & Transfer Collection Center 2755 California Ave. Signal Hill, CA 90755 9:00 am to 2:00 pm *Find EDCO schedule and holiday closure dates"
       },
       {
         "sourceId": "lb-special-collection",
@@ -1702,7 +1702,7 @@
     "label": {
       "en": "Unbroken fluorescent light bulbs"
     },
-    "destination": "battery-bulb-dropoff",
+    "destination": "bulb-dropoff",
     "evidence": [
       {
         "sourceId": "lb-universal-waste",
@@ -1715,18 +1715,7 @@
         "text": "Unbroken bulbs should be recycled at one of the locations below."
       }
     ],
-    "tips": [
-      {
-        "sourceId": "lb-universal-waste",
-        "lang": "en",
-        "text": "Home Depot accepts compact fluorescent bulbs, but not long fluorescent bulbs."
-      },
-      {
-        "sourceId": "lb-universal-waste",
-        "lang": "en",
-        "text": "Lowe's accepts compact fluorescent bulbs at all Long Beach stores and long fluorescent bulbs at the Bellflower Blvd. store only."
-      }
-    ],
+    "tips": [],
     "terms": [
       "fluorescent bulb",
       "fluorescent light bulb",
@@ -1775,7 +1764,7 @@
     "label": {
       "en": "Household batteries (alkaline, zinc, mercury, silver oxide, NiCad, nickel metal hydride)"
     },
-    "destination": "battery-bulb-dropoff",
+    "destination": "battery-dropoff",
     "evidence": [
       {
         "sourceId": "lb-universal-waste",
@@ -2060,6 +2049,11 @@
         "sourceId": "lb-motor-oil",
         "lang": "en",
         "text": "On your scheduled used oil collection day, place motor oil and filters two feet away from your recycling cart (NOT inside the cart)."
+      },
+      {
+        "sourceId": "lb-motor-oil",
+        "lang": "en",
+        "text": "Used motor oil and filters MUST be in the containers provided for oil collection."
       },
       {
         "sourceId": "lb-motor-oil",

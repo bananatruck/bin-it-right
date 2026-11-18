@@ -75,11 +75,23 @@
     ]
   },
   {
-    "id": "battery-bulb-dropoff",
-    "label": { "en": "Battery and bulb drop-off" },
+    "id": "battery-dropoff",
+    "label": { "en": "Battery drop-off" },
     "action": [
       { "sourceId": "lb-universal-waste", "lang": "en", "text": "It’s better to recycle them responsibly at a drop-off site or household hazardous waste collection event." },
       { "sourceId": "lb-universal-waste", "lang": "en", "text": "Environmental Services Bureau 2929 E. Willow St. Long Beach, CA 90806 (562) 570-2850" }
+    ],
+    "links": [
+      { "label": "Universal Waste", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/universal-waste/" }
+    ]
+  },
+  {
+    "id": "bulb-dropoff",
+    "label": { "en": "Fluorescent bulb drop-off at stores" },
+    "action": [
+      { "sourceId": "lb-universal-waste", "lang": "en", "text": "Expired, unbroken fluorescent light bulbs can be recycled at the following retail locations:" },
+      { "sourceId": "lb-universal-waste", "lang": "en", "text": "Home Depot accepts compact fluorescent bulbs, but not long fluorescent bulbs." },
+      { "sourceId": "lb-universal-waste", "lang": "en", "text": "Lowe's accepts compact fluorescent bulbs at all Long Beach stores and long fluorescent bulbs at the Bellflower Blvd. store only." }
     ],
     "links": [
       { "label": "Universal Waste", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/universal-waste/" }
