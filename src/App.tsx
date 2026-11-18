@@ -12,7 +12,7 @@ import { REPO_URL } from '@/lib/labels'
 import { dataset } from '@/data'
 import { createMatcher, type SearchResult } from '@/engine'
 import { useStrings } from '@/i18n/useLocale'
-import { announcement } from '@/lib/labels'
+import { announcement, termLang } from '@/lib/labels'
 
 const matcher = createMatcher(dataset)
 const termCount = dataset.rules.reduce((total, rule) => total + rule.terms.length + rule.termsEs.length, 0)
@@ -91,7 +91,9 @@ export default function App() {
                     <ul className="typeahead" role="list" aria-label={t.typeaheadLabel}>
                       {typeahead.map((entry) => (
                         <li key={entry.rule.id}>
-                          <button type="button" onClick={() => { runSearch(entry.term) }}>{entry.term}</button>
+                          <button type="button" lang={termLang(entry.rule, entry.term)} onClick={() => { runSearch(entry.term) }}>
+                            {entry.term}
+                          </button>
                         </li>
                       ))}
                     </ul>

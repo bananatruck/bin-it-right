@@ -156,16 +156,20 @@ function HaulerNote() {
 
 function ContactBlock({ query }: { query: string }) {
   const { t } = useStrings()
-  const [copied, setCopied] = useState(false)
+  // "Copied" shows only while the text on the clipboard is the report on screen, so a language
+  // switch or a late clipboard reply cannot confirm a different report.
+  const [copiedText, setCopiedText] = useState<string | null>(null)
   const { email, phone } = dataset.contact
   const report = t.gapReport(query)
+  const copied = copiedText === report
   const mailto = `mailto:${email}?subject=${encodeURIComponent(t.gapSubject(query))}&body=${encodeURIComponent(report)}`
   async function copy() {
+    const text = report
     try {
-      await navigator.clipboard.writeText(report)
-      setCopied(true)
+      await navigator.clipboard.writeText(text)
+      setCopiedText(text)
     } catch {
-      setCopied(false)
+      setCopiedText(null)
     }
   }
   return (

@@ -79,7 +79,7 @@ export function SourcesList() {
               <span>SHA-256</span> <code>{source.sha256.slice(0, 16)}</code>
             </p>
           </div>
-          <a className="sources__snapshot" href={`${REPO_URL}/blob/main/${source.snapshot}`} target="_blank" rel="noreferrer">
+          <a className="sources__snapshot" href={`${REPO_URL}/blob/${__DATASET_COMMIT__}/${source.snapshot}`} target="_blank" rel="noreferrer">
             <FileText aria-hidden="true" className="size-4" />
             {t.savedCopy}
             <span className="sr-only">: {source.title}, {t.opensInNewTab}</span>

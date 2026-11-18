@@ -136,3 +136,33 @@ describe('screen-reader details (round 2 review)', () => {
     expect(within(answer()).getByRole('heading', { level: 2, name: /No official rule found/ })).toBeInTheDocument()
   })
 })
+
+describe('round 3 review', () => {
+  it('marks typeahead terms with their own language', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Español' }))
+    const box = screen.getByRole('textbox', { name: '¿Qué vas a tirar?' })
+    await user.type(box, 'paint')
+    const list = screen.getByRole('list', { name: 'Artículos que coinciden' })
+    expect(within(list).getByRole('button', { name: 'Paint and paint thinners' })).toHaveAttribute('lang', 'en')
+    await user.clear(box)
+    await user.type(box, 'pintu')
+    expect(within(screen.getByRole('list', { name: 'Artículos que coinciden' })).getByRole('button', { name: 'pintura' })).toHaveAttribute('lang', 'es')
+  })
+
+  it('stops showing "Copied" once the report text changes with the language', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Aluminum foil' }))
+    await user.click(within(answer()).getByRole('button', { name: 'Copy a gap report' }))
+    expect(within(answer()).getByRole('button', { name: 'Copied' })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Español' }))
+    expect(within(screen.getByRole('region', { name: 'Respuesta' })).getByRole('button', { name: 'Copiar consulta para la Ciudad' })).toBeInTheDocument()
+  })
+
+  it('pins each saved-copy link to the commit the dataset was built from', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: /^Sources/ }))
+    const links = screen.getAllByRole('link', { name: /Saved copy/ })
+    expect(links[0]?.getAttribute('href')).toMatch(/\/blob\/[0-9a-f]{40}\/data\/snapshots\/[a-z0-9-]+\.txt$/)
+  })
+})

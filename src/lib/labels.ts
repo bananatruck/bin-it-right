@@ -10,6 +10,11 @@ export function labelLang(label: Label, locale: Locale): Locale {
   return locale === 'es' && label.es !== undefined ? 'es' : 'en'
 }
 
+// The language of a listed search term: Spanish if the rule lists it among its Spanish terms or labels.
+export function termLang(rule: Rule, term: string): Locale {
+  return rule.termsEs.includes(term) || rule.label.es === term ? 'es' : 'en'
+}
+
 export function destinationLabel(destination: Destination, locale: Locale): string {
   return locale === 'es' && destination.label.es !== undefined ? destination.label.es : destination.label.en
 }
