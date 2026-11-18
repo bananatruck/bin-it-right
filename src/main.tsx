@@ -18,9 +18,16 @@ createRoot(root).render(
   </StrictMode>,
 )
 
-// Cache the app after the first visit so it keeps working offline.
+// Cache the app on the first visit so it keeps working offline: once the worker is active,
+// hand it every same-origin file this page has already loaded (scripts, styles, fonts).
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    void navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`, { scope: import.meta.env.BASE_URL })
+    void navigator.serviceWorker
+      .register(`${import.meta.env.BASE_URL}sw.js`, { scope: import.meta.env.BASE_URL })
+      .then(() => navigator.serviceWorker.ready)
+      .then((registration) => {
+        const urls = [window.location.href, ...performance.getEntriesByType('resource').map((entry) => entry.name)]
+        registration.active?.postMessage({ type: 'precache', urls })
+      })
   })
 }
