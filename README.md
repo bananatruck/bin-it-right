@@ -113,7 +113,7 @@ pnpm check          # lint, type-check, tests, production build
 Other commands:
 
 ```sh
-pnpm test           # 213 tests: engine, dataset provenance, UI, service worker, source fetcher
+pnpm test           # engine, dataset provenance, UI, service worker and source fetcher tests
 pnpm build && pnpm preview --port 4791 &
 pnpm screenshots    # headless Chromium screenshots into docs/screenshots/
 pnpm sources:fetch  # re-fetch every City page (needs network and pdftotext)
