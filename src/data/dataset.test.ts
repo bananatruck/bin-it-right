@@ -1,0 +1,69 @@
+// @vitest-environment node
+import { existsSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
+import { createMatcher } from '@/engine'
+import { dataset, rawDataset } from './index'
+import { validateDataset } from './validate'
+
+const root = join(import.meta.dirname, '..', '..')
+const readSnapshot = (path: string): string | undefined => {
+  const full = join(root, path)
+  return existsSync(full) ? readFileSync(full, 'utf8') : undefined
+}
+
+function clone(): { rules: Array<Record<string, unknown>> } & Record<string, unknown> {
+  return structuredClone(rawDataset) as { rules: Array<Record<string, unknown>> } & Record<string, unknown>
+}
+
+describe('the real Long Beach dataset', () => {
+  it('passes every provenance check against the saved City pages', () => {
+    expect(validateDataset(rawDataset, readSnapshot)).toEqual([])
+  })
+
+  it('fails if any rule lacks a source', () => {
+    for (let i = 0; i < dataset.rules.length; i++) {
+      const broken = clone()
+      const rule = broken.rules[i]
+      if (rule === undefined) throw new Error('rule index out of range')
+      rule.evidence = []
+      const issues = validateDataset(broken, readSnapshot)
+      expect(issues.some((issue) => issue.path.startsWith(`rules.${i}.evidence`))).toBe(true)
+    }
+  })
+
+  it('fails if any quote is changed by a single word', () => {
+    const broken = clone()
+    const rule = broken.rules[0] as { evidence: Array<{ text: string }> }
+    const first = rule.evidence[0]
+    if (first === undefined) throw new Error('first rule has no evidence')
+    first.text = `${first.text} always`
+    expect(validateDataset(broken, readSnapshot).map((issue) => issue.path)).toContain('rules.0.evidence.0.text')
+  })
+
+  it('cites only official www.longbeach.gov pages, each fetched and hashed', () => {
+    for (const source of dataset.sources) {
+      expect(new URL(source.url).hostname).toBe('www.longbeach.gov')
+      expect(Number.isNaN(Date.parse(source.fetchedAt))).toBe(false)
+      expect(source.sha256).toMatch(/^[0-9a-f]{64}$/)
+      const snapshot = readSnapshot(source.snapshot)
+      expect(snapshot).toBeDefined()
+      expect(snapshot).toContain(`URL: ${source.url}`)
+      expect(snapshot).toContain(`SHA-256 of raw ${source.format.toUpperCase()}: ${source.sha256}`)
+    }
+  })
+
+  it('builds a matcher with no term claimed by two rules', () => {
+    expect(() => createMatcher(dataset)).not.toThrow()
+  })
+
+  it('answers every listed term exactly, with the rule that lists it', () => {
+    const matcher = createMatcher(dataset)
+    for (const rule of dataset.rules) {
+      for (const term of [...rule.terms, ...rule.termsEs]) {
+        const result = matcher.search(term)
+        expect(result.kind, term).toBe('answer')
+        if (result.kind === 'answer') expect(result.rule.id, term).toBe(rule.id)
+      }
+    }
+  })
+})
