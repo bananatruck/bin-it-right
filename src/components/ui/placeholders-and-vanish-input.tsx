@@ -166,11 +166,8 @@ export function PlaceholdersAndVanishInput({
     }));
   }, [value]);
 
-  useEffect(() => {
-    if (!shouldReduceMotion) {
-      draw();
-    }
-  }, [value, draw, shouldReduceMotion]);
+  // Bin It Right: the text is rasterised only in vanishAndSubmit. Redrawing on every keystroke scanned an
+  // 800 by 800 canvas per change, and the redraw after the app clears the field erased the particles.
 
   const animate = (start: number) => {
     const animateFrame = (pos = 0) => {
