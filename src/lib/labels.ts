@@ -1,9 +1,14 @@
 import { dataset } from '@/data'
-import type { Destination, DestinationId, Quote, Rule } from '@/data/schema'
+import type { Destination, DestinationId, Label, Quote, Rule } from '@/data/schema'
 import type { SearchResult } from '@/engine'
 import type { Locale, UiStrings } from '@/i18n/strings'
 
 export const REPO_URL = 'https://github.com/bananatruck/bin-it-right'
+
+// The language of the label actually shown, so screen readers pronounce English fallbacks as English.
+export function labelLang(label: Label, locale: Locale): Locale {
+  return locale === 'es' && label.es !== undefined ? 'es' : 'en'
+}
 
 export function destinationLabel(destination: Destination, locale: Locale): string {
   return locale === 'es' && destination.label.es !== undefined ? destination.label.es : destination.label.en

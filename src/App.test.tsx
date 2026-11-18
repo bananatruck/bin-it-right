@@ -119,3 +119,20 @@ describe('the private-hauler note (round 2 review)', () => {
     expect(within(answer()).queryByText(/If a private hauler collects your carts, ask them/)).not.toBeInTheDocument()
   })
 })
+
+describe('screen-reader details (round 2 review)', () => {
+  it('marks English fallback labels as English in Spanish mode', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Español' }))
+    await user.click(screen.getByRole('button', { name: 'Pintura' }))
+    const region = screen.getByRole('region', { name: 'Respuesta' })
+    expect(within(region).getByText('Household hazardous waste drop-off')).toHaveAttribute('lang', 'en')
+    expect(within(region).getByText('Paint and paint thinners')).toHaveAttribute('lang', 'en')
+  })
+
+  it('makes the no-rule title a heading, like the other result titles', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Aluminum foil' }))
+    expect(within(answer()).getByRole('heading', { level: 2, name: /No official rule found/ })).toBeInTheDocument()
+  })
+})

@@ -7,7 +7,7 @@ import type { Explanation, SearchResult } from '@/engine'
 import { useStrings } from '@/i18n/useLocale'
 import { CITY_SERVICE_DESTINATIONS, DESTINATION_STYLE } from '@/lib/destinationStyle'
 import { formatScore } from '@/lib/format'
-import { destinationLabel, quotesForLocale, ruleLabel, withoutRepeats } from '@/lib/labels'
+import { destinationLabel, labelLang, quotesForLocale, ruleLabel, withoutRepeats } from '@/lib/labels'
 import { QuoteList } from './QuoteList'
 
 interface ResultViewProps {
@@ -39,7 +39,7 @@ function DestinationSlab({ destination }: { destination: Destination }) {
         <span className="slab__eyebrow">{t.answerLabel}</span>{' '}
         <span className="slab__title">
           <Icon aria-hidden="true" className="slab__icon" strokeWidth={2.25} />
-          <span>{destinationLabel(destination, locale)}</span>
+          <span lang={labelLang(destination.label, locale)}>{destinationLabel(destination, locale)}</span>
         </span>
       </h2>
     </motion.div>
@@ -55,7 +55,7 @@ function AnswerCard({ rule, destination, explanation }: { rule: Rule; destinatio
     <article className="result" aria-labelledby="answer-destination answer-item">
       <DestinationSlab destination={destination} />
       <div className="result__body">
-        <h3 id="answer-item" className="result__item" lang={locale === 'es' && rule.label.es !== undefined ? 'es' : 'en'}>
+        <h3 id="answer-item" className="result__item" lang={labelLang(rule.label, locale)}>
           {ruleLabel(rule, locale)}
         </h3>
         <section aria-labelledby="answer-quote">
@@ -110,8 +110,8 @@ function SuggestionsCard({ result, onPick }: { result: Extract<SearchResult, { k
                     <Icon className="size-5" />
                   </span>
                   <span className="suggestion__text">
-                    <span className="suggestion__term">{ruleLabel(suggestion.rule, locale)}</span>
-                    <span className="suggestion__dest">{destinationLabel(suggestion.destination, locale)}</span>
+                    <span className="suggestion__term" lang={labelLang(suggestion.rule.label, locale)}>{ruleLabel(suggestion.rule, locale)}</span>
+                    <span className="suggestion__dest" lang={labelLang(suggestion.destination.label, locale)}>{destinationLabel(suggestion.destination, locale)}</span>
                   </span>
                 </button>
               </li>
@@ -133,7 +133,7 @@ function NoRuleCard({ explanation }: { explanation: Explanation }) {
     <article className="result" aria-labelledby="none-title">
       <div className="slab slab--uncertain" style={{ backgroundColor: '#FFFFFF', color: '#0E2A3B' }}>
         <span className="slab__lid" aria-hidden="true" />
-        <p className="slab__title" id="none-title">{empty ? t.emptyQueryTitle : t.noRuleTitle}</p>
+        <h2 className="slab__title" id="none-title">{empty ? t.emptyQueryTitle : t.noRuleTitle}</h2>
       </div>
       <div className="result__body">
         {!empty && <p className="lede">{t.noRuleBody(explanation.query)}</p>}

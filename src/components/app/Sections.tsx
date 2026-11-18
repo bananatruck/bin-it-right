@@ -3,7 +3,7 @@ import { dataset } from '@/data'
 import { useStrings } from '@/i18n/useLocale'
 import { DESTINATION_STYLE } from '@/lib/destinationStyle'
 import { formatFetchedDate } from '@/lib/format'
-import { destinationLabel, REPO_URL, ruleLabel, rulesByDestination } from '@/lib/labels'
+import { destinationLabel, labelLang, REPO_URL, ruleLabel, rulesByDestination } from '@/lib/labels'
 
 const sourcesById = new Map(dataset.sources.map((source) => [source.id, source]))
 
@@ -31,7 +31,7 @@ export function BrowseRules({ onPick }: BrowseProps) {
               >
                 <Icon className="size-5" />
               </span>
-              <span className="browse__label">{destinationLabel(destination, locale)}</span>
+              <span className="browse__label" lang={labelLang(destination.label, locale)}>{destinationLabel(destination, locale)}</span>
               <span className="browse__count">{t.ruleCount(group.rules.length)}</span>
             </summary>
             <ul className="browse__list" role="list">
@@ -41,7 +41,7 @@ export function BrowseRules({ onPick }: BrowseProps) {
                 return (
                   <li key={rule.id} className="browse__row">
                     <button type="button" className="browse__rule" onClick={() => { onPick(rule.label.en) }}>
-                      {ruleLabel(rule, locale)}
+                      <span lang={labelLang(rule.label, locale)}>{ruleLabel(rule, locale)}</span>
                     </button>
                     {source !== undefined && (
                       <a className="browse__source" href={source.url} target="_blank" rel="noreferrer">

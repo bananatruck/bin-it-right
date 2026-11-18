@@ -34,7 +34,8 @@ export default function App() {
     // Move focus to the answer so keyboard and screen-reader users land on it.
     requestAnimationFrame(() => {
       resultRef.current?.focus()
-      resultRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      resultRef.current?.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' })
     })
   }
 

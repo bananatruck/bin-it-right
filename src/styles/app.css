@@ -202,8 +202,9 @@ a {
 .typeahead button:hover { background: var(--line); }
 
 /* Result */
-.result-region:focus,
-.result-region:focus-visible { outline: none; }
+.result-region:focus:not(:focus-visible) { outline: none; }
+/* Keyboard users see where focus moved after a search. */
+.result-region:focus-visible { outline: 3px solid var(--focus); outline-offset: 6px; border-radius: var(--radius-m); }
 .result {
   background: var(--paper);
   border-radius: var(--radius-m);
