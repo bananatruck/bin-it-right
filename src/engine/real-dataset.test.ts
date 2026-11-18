@@ -37,6 +37,14 @@ describe('searching parts of terms in the real dataset', () => {
     expect(result.suggestions.map(({ rule }) => rule.id)).toContain('glass-bottles-jars')
   })
 
+  // Words a resident could mean more than one way must not become a definite answer (round 2 review).
+  it.each(['used oil', 'aceite usado', 'dirty paper', 'papel sucio', 'untreated wood', 'foam', 'styrofoam', 'packing peanuts', 'tablet', 'keyboard'])(
+    'does not answer the ambiguous word %j outright',
+    (query) => {
+      expect(matcher.search(query).kind).not.toBe('answer')
+    },
+  )
+
   it.each(['aluminum foil', 'xyzzy', ''])('returns none for %j', (query) => {
     expect(matcher.search(query).kind).toBe('none')
   })

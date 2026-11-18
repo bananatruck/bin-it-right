@@ -498,13 +498,11 @@
       "paper napkin",
       "paper towel",
       "used paper towel",
-      "greasy paper",
-      "dirty paper"
+      "greasy paper"
     ],
     "termsEs": [
       "caja de pizza",
       "toalla de papel",
-      "papel sucio",
       "servilleta de papel"
     ]
   },
@@ -646,8 +644,7 @@
     ],
     "tips": [],
     "terms": [
-      "clean wood",
-      "untreated wood"
+      "clean wood"
     ],
     "termsEs": [
       "madera limpia"
@@ -935,12 +932,9 @@
       "padded mailer",
       "foam packaging",
       "packing foam",
-      "styrofoam",
       "styrofoam packaging",
-      "packing peanuts",
       "foam peanuts",
-      "polystyrene foam",
-      "foam"
+      "polystyrene foam"
     ],
     "termsEs": [
       "sobre acolchado",
@@ -1501,7 +1495,6 @@
       "cell phone",
       "phone",
       "smartphone",
-      "tablet",
       "vcr",
       "dvd player",
       "cd player",
@@ -1510,9 +1503,10 @@
       "alarm clock",
       "video game console",
       "electronic game",
-      "keyboard",
       "computer mouse",
-      "computer peripheral"
+      "computer peripheral",
+      "tablet computer",
+      "computer keyboard"
     ],
     "termsEs": [
       "basura electronica",
@@ -2076,7 +2070,6 @@
     "terms": [
       "motor oil",
       "used motor oil",
-      "used oil",
       "oil filter",
       "car oil",
       "engine oil",
@@ -2084,7 +2077,6 @@
     ],
     "termsEs": [
       "aceite de motor",
-      "aceite usado",
       "filtro de aceite"
     ]
   },
