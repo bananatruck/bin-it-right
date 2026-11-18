@@ -21,7 +21,7 @@ export default function App() {
   const [draft, setDraft] = useState('')
   const [result, setResult] = useState<SearchResult | null>(null)
   const [searchCount, setSearchCount] = useState(0)
-  const resultRef = useRef<HTMLDivElement>(null)
+  const resultRef = useRef<HTMLElement>(null)
 
   const typeahead = useMemo(() => matcher.autocomplete(draft, 6), [draft])
 
@@ -58,13 +58,16 @@ export default function App() {
                 <h1 id="ask-title" className="hero__lead">
                   {t.heroLead}
                   <br />
-                  <RotatingText
-                    texts={t.heroRotatingItems}
-                    mainClassName="hero__rotator"
-                    rotationInterval={2600}
-                    staggerDuration={0.02}
-                    staggerFrom="first"
-                  />
+                  {/* Decorative: screen readers get a stable heading, not a word that changes every few seconds. */}
+                  <span aria-hidden="true">
+                    <RotatingText
+                      texts={t.heroRotatingItems}
+                      mainClassName="hero__rotator"
+                      rotationInterval={2600}
+                      staggerDuration={0.02}
+                      staggerFrom="first"
+                    />
+                  </span>
                 </h1>
                 <p className="hero__sub">{t.heroSub}</p>
               </div>
@@ -104,7 +107,7 @@ export default function App() {
                 </ul>
               </div>
 
-              <div
+              <section
                 ref={resultRef}
                 tabIndex={-1}
                 aria-live="polite"
@@ -116,7 +119,7 @@ export default function App() {
                     <ResultView result={result} onPick={runSearch} />
                   </BlurFade>
                 )}
-              </div>
+              </section>
             </section>
 
             <aside aria-labelledby="browse-title" className="min-w-0">

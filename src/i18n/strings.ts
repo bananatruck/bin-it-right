@@ -93,7 +93,7 @@ export const strings: Record<Locale, UiStrings> = {
     typeaheadLabel: 'Matching items',
     typeaheadCount: (count) => `${count} matching ${count === 1 ? 'item' : 'items'}`,
     quickPicksLabel: 'Common items',
-    quickPicks: ['Pizza box', 'AA battery', 'Plastic bag', 'Coffee grounds', 'Paint', 'Aluminum foil'],
+    quickPicks: ['Pizza box', 'Battery', 'Plastic bag', 'Coffee grounds', 'Paint', 'Aluminum foil'],
     resultRegionLabel: 'Answer',
     answerLabel: 'Goes to',
     quoteIntro: "The City's rule, word for word",
