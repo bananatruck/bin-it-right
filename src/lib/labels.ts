@@ -1,6 +1,7 @@
 import { dataset } from '@/data'
 import type { Destination, DestinationId, Quote, Rule } from '@/data/schema'
-import type { Locale } from '@/i18n/strings'
+import type { SearchResult } from '@/engine'
+import type { Locale, UiStrings } from '@/i18n/strings'
 
 export const REPO_URL = 'https://github.com/bananatruck/bin-it-right'
 
@@ -28,14 +29,6 @@ export function rulesByDestination(): Array<{ id: DestinationId; rules: Rule[] }
     .filter((group) => group.rules.length > 0)
 }
 
-export function gapReport(query: string): string {
-  return [
-    'Bin It Right gap report',
-    `Item: ${query}`,
-    'No rule for this item was found in the City of Long Beach sorting guidelines saved by Bin It Right.',
-    'Could the City publish which cart or drop-off it belongs in?',
-  ].join('\n')
-}
 
 export interface QuoteGroup {
   sourceId: string
@@ -61,4 +54,11 @@ export function groupQuotes(quotes: readonly Quote[]): QuoteGroup[] {
 export function withoutRepeats(quotes: readonly Quote[], shown: readonly Quote[]): Quote[] {
   const seen = new Set(shown.map((quote) => quote.text))
   return quotes.filter((quote) => !seen.has(quote.text))
+}
+
+// The one-line status read to screen readers after a search.
+export function announcement(result: SearchResult, locale: Locale, t: UiStrings): string {
+  if (result.kind === 'answer') return t.announceAnswer(destinationLabel(result.destination, locale), ruleLabel(result.rule, locale))
+  if (result.kind === 'suggestions') return t.announceSuggestions(result.suggestions.length)
+  return result.explanation.normalized === '' ? t.emptyQueryTitle : t.noRuleTitle
 }

@@ -7,7 +7,7 @@ import type { Explanation, SearchResult } from '@/engine'
 import { useStrings } from '@/i18n/useLocale'
 import { DESTINATION_STYLE } from '@/lib/destinationStyle'
 import { formatScore } from '@/lib/format'
-import { destinationLabel, gapReport, quotesForLocale, ruleLabel, withoutRepeats } from '@/lib/labels'
+import { destinationLabel, quotesForLocale, ruleLabel, withoutRepeats } from '@/lib/labels'
 import { QuoteList } from './QuoteList'
 
 interface ResultViewProps {
@@ -35,11 +35,13 @@ function DestinationSlab({ destination }: { destination: Destination }) {
       transition={{ type: 'spring', stiffness: 260, damping: 26 }}
     >
       <span className="slab__lid" aria-hidden="true" />
-      <p className="slab__eyebrow">{t.answerLabel}</p>
-      <p className="slab__title">
-        <Icon aria-hidden="true" className="slab__icon" strokeWidth={2.25} />
-        <span>{destinationLabel(destination, locale)}</span>
-      </p>
+      <h2 id="answer-destination" className="slab__heading">
+        <span className="slab__eyebrow">{t.answerLabel}</span>{' '}
+        <span className="slab__title">
+          <Icon aria-hidden="true" className="slab__icon" strokeWidth={2.25} />
+          <span>{destinationLabel(destination, locale)}</span>
+        </span>
+      </h2>
     </motion.div>
   )
 }
@@ -50,25 +52,25 @@ function AnswerCard({ rule, destination, explanation }: { rule: Rule; destinatio
   const tips = quotesForLocale(rule.tips, locale)
   const action = quotesForLocale(withoutRepeats(destination.action, [...rule.evidence, ...rule.tips]), locale)
   return (
-    <article className="result" aria-labelledby="answer-item">
+    <article className="result" aria-labelledby="answer-destination answer-item">
       <DestinationSlab destination={destination} />
       <div className="result__body">
-        <h2 id="answer-item" className="result__item" lang={locale === 'es' && rule.label.es !== undefined ? 'es' : 'en'}>
+        <h3 id="answer-item" className="result__item" lang={locale === 'es' && rule.label.es !== undefined ? 'es' : 'en'}>
           {ruleLabel(rule, locale)}
-        </h2>
+        </h3>
         <section aria-labelledby="answer-quote">
-          <h3 id="answer-quote" className="result__heading">{t.quoteIntro}</h3>
+          <h4 id="answer-quote" className="result__heading">{t.quoteIntro}</h4>
           {evidence.englishOnly && <p className="note">{t.englishOnlyNote}</p>}
           <QuoteList quotes={evidence.quotes} />
         </section>
         {tips.quotes.length > 0 && (
           <section aria-labelledby="answer-tips">
-            <h3 id="answer-tips" className="result__heading">{t.tipsLabel}</h3>
+            <h4 id="answer-tips" className="result__heading">{t.tipsLabel}</h4>
             <QuoteList quotes={tips.quotes} variant="plain" />
           </section>
         )}
         <section aria-labelledby="answer-howto">
-          <h3 id="answer-howto" className="result__heading">{t.howToLabel}</h3>
+          <h4 id="answer-howto" className="result__heading">{t.howToLabel}</h4>
           <QuoteList quotes={action.quotes} variant="plain" />
           {destination.links.length > 0 && (
             <ul className="link-row" role="list">
@@ -156,8 +158,8 @@ function ContactBlock({ query }: { query: string }) {
   const { t } = useStrings()
   const [copied, setCopied] = useState(false)
   const { email, phone } = dataset.contact
-  const report = gapReport(query)
-  const mailto = `mailto:${email}?subject=${encodeURIComponent(`Sorting question: ${query}`)}&body=${encodeURIComponent(report)}`
+  const report = t.gapReport(query)
+  const mailto = `mailto:${email}?subject=${encodeURIComponent(t.gapSubject(query))}&body=${encodeURIComponent(report)}`
   async function copy() {
     try {
       await navigator.clipboard.writeText(report)

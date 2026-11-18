@@ -79,3 +79,29 @@ describe('Bin It Right', () => {
     expect(within(region).getByRole('heading', { name: 'Paint and paint thinners' })).toBeInTheDocument()
   })
 })
+
+describe('screen-reader and edge behaviour', () => {
+  it('announces a one-line status instead of reading the whole answer twice', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Paint' }))
+    expect(screen.getByRole('status')).toHaveTextContent('Goes to Household hazardous waste drop-off: Paint and paint thinners')
+    expect(answer()).not.toHaveAttribute('aria-live')
+    expect(screen.getByRole('heading', { level: 2, name: /Goes to Household hazardous waste drop-off/ })).toBeInTheDocument()
+  })
+
+  it('shows the "type an item" card for a blank query instead of keeping the old answer', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Paint' }))
+    await user.type(screen.getByRole('textbox', { name: 'What are you throwing away?' }), '   {Enter}')
+    expect(within(answer()).getByText('Type an item to search')).toBeInTheDocument()
+  })
+
+  it('writes the gap report in Spanish in Spanish mode', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Español' }))
+    await user.type(screen.getByRole('textbox', { name: '¿Qué vas a tirar?' }), 'xilófono{Enter}')
+    const mail = within(screen.getByRole('region', { name: 'Respuesta' })).getByRole('link', { name: /lbrecycles@longbeach.gov/ })
+    expect(decodeURIComponent(mail.getAttribute('href') ?? '')).toContain('Pregunta sobre separación: xilófono')
+    expect(screen.getByRole('button', { name: 'Buscar' })).toBeInTheDocument()
+  })
+})

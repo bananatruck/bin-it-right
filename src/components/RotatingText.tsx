@@ -73,7 +73,7 @@ export interface RotatingTextProps
   direction?: 'up' | 'down' | undefined;
   highlight?: boolean | undefined;
   highlightColor?: string | undefined;
-  animatePresenceMode?: 'sync' | 'wait' | undefined;
+  animatePresenceMode?: 'sync' | 'wait' | 'popLayout' | undefined;
   animatePresenceInitial?: boolean | undefined;
   rotationInterval?: number | undefined;
   staggerDuration?: number | undefined;

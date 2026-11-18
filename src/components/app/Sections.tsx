@@ -96,7 +96,7 @@ export function HowItWorks() {
     <ol className="steps">
       {t.howItWorksSteps.map((step) => (
         <li key={step.title} className="steps__item">
-          <h3 className="steps__title">{step.title}</h3>
+          <h4 className="steps__title">{step.title}</h4>
           <p>{step.body}</p>
         </li>
       ))}

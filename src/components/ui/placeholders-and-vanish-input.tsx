@@ -31,6 +31,8 @@ export interface PlaceholdersAndVanishInputProps {
   initialValue?: string | undefined;
   id?: string | undefined;
   "aria-label"?: string | undefined;
+  /** Bin It Right: accessible name of the submit button, so it can be translated. */
+  submitLabel?: string | undefined;
 }
 
 function prefersReducedMotionQuery(): boolean {
@@ -49,6 +51,7 @@ export function PlaceholdersAndVanishInput({
   initialValue = "",
   id,
   "aria-label": ariaLabel,
+  submitLabel = "Search",
 }: PlaceholdersAndVanishInputProps) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
   const framerReducedMotion = useReducedMotion();
@@ -116,7 +119,7 @@ export function PlaceholdersAndVanishInput({
     if (!canvas) return;
     let ctx: CanvasRenderingContext2D | null;
     try {
-      ctx = canvas.getContext("2d");
+      ctx = canvas.getContext("2d", { willReadFrequently: true });
     } catch {
       ctx = null;
     }
@@ -189,7 +192,7 @@ export function PlaceholdersAndVanishInput({
           }
         }
         newDataRef.current = newArr;
-        const ctx = canvasRef.current?.getContext("2d");
+        const ctx = canvasRef.current?.getContext("2d", { willReadFrequently: true });
         if (ctx) {
           ctx.clearRect(pos, 0, 800, 800);
           newDataRef.current.forEach((t) => {
@@ -279,7 +282,7 @@ export function PlaceholdersAndVanishInput({
       />
 
       <button
-        aria-label="Search"
+        aria-label={submitLabel}
         disabled={!value}
         type="submit"
         className="absolute right-0 top-1/2 z-50 -translate-y-1/2 h-12 w-12 min-h-[48px] min-w-[48px] rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
@@ -316,7 +319,7 @@ export function PlaceholdersAndVanishInput({
         </motion.svg>
       </button>
 
-      <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
+      <div aria-hidden="true" className="absolute inset-0 flex items-center rounded-full pointer-events-none">
         {shouldReduceMotion ? (
           !value && (
             <p className="dark:text-zinc-500 text-[1.0625rem] font-normal text-neutral-500 pl-6 text-left w-[calc(100%-2rem)] truncate">

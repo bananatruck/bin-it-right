@@ -4,6 +4,7 @@ import {
   AnimatePresence,
   motion,
   useInView,
+  useReducedMotion,
   type MotionProps,
   type UseInViewOptions,
   type Variants,
@@ -53,6 +54,8 @@ export function BlurFade({
     margin: inViewMargin,
   })
   const isInView = !inView || inViewResult
+  // Bin It Right: with reduced motion, show the content at once with no fade, blur or slide.
+  const reduceMotion = useReducedMotion() === true
   const defaultVariants: Variants = {
     hidden: {
       [direction === "left" || direction === "right" ? "x" : "y"]:
@@ -75,6 +78,10 @@ export function BlurFade({
     hiddenFilter != null &&
     visibleFilter != null &&
     hiddenFilter !== visibleFilter
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>
+  }
 
   return (
     <AnimatePresence>

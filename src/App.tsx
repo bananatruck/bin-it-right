@@ -12,12 +12,13 @@ import { REPO_URL } from '@/lib/labels'
 import { dataset } from '@/data'
 import { createMatcher, type SearchResult } from '@/engine'
 import { useStrings } from '@/i18n/useLocale'
+import { announcement } from '@/lib/labels'
 
 const matcher = createMatcher(dataset)
 const termCount = dataset.rules.reduce((total, rule) => total + rule.terms.length + rule.termsEs.length, 0)
 
 export default function App() {
-  const { t } = useStrings()
+  const { locale, t } = useStrings()
   const [draft, setDraft] = useState('')
   const [result, setResult] = useState<SearchResult | null>(null)
   const [searchCount, setSearchCount] = useState(0)
@@ -26,9 +27,8 @@ export default function App() {
   const typeahead = useMemo(() => matcher.autocomplete(draft, 6), [draft])
 
   function runSearch(query: string) {
-    const trimmed = query.trim()
-    if (trimmed === '') return
-    setResult(matcher.search(trimmed))
+    // A blank query shows the "type an item" card instead of silently keeping the old answer.
+    setResult(matcher.search(query.trim()))
     setSearchCount((count) => count + 1)
     setDraft('')
     // Move focus to the answer so keyboard and screen-reader users land on it.
@@ -66,6 +66,7 @@ export default function App() {
                       rotationInterval={2600}
                       staggerDuration={0.02}
                       staggerFrom="first"
+                      animatePresenceMode="popLayout"
                     />
                   </span>
                 </h1>
@@ -80,6 +81,7 @@ export default function App() {
                   placeholders={t.searchPlaceholders}
                   value={draft}
                   onValueChange={setDraft}
+                  submitLabel={t.searchSubmit}
                   onSubmit={() => { runSearch(draft) }}
                 />
                 {typeahead.length > 0 && (
@@ -107,10 +109,11 @@ export default function App() {
                 </ul>
               </div>
 
+              {/* A short status line is announced; the full answer is read when focus moves to it. */}
+              <p className="sr-only" role="status">{result === null ? '' : announcement(result, locale, t)}</p>
               <section
                 ref={resultRef}
                 tabIndex={-1}
-                aria-live="polite"
                 aria-label={t.resultRegionLabel}
                 className="result-region scroll-mt-4"
               >
@@ -176,7 +179,7 @@ export default function App() {
             <p className="m-0">{t.footerNote}</p>
             <p className="m-0">{t.translationNote}</p>
             <p className="m-0">
-              <a href={REPO_URL} target="_blank" rel="noreferrer">{t.sourceCode}</a>
+              <a className="inline-flex min-h-12 items-center" href={REPO_URL} target="_blank" rel="noreferrer">{t.sourceCode}</a>
             </p>
           </footer>
         </div>

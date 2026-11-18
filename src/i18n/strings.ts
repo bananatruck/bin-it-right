@@ -37,6 +37,11 @@ export interface UiStrings {
   contactEmail: string
   contactPhone: string
   copyGapReport: string
+  gapSubject: (query: string) => string
+  gapReport: (query: string) => string
+  searchSubmit: string
+  announceAnswer: (destination: string, item: string) => string
+  announceSuggestions: (count: number) => string
   copied: string
   explainTitle: string
   explainTyped: string
@@ -111,11 +116,22 @@ export const strings: Record<Locale, UiStrings> = {
     emptyQueryTitle: 'Type an item to search',
     noRuleTitle: 'No official rule found',
     noRuleBody: (query) =>
-      `The City of Long Beach has not published a sorting rule for "${query}" in the pages this app uses, so it will not guess. Ask the City directly.`,
+      `Nothing in the City of Long Beach rules this app uses matched "${query}". Check the spelling or try a simpler word. If it is spelled right, the City may not have published a rule for it, so the app will not guess. Ask the City directly.`,
     contactTitle: 'Ask the City',
     contactEmail: 'Email',
     contactPhone: 'Call',
     copyGapReport: 'Copy a gap report',
+    gapSubject: (query) => `Sorting question: ${query}`,
+    gapReport: (query) =>
+      [
+        'Bin It Right gap report',
+        `Item: ${query}`,
+        'No rule for this item was found in the City of Long Beach sorting guidelines saved by Bin It Right.',
+        'Could the City publish which cart or drop-off it belongs in?',
+      ].join('\n'),
+    searchSubmit: 'Search',
+    announceAnswer: (destination, item) => `Goes to ${destination}: ${item}`,
+    announceSuggestions: (count) => `No exact match. ${count} ${count === 1 ? 'suggestion' : 'suggestions'}.`,
     copied: 'Copied',
     explainTitle: 'Why this answer',
     explainTyped: 'You typed',
@@ -165,9 +181,9 @@ export const strings: Record<Locale, UiStrings> = {
     savedCopy: 'Saved copy',
     accessTitle: 'Accessibility',
     accessPoints: [
-      'Every button is at least 48 by 48 pixels.',
+      'Buttons and links are at least 48 pixels tall.',
       'Colour is never the only signal: each destination has a name and an icon.',
-      'Answers are announced to screen readers, and focus moves to the answer.',
+      'A short status line is announced to screen readers, and focus moves to the answer.',
       'Animations stop when your device asks for reduced motion.',
       "Spanish mode shows the City's own Spanish wording where the City publishes it.",
     ],
@@ -219,11 +235,22 @@ export const strings: Record<Locale, UiStrings> = {
     emptyQueryTitle: 'Escribe un artículo para buscar',
     noRuleTitle: 'No se encontró una regla oficial',
     noRuleBody: (query) =>
-      `La Ciudad de Long Beach no ha publicado una regla de separación para "${query}" en las páginas que usa esta app, así que no va a adivinar. Pregúntale directamente a la Ciudad.`,
+      `Nada en las reglas de la Ciudad de Long Beach que usa esta app coincidió con "${query}". Revisa la ortografía o prueba una palabra más sencilla. Si está bien escrito, puede que la Ciudad no haya publicado una regla, así que la app no va a adivinar. Pregúntale directamente a la Ciudad.`,
     contactTitle: 'Pregúntale a la Ciudad',
     contactEmail: 'Correo',
     contactPhone: 'Llamar',
     copyGapReport: 'Copiar reporte de regla faltante',
+    gapSubject: (query) => `Pregunta sobre separación: ${query}`,
+    gapReport: (query) =>
+      [
+        'Reporte de regla faltante de Bin It Right',
+        `Artículo: ${query}`,
+        'No se encontró una regla para este artículo en las guías de separación de la Ciudad de Long Beach guardadas por Bin It Right.',
+        '¿Podría la Ciudad publicar en qué contenedor o centro de entrega va?',
+      ].join('\n'),
+    searchSubmit: 'Buscar',
+    announceAnswer: (destination, item) => `Va en ${destination}: ${item}`,
+    announceSuggestions: (count) => `No hay coincidencia exacta. ${count} ${count === 1 ? 'sugerencia' : 'sugerencias'}.`,
     copied: 'Copiado',
     explainTitle: 'Por qué esta respuesta',
     explainTyped: 'Escribiste',
@@ -273,9 +300,9 @@ export const strings: Record<Locale, UiStrings> = {
     savedCopy: 'Copia guardada',
     accessTitle: 'Accesibilidad',
     accessPoints: [
-      'Cada botón mide al menos 48 por 48 píxeles.',
+      'Los botones y enlaces miden al menos 48 píxeles de alto.',
       'El color nunca es la única señal: cada destino tiene nombre e ícono.',
-      'Las respuestas se anuncian a los lectores de pantalla y el foco pasa a la respuesta.',
+      'Se anuncia una línea breve a los lectores de pantalla y el foco pasa a la respuesta.',
       'Las animaciones se detienen si tu dispositivo pide menos movimiento.',
       'El modo en español muestra el texto en español de la Ciudad cuando la Ciudad lo publica.',
     ],
