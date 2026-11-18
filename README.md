@@ -1,5 +1,7 @@
 # Bin It Right
 
+[![CI](https://github.com/bananatruck/bin-it-right/actions/workflows/ci.yml/badge.svg)](https://github.com/bananatruck/bin-it-right/actions/workflows/ci.yml) [![Deploy to GitHub Pages](https://github.com/bananatruck/bin-it-right/actions/workflows/pages.yml/badge.svg)](https://github.com/bananatruck/bin-it-right/actions/workflows/pages.yml)
+
 Which Long Beach cart does it go in?
 Bin It Right answers with the City of Long Beach's own published rule, quoted word for word, with a link to the City page it came from and the date that page was saved.
 When the City has not published a rule for an item, it says so and gives you the City's email and phone number instead of guessing.
