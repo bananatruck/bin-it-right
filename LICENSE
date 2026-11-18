@@ -25,5 +25,6 @@ SOFTWARE.
 This license covers the code in this repository.
 The saved page text in data/snapshots/ and the rule wording quoted in src/data/
 are published by the City of Long Beach and remain the City's content.
-Third-party UI components keep their own licenses; see the credit line at the
-top of each file in src/components/ui/ and src/components/RotatingText.tsx.
+Third-party UI components keep their own licenses; their copyright and
+permission notices are reproduced in THIRD_PARTY_NOTICES.md, and each copied
+file names its source on its first line.

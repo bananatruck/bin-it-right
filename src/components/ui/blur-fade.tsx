@@ -1,4 +1,5 @@
 // Source: Magic UI, https://magicui.design/r/blur-fade.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 import { useRef } from "react"
 import {
   AnimatePresence,

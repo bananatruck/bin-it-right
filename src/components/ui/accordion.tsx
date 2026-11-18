@@ -1,4 +1,5 @@
 // Source: shadcn/ui, https://ui.shadcn.com/r/styles/new-york-v4/accordion.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 import * as React from "react"
 import { ChevronDownIcon } from "lucide-react"
 import { Accordion as AccordionPrimitive } from "radix-ui"

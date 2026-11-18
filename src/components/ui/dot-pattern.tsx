@@ -1,4 +1,5 @@
 // Source: Magic UI, https://magicui.design/r/dot-pattern.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 import React, { useEffect, useId, useRef, useState } from "react"
 import { motion } from "motion/react"
 

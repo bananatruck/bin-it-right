@@ -1,4 +1,5 @@
 // Source: React Bits, https://reactbits.dev/r/RotatingText-TS-TW.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 'use client';
 
 import React, {

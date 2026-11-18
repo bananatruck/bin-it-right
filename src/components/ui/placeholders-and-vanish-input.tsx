@@ -1,4 +1,5 @@
 // Source: Aceternity UI, https://ui.aceternity.com/registry/placeholders-and-vanish-input.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";

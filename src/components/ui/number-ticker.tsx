@@ -1,4 +1,5 @@
 // Source: Magic UI, https://magicui.design/r/number-ticker.json
+// License and copyright notice: THIRD_PARTY_NOTICES.md at the repository root.
 import { useEffect, useRef, type ComponentPropsWithoutRef } from "react"
 import { useInView, useMotionValue, useReducedMotion, useSpring } from "motion/react"
 
