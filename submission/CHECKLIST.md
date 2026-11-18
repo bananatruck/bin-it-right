@@ -42,6 +42,7 @@ If a judge or organizer asks, the agents and what each one did are listed in the
 
 ## Before recording, re-check
 
-- The quick picks give the answers the script names: "Pizza box" to the green organics cart, "Battery" to "Did you mean" with household and lithium batteries, "Aluminum foil" to "No official rule found", and in Spanish "Bolsa de plástico" to "Basura".
+- The quick picks give the answers the script names: "Pizza box" to the green organics cart, "Battery" to "Did you mean" with household and lithium batteries, "Aluminum foil" to "No official rule found in this app", and in Spanish "Bolsa de plástico" to "Basura".
 - The CI badge or Actions tab shows the latest run passing.
-- Dated content (household hazardous waste event dates, the Treecycling window of Dec. 26, 2026 to Jan. 8, 2027) is still current, or run `pnpm sources:fetch` and `pnpm check` to refresh it.
+- Dated content (household hazardous waste event dates from Dec. 12, 2026, the Treecycling window of Dec. 26, 2026 to Jan. 8, 2027) is still current, or run `pnpm sources:fetch` and `pnpm check` to refresh it.
+  After a refresh, a test fails if any quoted "Month D, YYYY" date is earlier than the day its page was saved, which points at the dates to trim.

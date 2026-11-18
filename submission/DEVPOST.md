@@ -40,7 +40,7 @@ I wanted an answer I could trust, with the City's own words as proof.
 You type an item, or tap a common one, and Bin It Right shows where it goes as a large slab in that cart's colour, with an icon and a label.
 Under it is the City of Long Beach's rule quoted word for word, a link to the City page, and the date the page was saved, plus the City's tips and how to use the destination.
 If a word is ambiguous or misspelled ("battery" could be alkaline or lithium-ion), it asks "Did you mean" instead of guessing.
-If the City has not published a rule ("aluminum foil"), it says "No official rule found" and gives the City's email, phone and a ready-made gap report.
+If none of the City rules in the app match ("aluminum foil"), it says "No official rule found in this app" and gives the City's email, phone and a ready-made gap report, because the City may have guidance the app does not include.
 In Spanish mode it shows the City's own Spanish wording where the City publishes it, and says when a rule exists only in English, instead of machine-translating an official rule.
 You can browse all 62 rules by destination, see the 20 saved City sources, and open "Why this answer" to see exactly how your words were matched.
 It works offline after the first visit and has no accounts, no tracking and no AI model at runtime.
@@ -101,7 +101,7 @@ Upload from `docs/screenshots/`, in this order:
 
 1. `phone-answer-pizza-box.png`: an answer with the City's quote and source.
 2. `phone-did-you-mean-battery.png`: "Did you mean" for an ambiguous word.
-3. `phone-no-rule.png`: "No official rule found" with the City's contact route.
+3. `phone-no-rule.png`: "No official rule found in this app" with the City's contact route.
 4. `phone-spanish-answer.png`: the City's own Spanish wording.
 5. `desktop-home.png`: search and the full rule list.
 6. `desktop-hazardous.png`: a hazardous waste answer with tips.

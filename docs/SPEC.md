@@ -2,7 +2,7 @@
 
 Bin It Right tells a Long Beach resident which cart or drop-off an item goes to, using only the City of Long Beach's own published sorting rules.
 Every answer quotes the exact official sentence it rests on, links to the page it came from, and shows the date that page was fetched.
-When the City has not published a rule for an item, the app says so and gives the City's contact route instead of guessing.
+When none of the City rules in the app match an item, the app says so and gives the City's contact route instead of guessing.
 
 ## 1. The hackathon as read on 2026-11-17 (Pacific time)
 
@@ -90,7 +90,7 @@ Matching is deterministic, runs in the browser, makes no network or model calls,
 4. Exact match: if the normalised query equals a normalised term, return that rule as an answer.
 5. Fuzzy match: otherwise score every term by similarity (Damerau-Levenshtein on the whole phrase, and token overlap), and return terms above a fixed threshold as "Did you mean" suggestions.
 6. A fuzzy match never becomes an answer by itself; the resident picks a suggestion, which then runs as an exact match.
-7. No match above the threshold returns "No official rule found" with the City's published contact route.
+7. No match above the threshold returns "No official rule found in this app" with the City's published contact route.
 
 The explanation lists the normalised text, the dropped words, the term matched or the top scores, and the threshold used.
 
@@ -100,7 +100,7 @@ The explanation lists the normalised text, the dropped words, the term matched o
 2. Typing shows suggestions from the dataset as they type.
 3. Submitting shows one answer card: the destination in its cart colour, the item as the City names it, the quoted rule, the source link with its fetch date, and any official tips.
 4. "Did you mean" lists close entries when there is no exact match.
-5. "No official rule found" shows the City's email and phone, and lets the resident copy a short gap report.
+5. "No official rule found in this app" shows the City's email and phone, and lets the resident copy a short question for the City.
 6. A browse view lists every rule grouped by destination, each with its citation.
 7. A sources view lists every page fetched, with its date and hash.
 8. A language switch shows the City's official Spanish wording where it exists and says plainly when only English is published.

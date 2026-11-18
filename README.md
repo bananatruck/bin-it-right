@@ -4,7 +4,7 @@
 
 Which Long Beach cart does it go in?
 Bin It Right answers with the City of Long Beach's own published rule, quoted word for word, with a link to the City page it came from and the date that page was saved.
-When the City has not published a rule for an item, it says so and gives you the City's email and phone number instead of guessing.
+When none of the City rules in the app match an item, it says so and gives you the City's email and phone number instead of guessing.
 
 **Live app:** https://bananatruck.github.io/bin-it-right/
 
@@ -13,7 +13,7 @@ Built for the Theme Track, "Rethinking Waste", of [Arbiter Hacks V1](https://arb
 <p>
   <img src="docs/screenshots/phone-answer-pizza-box.png" alt="Phone screen: 'Pizza box' answered with a green slab reading 'Green organics cart' and the City's rule quoted below it" width="260">
   <img src="docs/screenshots/phone-did-you-mean-battery.png" alt="Phone screen: 'battery' gives two choices, household batteries and lithium batteries, instead of a guess" width="260">
-  <img src="docs/screenshots/phone-no-rule.png" alt="Phone screen: 'aluminum foil' shows 'No official rule found' with the City's email and phone" width="260">
+  <img src="docs/screenshots/phone-no-rule.png" alt="Phone screen: 'aluminum foil' shows 'No official rule found in this app' with the City's email and phone" width="260">
 </p>
 
 ![Desktop: search on the left, every official rule grouped by destination on the right](docs/screenshots/desktop-home.png)
@@ -32,7 +32,7 @@ Generic "is this recyclable?" tools answer from general knowledge, which can con
 - Quotes the City's wording exactly, with the page title, a link, and the date the page was saved.
 - Adds the City's own tips (such as "Lids On!" and "Flatten Boxes!") and how to use the destination (pickup forms, drop-off sites, hours).
 - Asks "Did you mean" for ambiguous or misspelled words, and never turns a close match into an answer on its own.
-- Says "No official rule found" when the City has not published one, with a ready-made gap report to send the City.
+- Says "No official rule found in this app" when none of the City rules it includes match, with a ready-made question to send the City; the City may have guidance the app does not include.
 - Shows the City's own Spanish wording where the City publishes it, and says plainly when a rule exists in English only.
 - Lets you browse every rule by destination, see every saved source page, and open "Why this answer" to see exactly how your words were matched.
 - Works offline after the first visit, with no accounts, no tracking, and no AI model at runtime.
@@ -47,7 +47,7 @@ That is enough detail to answer common questions from the City's own words, so L
 |---|---|
 | Official rules | 62 |
 | City pages and PDFs saved | 20 |
-| Search terms (English and Spanish) | 551 |
+| Search terms (English and Spanish) | 543 |
 | Rules with the City's own Spanish wording | 13 |
 
 Each source in `src/data/sources.json` records its URL, title, format, fetch time, the SHA-256 hash of the bytes fetched, and the path of its text snapshot in `data/snapshots/`.
@@ -67,6 +67,7 @@ These checks run in CI on every push to `main` and on every pull request, and th
 - No search term selects two different rules.
 - Every listed term returns its own rule as an exact answer.
 - Every source is cited at least once.
+- No quoted "Month D, YYYY" date is earlier than the day its page was saved, so past events in a City "Upcoming Dates" list are not shown as upcoming.
 
 There is a test named "fails if any rule lacks a source" that removes the evidence from each rule in turn and checks that validation fails.
 
@@ -85,7 +86,7 @@ Matching is deterministic and runs entirely in the browser.
 4. Exact match against the explicit term list: that is the only way to get an answer.
 5. Otherwise score every term by the best of three measures: whole-phrase Damerau-Levenshtein similarity; how much of the term appears in the query (a typo-tolerant word counts by its similarity); and how much of the query appears in the term, weighted 0.85 (an exact word counts 1, a typo-tolerant word 0.95).
 6. Terms scoring 0.8 or more are offered as "Did you mean", one per rule, at most five, in a fixed order.
-7. Nothing at 0.8 or above means "No official rule found".
+7. Nothing at 0.8 or above means "No official rule found in this app".
 
 The "Why this answer" panel under every result shows the normalised text, the ignored words, the matched term or the closest terms with their scores, and the threshold.
 The engine is in `src/engine/`, with unit tests and tests against the real dataset (for example "battery" offers both household and lithium batteries, "glass" ranks glass rules above "grass", and "aluminum foil" returns no rule).
@@ -94,7 +95,7 @@ The engine is in `src/engine/`, with unit tests and tests against the real datas
 
 - Buttons and links are at least 48 CSS pixels tall (the language and browse source buttons also at least 48 wide); search text is 17 px.
 - Every destination has a text label and an icon as well as a colour; text contrast meets WCAG AA.
-- After a search, a one-line status ("Goes to ...") is announced and focus moves to the labelled answer region; the destination is part of the answer's heading.
+- After a search, a one-line status ("item: destination") is announced and focus moves to the labelled answer region; the destination is part of the answer's heading.
 - The rotating headline word is hidden from screen readers, and under `prefers-reduced-motion` the headline, counters and answer reveal are static.
 - The page language attribute follows the language switch, and each quote is marked with its own language.
 - Spanish interface text was translated with AI assistance and has not yet been reviewed by a native speaker; City rule text is never translated.
@@ -112,7 +113,7 @@ pnpm check          # lint, type-check, tests, production build
 Other commands:
 
 ```sh
-pnpm test           # 147 tests: engine, dataset provenance, UI components
+pnpm test           # 213 tests: engine, dataset provenance, UI, service worker, source fetcher
 pnpm build && pnpm preview --port 4791 &
 pnpm screenshots    # headless Chromium screenshots into docs/screenshots/
 pnpm sources:fetch  # re-fetch every City page (needs network and pdftotext)
@@ -154,6 +155,7 @@ A Claude agent acted as lead: it read the hackathon rules, fetched the City page
 GPT 6.1 Sol (through Codex) wrote the matching engine and the dataset validator with their tests.
 Gemini 4 Argon (through Antigravity) generated the mock-ups, installed and adapted the third-party components, and drafted the interface copy.
 Grok 4.7 (through Cursor) audited every rule against the saved City pages.
+On 2026-11-18, GPT 6.1 Sol (through Codex) reviewed the whole project as a judge and as a resident; its findings on over-broad terms, missing City conditions, accessibility, Spanish wording and the offline cache were fixed with tests.
 No outside agent wrote sorting rules: the lead wrote each rule from the saved pages, the audit reviewed them afterwards, and the tests above check every quote against its saved page on every CI run.
 
 ## Status

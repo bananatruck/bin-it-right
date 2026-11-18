@@ -32,13 +32,13 @@ On screen: tap the source line under the quote ("City of Long Beach, Residential
 On screen: type "battery".
 
 Voice: "Some words are ambiguous.
-'Battery' could mean an AA battery, which goes to a battery drop-off, or a lithium-ion battery, which the City sends to a hazardous waste event.
+'Battery' could mean an alkaline battery, which goes to a battery drop-off, or a lithium-ion battery, which the City sends to a hazardous waste event.
 So Bin It Right does not guess; it asks which one you mean."
 
 On screen: tap the lithium suggestion, show the amber slab.
 Then type "aluminum foil".
 
-Voice: "And when the City has not published a rule, it says so: no official rule found.
+Voice: "And when none of the City rules in the app match, it says so: no official rule found in this app.
 It gives the City's email and phone number, and a ready-made gap report you can send them."
 
 ## 1:20 to 1:45 - Spanish and accessibility
