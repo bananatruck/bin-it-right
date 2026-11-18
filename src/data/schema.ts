@@ -55,10 +55,16 @@ export const DestinationIdSchema = z.enum([
 ])
 export type DestinationId = z.infer<typeof DestinationIdSchema>
 
+// longbeach.gov itself or a subdomain of it, over HTTPS. A bare suffix check would accept look-alikes such as notlongbeach.gov.
+export function isOfficialCityUrl(url: string): boolean {
+  const parsed = new URL(url)
+  return parsed.protocol === 'https:' && (parsed.hostname === 'longbeach.gov' || parsed.hostname.endsWith('.longbeach.gov'))
+}
+
 export const LinkSchema = z.object({
   label: z.string().min(1),
-  url: z.url().refine((url) => new URL(url).hostname.endsWith('longbeach.gov'), {
-    message: 'links must point to an official longbeach.gov page',
+  url: z.url().refine(isOfficialCityUrl, {
+    message: 'links must point to an official longbeach.gov page over HTTPS',
   }),
 })
 export type Link = z.infer<typeof LinkSchema>
