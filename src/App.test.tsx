@@ -52,7 +52,7 @@ describe('Bin It Right', () => {
     const user = renderApp()
     await user.click(screen.getByRole('button', { name: 'Aluminum foil' }))
     const region = answer()
-    expect(within(region).getByText('No official rule found')).toBeInTheDocument()
+    expect(within(region).getByText('No official rule found in this app')).toBeInTheDocument()
     expect(within(region).getByRole('link', { name: /lbrecycles@longbeach.gov/ })).toHaveAttribute(
       'href',
       expect.stringMatching(/^mailto:lbrecycles@longbeach\.gov\?subject=/),
@@ -84,9 +84,9 @@ describe('screen-reader and edge behaviour', () => {
   it('announces a one-line status instead of reading the whole answer twice', async () => {
     const user = renderApp()
     await user.click(screen.getByRole('button', { name: 'Paint' }))
-    expect(screen.getByRole('status')).toHaveTextContent('Goes to Household hazardous waste drop-off: Paint and paint thinners')
+    expect(screen.getByRole('status')).toHaveTextContent('Paint and paint thinners: Household hazardous waste drop-off')
     expect(answer()).not.toHaveAttribute('aria-live')
-    expect(screen.getByRole('heading', { level: 2, name: /Goes to Household hazardous waste drop-off/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: /Where it goes Household hazardous waste drop-off/ })).toBeInTheDocument()
   })
 
   it('shows the "type an item" card for a blank query instead of keeping the old answer', async () => {
@@ -101,7 +101,7 @@ describe('screen-reader and edge behaviour', () => {
     await user.click(screen.getByRole('button', { name: 'Español' }))
     await user.type(screen.getByRole('textbox', { name: '¿Qué vas a tirar?' }), 'xilófono{Enter}')
     const mail = within(screen.getByRole('region', { name: 'Respuesta' })).getByRole('link', { name: /lbrecycles@longbeach.gov/ })
-    expect(decodeURIComponent(mail.getAttribute('href') ?? '')).toContain('Pregunta sobre separación: xilófono')
+    expect(decodeURIComponent(mail.getAttribute('href') ?? '')).toContain('Consulta sobre cómo desechar: xilófono')
     expect(screen.getByRole('button', { name: 'Buscar' })).toBeInTheDocument()
   })
 })
