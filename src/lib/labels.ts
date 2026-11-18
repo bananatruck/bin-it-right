@@ -63,7 +63,10 @@ export function withoutRepeats(quotes: readonly Quote[], shown: readonly Quote[]
 
 // The one-line status read to screen readers after a search.
 export function announcement(result: SearchResult, locale: Locale, t: UiStrings): string {
-  if (result.kind === 'answer') return t.announceAnswer(destinationLabel(result.destination, locale), ruleLabel(result.rule, locale))
+  if (result.kind === 'answer') {
+    // Some City labels end with a period; drop it so the line reads "item: destination".
+    return t.announceAnswer(destinationLabel(result.destination, locale), ruleLabel(result.rule, locale).replace(/\.$/, ''))
+  }
   if (result.kind === 'suggestions') return t.announceSuggestions(result.suggestions.length)
   return result.explanation.normalized === '' ? t.emptyQueryTitle : t.noRuleTitle
 }

@@ -38,3 +38,14 @@ describe('quotesForLocale', () => {
     expect(quotesForLocale([q('a', 'English rule')], 'es')).toEqual({ quotes: [q('a', 'English rule')], englishOnly: true })
   })
 })
+
+describe('announcement', () => {
+  it('drops a label-ending period before the colon', async () => {
+    const { dataset } = await import('@/data')
+    const { createMatcher } = await import('@/engine')
+    const { strings } = await import('@/i18n/strings')
+    const { announcement } = await import('./labels')
+    const result = createMatcher(dataset).search('bolsa de plástico')
+    expect(announcement(result, 'es', strings.es)).toBe('Bolsas de plástico, film transparente, bolsas para botanas y envolturas de dulces: Basura')
+  })
+})
