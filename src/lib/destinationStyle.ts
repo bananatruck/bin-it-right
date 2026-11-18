@@ -28,6 +28,17 @@ export interface DestinationStyle {
   uncertain: boolean
 }
 
+// Destinations that depend on City collection service, where a private hauler's rules may differ.
+// Public drop-offs (hazardous waste, e-waste, batteries, bulbs, medical, mattress, Treecycling, donation) do not.
+export const CITY_SERVICE_DESTINATIONS: ReadonlySet<DestinationId> = new Set<DestinationId>([
+  'blue-cart',
+  'green-cart',
+  'trash-cart',
+  'special-collection',
+  'used-oil',
+  'no-cart',
+])
+
 const BLUE = '#1D5FD1'
 const GREEN = '#2F7D3A'
 const SLATE = '#4A5560'

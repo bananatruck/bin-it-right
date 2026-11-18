@@ -105,3 +105,17 @@ describe('screen-reader and edge behaviour', () => {
     expect(screen.getByRole('button', { name: 'Buscar' })).toBeInTheDocument()
   })
 })
+
+describe('the private-hauler note (round 2 review)', () => {
+  it('appears on cart answers, which depend on City collection service', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Plastic bag' }))
+    expect(within(answer()).getByText(/If a private hauler collects your carts, ask them/)).toBeInTheDocument()
+  })
+
+  it('does not appear on public drop-offs, which the City opens to all residents', async () => {
+    const user = renderApp()
+    await user.click(screen.getByRole('button', { name: 'Paint' }))
+    expect(within(answer()).queryByText(/If a private hauler collects your carts, ask them/)).not.toBeInTheDocument()
+  })
+})

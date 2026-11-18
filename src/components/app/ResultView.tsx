@@ -5,7 +5,7 @@ import { dataset } from '@/data'
 import type { Destination, Rule } from '@/data/schema'
 import type { Explanation, SearchResult } from '@/engine'
 import { useStrings } from '@/i18n/useLocale'
-import { DESTINATION_STYLE } from '@/lib/destinationStyle'
+import { CITY_SERVICE_DESTINATIONS, DESTINATION_STYLE } from '@/lib/destinationStyle'
 import { formatScore } from '@/lib/format'
 import { destinationLabel, quotesForLocale, ruleLabel, withoutRepeats } from '@/lib/labels'
 import { QuoteList } from './QuoteList'
@@ -85,7 +85,7 @@ function AnswerCard({ rule, destination, explanation }: { rule: Rule; destinatio
             </ul>
           )}
         </section>
-        <HaulerNote />
+        {CITY_SERVICE_DESTINATIONS.has(destination.id) && <HaulerNote />}
         <ExplainPanel explanation={explanation} />
       </div>
     </article>
