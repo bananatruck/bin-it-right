@@ -18,6 +18,7 @@ describe('normalize', () => {
     const original = '  ¡PLÁSTICO!\tWidgets-１２３ café\u0301  '
     expect(normalize(original)).toEqual({
       original, normalized: 'plastico widget 123 cafe', tokens: ['plastico', 'widget', '123', 'cafe'], dropped: [],
+      surface: 'plastico widgets 123 cafe', surfaceTokens: ['plastico', 'widgets', '123', 'cafe'],
     })
   })
 
@@ -26,6 +27,7 @@ describe('normalize', () => {
     expect(normalize(original)).toEqual({
       original, normalized: 'used widget', tokens: ['used', 'widget'],
       dropped: original.split(' ').slice(0, -2),
+      surface: 'used widgets', surfaceTokens: ['used', 'widgets'],
     })
     expect(normalize('used motor oil').normalized).toBe('used motor oil')
   })

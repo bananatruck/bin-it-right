@@ -61,12 +61,19 @@ export function queryCoverage(queryTokens: readonly string[], termTokens: readon
   return present / query.length
 }
 
-export function score(query: NormalizedText, term: NormalizedText): number {
-  // max(phraseSimilarity, tokenContainment, 0.85 * queryCoverage).
-  // Complete query coverage clears the suggestion threshold; only exact normalized matches answer.
+function scoreForms(query: string, queryTokens: readonly string[], term: string, termTokens: readonly string[]): number {
   return Math.max(
-    phraseSimilarity(query.normalized, term.normalized),
-    tokenContainment(query.tokens, term.tokens),
-    0.85 * queryCoverage(query.tokens, term.tokens),
+    phraseSimilarity(query, term),
+    tokenContainment(queryTokens, termTokens),
+    0.85 * queryCoverage(queryTokens, termTokens),
   )
+}
+
+export function score(query: NormalizedText, term: NormalizedText): number {
+  // max(phraseSimilarity, tokenContainment, 0.85 * queryCoverage), computed on the singular forms
+  // and on the forms before singularisation, keeping the better of the two.
+  // Complete query coverage clears the suggestion threshold; only exact normalized matches answer.
+  const singular = scoreForms(query.normalized, query.tokens, term.normalized, term.tokens)
+  if (query.surface === query.normalized && term.surface === term.normalized) return singular
+  return Math.max(singular, scoreForms(query.surface, query.surfaceTokens, term.surface, term.surfaceTokens))
 }

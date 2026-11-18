@@ -61,7 +61,8 @@ describe('the real Long Beach dataset', () => {
     expect(() => createMatcher(dataset)).not.toThrow()
   })
 
-  it('answers every listed term exactly, with the rule that lists it', () => {
+  // Exhaustive: one full search per listed term, so it gets a longer timeout than the default.
+  it('answers every listed term exactly, with the rule that lists it', { timeout: 60_000 }, () => {
     const matcher = createMatcher(dataset)
     for (const rule of dataset.rules) {
       for (const term of [...rule.terms, ...rule.termsEs]) {

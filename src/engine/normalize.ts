@@ -5,6 +5,10 @@ export interface NormalizedText {
   normalized: string
   tokens: string[]
   dropped: string[]
+  // The same words before singularisation. Fuzzy scoring also compares these, because
+  // singularising a typo can push it further away ("glas" becomes "gla", two edits from "glass").
+  surface: string
+  surfaceTokens: string[]
 }
 
 function singularize(token: string): string {
@@ -24,10 +28,14 @@ export function normalize(text: string): NormalizedText {
   const words = text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/u).filter(Boolean)
   const tokens: string[] = []
+  const surfaceTokens: string[] = []
   const dropped: string[] = []
   for (const word of words) {
     if (FILLER_WORDS.has(word)) dropped.push(word)
-    else tokens.push(singularize(word))
+    else {
+      surfaceTokens.push(word)
+      tokens.push(singularize(word))
+    }
   }
-  return { original: text, normalized: tokens.join(' '), tokens, dropped }
+  return { original: text, normalized: tokens.join(' '), tokens, dropped, surface: surfaceTokens.join(' '), surfaceTokens }
 }
