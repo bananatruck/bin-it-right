@@ -105,6 +105,28 @@ describe('the real Long Beach dataset', () => {
     })
   })
 
+  describe('round 3 review', () => {
+    const texts = (quotes: ReadonlyArray<{ text: string }>) => quotes.map((quote) => quote.text).join(' ')
+
+    it('shows the HHW transport limit on every household hazardous waste answer', () => {
+      const hhw = dataset.destinations.find((entry) => entry.id === 'hazardous-dropoff')
+      expect(texts(hhw?.action ?? [])).toContain('15 gallons or 125 pounds of HHW')
+    })
+
+    it('gives the 6 a.m. cutoff for the one-time tree pickup', () => {
+      const trees = dataset.rules.find((entry) => entry.id === 'holiday-trees')
+      expect(texts(trees?.tips ?? [])).toContain('by 6 a.m. on Jan. 9')
+    })
+
+    it('spells Spanish search terms with their accents, since suggestions show them', () => {
+      const unaccented = ['arbol', 'articulo', 'bateria', 'electronica', 'plastico', 'cafe', 'carton', 'cascara', 'platano', 'ceramica',
+        'cesped', 'colchon', 'construccion', 'electrodomestico', 'jardin', 'neumatico', 'periodico', 'quimicos', 'sillon', 'sofa',
+        'telefono', 'television', 'tocon']
+      const words = dataset.rules.flatMap((rule) => rule.termsEs).flatMap((term) => term.split(' '))
+      expect(words.filter((word) => unaccented.includes(word))).toEqual([])
+    })
+  })
+
   it('builds a matcher with no term claimed by two rules', () => {
     expect(() => createMatcher(dataset)).not.toThrow()
   })

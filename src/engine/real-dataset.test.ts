@@ -38,7 +38,7 @@ describe('searching parts of terms in the real dataset', () => {
   })
 
   // Words a resident could mean more than one way must not become a definite answer (round 2 review).
-  it.each(['used oil', 'aceite usado', 'dirty paper', 'papel sucio', 'untreated wood', 'foam', 'styrofoam', 'packing peanuts', 'tablet', 'keyboard'])(
+  it.each(['used oil', 'aceite usado', 'dirty paper', 'papel sucio', 'untreated wood', 'foam', 'styrofoam', 'packing peanuts', 'tablet', 'keyboard', 'tree trimmings'])(
     'does not answer the ambiguous word %j outright',
     (query) => {
       expect(matcher.search(query).kind).not.toBe('answer')
