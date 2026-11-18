@@ -135,8 +135,11 @@ describe('validateDataset', () => {
     expect(validateDataset(changeRule((rule) => { rule.terms.push('WÍDGETS') }), readSnapshot)).toEqual([])
   })
 
-  it('requires each Spanish rule label to occur case-sensitively in its own Spanish evidence or tips', () => {
-    const dataset = changeRule((rule) => { rule.label.es = 'artilugio ficticio' })
+  it('requires each Spanish rule label to occur in its own Spanish evidence or tips, ignoring only letter case', () => {
+    // The City prints some Spanish headings in capitals ("RECICLAR"); casing is not wording.
+    const recased = changeRule((rule) => { rule.label.es = 'artilugio FICTICIO' })
+    expect(validateDataset(recased, readSnapshot)).toEqual([])
+    const dataset = changeRule((rule) => { rule.label.es = 'artilugio ficticia' })
     expect(validateDataset(dataset, readSnapshot).some((issue) => issue.path === 'rules.0.label.es')).toBe(true)
     const tips = changeRule((rule) => {
       rule.tips = rule.evidence.filter((quote) => quote.lang === 'es')

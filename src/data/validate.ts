@@ -65,9 +65,11 @@ export function validateDataset(
     }
   }
 
+  // Letter case is ignored because the City prints some Spanish headings in capitals ("RECICLAR").
+  const caseless = (text: string) => normalizeForQuote(text).toLocaleLowerCase('es')
   function checkSpanish(label: string | undefined, evidence: Quote[], path: string) {
     if (label !== undefined && !evidence.some((quote) =>
-      quote.lang === 'es' && normalizeForQuote(quote.text).includes(normalizeForQuote(label)),
+      quote.lang === 'es' && caseless(quote.text).includes(caseless(label)),
     )) add(path, `Spanish label "${label}" is not contained in a Spanish quote`)
   }
   const destinations = new Set(dataset.destinations.map((destination) => destination.id))
