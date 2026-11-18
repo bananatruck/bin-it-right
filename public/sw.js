@@ -7,6 +7,9 @@ const CACHE = `${PREFIX}v2`
 const SCOPE = self.registration.scope
 
 const inScope = (url) => typeof url === 'string' && url.startsWith(SCOPE)
+// Module scripts and fonts are requested with an Origin header, the precached copies without one,
+// and servers may answer with "Vary: Origin". The files are static and hashed, so Vary is ignored.
+const MATCH = { ignoreVary: true }
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -46,14 +49,14 @@ self.addEventListener('fetch', (event) => {
             void caches.open(CACHE).then((cache) => cache.put('./index.html', copy))
             return response
           }
-          return caches.match('./index.html').then((cached) => cached ?? response)
+          return caches.match('./index.html', MATCH).then((cached) => cached ?? response)
         })
-        .catch(() => caches.match('./index.html').then((cached) => cached ?? Response.error())),
+        .catch(() => caches.match('./index.html', MATCH).then((cached) => cached ?? Response.error())),
     )
     return
   }
   event.respondWith(
-    caches.match(request).then(
+    caches.match(request, MATCH).then(
       (cached) =>
         cached ??
         fetch(request).then((response) => {

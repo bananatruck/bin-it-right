@@ -9,6 +9,7 @@ type Handler = (event: Record<string, unknown>) => void
 function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
   const stores = new Map<string, Map<string, Response>>()
   const handlers = new Map<string, Handler>()
+  const matchOptions: Array<{ ignoreVary?: boolean } | undefined> = []
   const open = (name: string) => {
     let store = stores.get(name)
     if (store === undefined) {
@@ -27,7 +28,8 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
     open,
     keys: () => Promise.resolve([...stores.keys()]),
     delete: (name: string) => Promise.resolve(stores.delete(name)),
-    match: async (request: Request | string) => {
+    match: async (request: Request | string, options?: { ignoreVary?: boolean }) => {
+      matchOptions.push(options)
       for (const name of stores.keys()) {
         const hit = await (await open(name)).match(request)
         if (hit !== undefined) return hit
@@ -51,7 +53,7 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
     await Promise.all(waits)
     return responded === undefined ? undefined : await responded
   }
-  return { stores, open, fire }
+  return { stores, open, fire, matchOptions }
 }
 
 const navigate = (url: string) => ({ url, method: 'GET', mode: 'navigate', clone: () => navigate(url) }) as unknown as Request
@@ -89,5 +91,13 @@ describe('service worker (round 2 review)', () => {
     const cache = await worker.open(name ?? '')
     expect(await cache.match('https://example.github.io/bin-it-right/assets/index.js')).toBeDefined()
     expect(await cache.match('https://elsewhere.example/x.js')).toBeUndefined()
+  })
+
+  it('matches cached assets regardless of Vary, so precached files serve module requests offline', async () => {
+    const worker = loadWorker(() => Promise.resolve(new Response('ok')))
+    await worker.fire('install')
+    const asset = new Request('https://example.github.io/bin-it-right/assets/index.js')
+    await worker.fire('fetch', { request: asset })
+    expect(worker.matchOptions).toContainEqual(expect.objectContaining({ ignoreVary: true }))
   })
 })
