@@ -48,40 +48,51 @@ export const SOURCES: SourceSpec[] = [
   { id: 'lb-donation-guide', format: 'html', title: 'Donation Guide', url: `${LB}/lbrecycles/waste-reduction/reduce-waste/donation-guide/` },
 ]
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const snapshotDir = join(root, 'data', 'snapshots')
-const rawDir = join(root, 'data', 'raw')
-const manifestPath = join(root, 'src', 'data', 'sources.json')
+const defaultRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 
-interface ManifestEntry extends SourceSpec {
+export interface ManifestEntry extends SourceSpec {
   publisher: 'City of Long Beach'
   fetchedAt: string
   sha256: string
   snapshot: string
 }
 
+interface Fetched {
+  entry: ManifestEntry
+  snapshotText: string
+}
+
+export interface RefreshOptions {
+  root?: string
+  specs?: SourceSpec[]
+  only?: ReadonlySet<string>
+  fetchImpl?: typeof fetch
+  log?: (line: string) => void
+}
+
 function pdfToText(path: string): string {
   return execFileSync('pdftotext', ['-raw', '-enc', 'UTF-8', path, '-'], { encoding: 'utf8' })
 }
 
-async function fetchOne(spec: SourceSpec): Promise<ManifestEntry> {
-  const response = await fetch(spec.url, {
+// Fetches one source into memory. The raw download goes to data/raw/ (git-ignored cache) because
+// pdftotext reads from a file; nothing that the app or the tests read is written here.
+async function fetchOne(spec: SourceSpec, root: string, fetchImpl: typeof fetch): Promise<Fetched> {
+  const response = await fetchImpl(spec.url, {
     headers: { 'User-Agent': 'Mozilla/5.0 (compatible; bin-it-right source fetcher)' },
     redirect: 'follow',
   })
-  if (!response.ok) throw new Error(`${spec.id}: HTTP ${response.status} for ${spec.url}`)
+  if (!response.ok) throw new Error(`${spec.id}: HTTP ${String(response.status)} for ${spec.url}`)
   const bytes = Buffer.from(await response.arrayBuffer())
   const fetchedAt = new Date().toISOString()
   const sha256 = createHash('sha256').update(bytes).digest('hex')
-
-  const rawPath = join(rawDir, `${spec.id}.${spec.format}`)
-  writeFileSync(rawPath, bytes)
 
   let text: string
   if (spec.format === 'pdf') {
     if (!bytes.subarray(0, 5).toString('latin1').startsWith('%PDF')) {
       throw new Error(`${spec.id}: expected a PDF, got something else`)
     }
+    const rawPath = join(root, 'data', 'raw', `${spec.id}.pdf`)
+    writeFileSync(rawPath, bytes)
     text = pdfToText(rawPath)
   } else {
     text = extractMainContent(htmlToText(bytes.toString('utf8')))
@@ -97,30 +108,47 @@ async function fetchOne(spec: SourceSpec): Promise<ManifestEntry> {
     '---',
   ].join('\n')
   const snapshot = `data/snapshots/${spec.id}.txt`
-  writeFileSync(join(root, snapshot), `${header}\n${text.trim()}\n`)
-  return { ...spec, publisher: 'City of Long Beach', fetchedAt, sha256, snapshot }
+  return {
+    entry: { ...spec, publisher: 'City of Long Beach', fetchedAt, sha256, snapshot },
+    snapshotText: `${header}\n${text.trim()}\n`,
+  }
 }
 
-async function main(): Promise<void> {
-  mkdirSync(snapshotDir, { recursive: true })
-  mkdirSync(rawDir, { recursive: true })
-  const only = new Set(process.argv.slice(2))
+// Fetches every source first and writes snapshots and the manifest only if all of them succeeded,
+// so a failure halfway never leaves new snapshots next to an old manifest.
+export async function refresh(options: RefreshOptions = {}): Promise<ManifestEntry[]> {
+  const root = options.root ?? defaultRoot
+  const specs = options.specs ?? SOURCES
+  const only = options.only ?? new Set<string>()
+  const fetchImpl = options.fetchImpl ?? fetch
+  const log = options.log ?? ((line: string) => { console.log(line) })
+  const manifestPath = join(root, 'src', 'data', 'sources.json')
+  mkdirSync(join(root, 'data', 'snapshots'), { recursive: true })
+  mkdirSync(join(root, 'data', 'raw'), { recursive: true })
   const previous: ManifestEntry[] = existsSync(manifestPath)
     ? (JSON.parse(readFileSync(manifestPath, 'utf8')) as ManifestEntry[])
     : []
+
   const result: ManifestEntry[] = []
-  for (const spec of SOURCES) {
+  const pending: Fetched[] = []
+  for (const spec of specs) {
     const kept = previous.find((entry) => entry.id === spec.id)
     if (only.size > 0 && !only.has(spec.id) && kept) {
       result.push(kept)
       continue
     }
-    const entry = await fetchOne(spec)
-    console.log(`fetched ${entry.id} ${entry.sha256.slice(0, 12)} ${entry.url}`)
-    result.push(entry)
+    const fetched = await fetchOne(spec, root, fetchImpl)
+    log(`fetched ${fetched.entry.id} ${fetched.entry.sha256.slice(0, 12)} ${fetched.entry.url}`)
+    pending.push(fetched)
+    result.push(fetched.entry)
   }
+
+  for (const fetched of pending) writeFileSync(join(root, fetched.entry.snapshot), fetched.snapshotText)
   writeFileSync(manifestPath, `${JSON.stringify(result, null, 2)}\n`)
-  console.log(`wrote ${result.length} sources to src/data/sources.json`)
+  log(`wrote ${String(result.length)} sources to src/data/sources.json`)
+  return result
 }
 
-await main()
+if (import.meta.main) {
+  await refresh({ only: new Set(process.argv.slice(2)) })
+}
