@@ -10,7 +10,7 @@
 
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { htmlToText, extractMainContent } from './extract.ts'
@@ -68,6 +68,7 @@ export interface RefreshOptions {
   only?: ReadonlySet<string>
   fetchImpl?: typeof fetch
   log?: (line: string) => void
+  writeFile?: (path: string, data: string) => void
 }
 
 function pdfToText(path: string): string {
@@ -122,6 +123,7 @@ export async function refresh(options: RefreshOptions = {}): Promise<ManifestEnt
   const only = options.only ?? new Set<string>()
   const fetchImpl = options.fetchImpl ?? fetch
   const log = options.log ?? ((line: string) => { console.log(line) })
+  const writeFile = options.writeFile ?? ((path: string, data: string) => { writeFileSync(path, data) })
   const manifestPath = join(root, 'src', 'data', 'sources.json')
   mkdirSync(join(root, 'data', 'snapshots'), { recursive: true })
   mkdirSync(join(root, 'data', 'raw'), { recursive: true })
@@ -143,8 +145,19 @@ export async function refresh(options: RefreshOptions = {}): Promise<ManifestEnt
     result.push(fetched.entry)
   }
 
-  for (const fetched of pending) writeFileSync(join(root, fetched.entry.snapshot), fetched.snapshotText)
-  writeFileSync(manifestPath, `${JSON.stringify(result, null, 2)}\n`)
+  // Publish snapshots and manifest together; if any write fails, put every file back as it was.
+  const targets = [...pending.map((fetched) => ({ path: join(root, fetched.entry.snapshot), text: fetched.snapshotText })),
+    { path: manifestPath, text: `${JSON.stringify(result, null, 2)}\n` }]
+  const backups = targets.map(({ path }) => ({ path, text: existsSync(path) ? readFileSync(path, 'utf8') : undefined }))
+  try {
+    for (const target of targets) writeFile(target.path, target.text)
+  } catch (error) {
+    for (const backup of backups) {
+      if (backup.text === undefined) rmSync(backup.path, { force: true })
+      else writeFileSync(backup.path, backup.text)
+    }
+    throw error
+  }
   log(`wrote ${String(result.length)} sources to src/data/sources.json`)
   return result
 }

@@ -40,4 +40,17 @@ describe('refresh (round 2 review)', () => {
     expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toContain('URL: https://www.longbeach.gov/a/')
     expect(JSON.parse(readFileSync(join(root, 'src', 'data', 'sources.json'), 'utf8')) as unknown[]).toHaveLength(2)
   })
+
+  it('restores the previous snapshots and manifest if publishing fails partway (round 3 review)', async () => {
+    const fetchImpl = (() => Promise.resolve(new Response(page(longText)))) as typeof fetch
+    const failingWrite = (path: string, data: string) => {
+      if (path.endsWith('sources.json') && data !== '[]\n') throw new Error('disk full')
+      writeFileSync(path, data)
+    }
+    await expect(refresh({ root, specs, fetchImpl, log: () => undefined, writeFile: failingWrite })).rejects.toThrow('disk full')
+    expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toBe('old snapshot\n')
+    expect(existsSync(join(root, 'data', 'snapshots', 'b.txt'))).toBe(false)
+    expect(readFileSync(join(root, 'src', 'data', 'sources.json'), 'utf8')).toBe('[]\n')
+  })
 })
+
