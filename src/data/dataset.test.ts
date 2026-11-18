@@ -57,6 +57,26 @@ describe('the real Long Beach dataset', () => {
     }
   })
 
+  it('shows no "Month D, YYYY" date that had already passed when its page was saved', () => {
+    // The City's own "Upcoming Dates" lists can keep past events; the app must not present them as upcoming.
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const pattern = new RegExp(`\\b(${months.join('|')}) (\\d{1,2}), (\\d{4})\\b`, 'g')
+    const quotes = [...dataset.destinations.flatMap((d) => d.action), ...dataset.rules.flatMap((r) => [...r.evidence, ...r.tips])]
+    const stale: string[] = []
+    for (const quote of quotes) {
+      const source = dataset.sources.find((s) => s.id === quote.sourceId)
+      if (source === undefined) continue
+      // The Pacific-time date, as the app shows it.
+      const saved = new Date(source.fetchedAt).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' })
+      for (const match of quote.text.matchAll(pattern)) {
+        const [, month = '', day = '', year = ''] = match
+        const iso = `${year}-${String(months.indexOf(month) + 1).padStart(2, '0')}-${day.padStart(2, '0')}`
+        if (iso < saved) stale.push(`${match[0]} in ${quote.sourceId} (saved ${saved})`)
+      }
+    }
+    expect(stale).toEqual([])
+  })
+
   it('builds a matcher with no term claimed by two rules', () => {
     expect(() => createMatcher(dataset)).not.toThrow()
   })

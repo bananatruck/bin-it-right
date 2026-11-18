@@ -54,7 +54,8 @@
     "action": [
       { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Long Beach and Los Angeles County residents have access to no-cost disposal of hazardous waste at a local HHW collection event or at the following locations and times:" },
       { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Gaffey Street S.A.F.E. (Solvents/Automotive/Flammables/Electronics) Center 1400 N. Gaffey St. San Pedro, CA 90731 Open Saturday and Sunday from 9:00 am to 3:00 pm" },
-      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Los Angeles County EDCO HHW Collection Event Upcoming Dates: November 14, 2026 December 12, 2026 January 9, 2027" },
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Los Angeles County EDCO HHW Collection Event Upcoming Dates:" },
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "December 12, 2026 January 9, 2027 February 13, 2027" },
       { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "All containers must be sealed and not leaking." }
     ],
     "links": [
