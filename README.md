@@ -146,7 +146,7 @@ Fonts: Overpass (inspired by US highway signage) for headings and Atkinson Hyper
 
 ## How it was built
 
-This project was built overnight on 2026-11-17 by AI coding agents directed by Kesh, the entrant.
+This project was built overnight on 2026-11-17 by AI coding agents directed by its author (GitHub: bananatruck), the student entering the hackathon.
 A Claude agent acted as lead: it read the hackathon rules, fetched the City pages, wrote the specification and every rule in the dataset, built the app, and reviewed and integrated all other work.
 GPT 6.1 Sol (through Codex) wrote the matching engine and the dataset validator with their tests.
 Gemini 4 Argon (through Antigravity) generated the mock-ups, installed and adapted the third-party components, and drafted the interface copy.
