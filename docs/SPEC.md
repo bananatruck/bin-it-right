@@ -12,7 +12,7 @@ Track: Theme Track, "Rethinking Waste": "Build something that helps people or sy
 The overview names "a tool that identifies whether an item is recyclable" as an example project.
 "Judges will check that the theme is central to the project, not bolted on."
 Eligibility: ages 13 and over, students only, teams of 1 to 4, solo entries allowed, one submission per team to one track only.
-Submission period: October 20, 2026 9:00am PDT to December 20, 2026 9:00pm PST (dates page).
+Submission period: October 20, 2026 9:00am PDT to December 20, 2026 9:00pm PST (dates page, https://arbiter-hacks-v1.devpost.com/details/dates).
 Every submission must include a public code repository, a demo video of 2 to 3 minutes maximum on YouTube or Vimeo, and a written description of what it does, how it was built, and what comes next.
 The Theme Track also requires one paragraph stating the specific waste problem targeted and how success would be measured.
 Missing the repo or the video makes a submission ineligible.
@@ -57,7 +57,7 @@ The dataset lives in `src/data/` as JSON validated by a Zod schema in `src/data/
 ### Destination
 
 A destination is where an item goes: the blue recycling cart, the green organics cart, the trash cart, a special collection pickup, a hazardous waste drop-off, and so on.
-Each destination has an English label, a Spanish label only when the City publishes one, a colour token, and an action with its own quoted source.
+Each destination has an English label, a Spanish label only when the City publishes one, and an action with its own quoted source; its colour and icon live in `src/lib/destinationStyle.ts`.
 
 ### Rule
 
@@ -78,7 +78,7 @@ Each destination has an English label, a Spanish label only when the City publis
 - No search term selects two different rules.
 - Rule ids and source ids are unique.
 
-Rules are written by hand by the lead, never by an outside agent from memory, and each one is audited against the saved snapshot.
+Rules are written by hand by the lead from the saved snapshots, never by an outside agent from memory; an outside model then audited every rule against the snapshots, and the tests recheck every quote on every CI run.
 
 ## 4. Matching design
 
@@ -108,7 +108,7 @@ The explanation lists the normalised text, the dropped words, the term matched o
 
 ### Accessibility
 
-- Touch targets are at least 48 by 48 CSS pixels.
+- Buttons and links are at least 48 CSS pixels tall, and small ones at least 48 wide.
 - Every control has an accessible name, results are announced through a polite live region, and focus moves to the answer.
 - Colour is never the only signal: every destination has a text label and an icon.
 - Text contrast meets WCAG 2.2 AA, motion respects `prefers-reduced-motion`, and the layout works from 320 CSS pixels wide.
@@ -119,4 +119,4 @@ The explanation lists the normalised text, the dropped words, the term matched o
 - Engine tests: normalisation, filler words, singularisation, exact matches for every term in the dataset, typos that produce suggestions, unrelated text that produces "No official rule found", Spanish queries, and stable ordering.
 - Component tests: the answer card shows the quote, link and date; the no-match card shows the contact route.
 - Browser checks: the production build loaded in headless Chromium at 390 by 844 and 1440 by 900, with screenshots saved to `docs/screenshots/`.
-- CI runs lint, type-check, tests and build on every push, and a separate workflow deploys `dist/` to GitHub Pages.
+- CI runs lint, type-check, tests and build on every push to `main` and every pull request, and a separate workflow deploys `dist/` to GitHub Pages.

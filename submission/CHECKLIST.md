@@ -6,10 +6,11 @@ The steps below need the entrant, because they need a Devpost login or a recordi
 ## Rules that affect the submission (read on 2026-11-17 from the live hackathon pages)
 
 - Deadline: December 20, 2026 at 9:00pm PST; "Late submissions are not judged."
-- Submission period opened October 20, 2026 at 9:00am PDT, so work done on 2026-11-17 is inside it.
+- Submission period opened October 20, 2026 at 9:00am PDT (https://arbiter-hacks-v1.devpost.com/details/dates, read live on 2026-11-17), so work done on 2026-11-17 is inside it.
 - Who can enter: ages 13 and over, students only, companies and professional organizations excluded, all countries except the standard exceptions.
 - Teams of 1 to 4; solo entries are allowed.
-- "One submission per team, to one track only." This entry is for the Theme Track, "Rethinking Waste".
+- "One submission per team, to one track only."
+  This entry is for the Theme Track, "Rethinking Waste".
 - Theme Track entries must have waste reduction, sorting or recycling as their primary purpose; "Judges will check that the theme is central to the project, not bolted on."
 - Required: a public code repository, a demo video "[2 to 3] minutes max, showing the project working" on YouTube or Vimeo, a written description (what it does, how you built it, what you'd do next), and for the Theme Track one paragraph naming the waste problem and how you would measure whether it worked.
 - "Missing the repo or the video makes a submission ineligible."

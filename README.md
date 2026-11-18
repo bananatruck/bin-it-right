@@ -58,7 +58,7 @@ The City says that residents served by a permitted private hauler should contact
 
 ## How trust is enforced
 
-These checks run in CI on every push, and the build fails if any of them fails:
+These checks run in CI on every push to `main` and on every pull request, and the build fails if any of them fails:
 
 - Every rule has at least one English evidence quote, and every quote names a source that exists.
 - Every quote appears in its saved City page, word for word, after only Unicode compatibility normalisation (NFKC, which turns a printed "ﬁ" ligature into "fi") and whitespace collapsing.
@@ -71,7 +71,8 @@ These checks run in CI on every push, and the build fails if any of them fails:
 There is a test named "fails if any rule lacks a source" that removes the evidence from each rule in turn and checks that validation fails.
 
 The dataset was written by hand from the saved pages and then audited against them by a second model (see "How it was built").
-The audit mostly flagged search terms broader than the City's wording (such as "can", "paper" and "AA battery"); those were removed or narrowed, mixed rules were split, and six items it found in the pages were added.
+The audit mostly flagged search terms broader than the City's wording (such as "can", "paper" and "AA battery"); those were removed or narrowed.
+Six rules were added after it: three split out of broader rules (computers, monitors and TVs; broken fluorescent bulbs; bundled tree branches) and three items the audit found in the pages (clean wood, nursery pots and tags, extra food to donate).
 Items the City excludes from a cart without saying where they go (for example cacti, tree stumps, carpet, cooking oil and broken fluorescent bulbs) go to "Ask the City", with the City's contact route, instead of a guessed destination.
 
 ## How matching works
@@ -82,7 +83,7 @@ Matching is deterministic and runs entirely in the browser.
 2. Drop a short listed set of filler words such as "the", "my", "old", "empty", "el", "de".
 3. Make each word singular with a small listed rule set (`boxes` to `box`, `batteries` to `battery`, `botellas` to `botella`), with exceptions such as `glass` and `mattress`.
 4. Exact match against the explicit term list: that is the only way to get an answer.
-5. Otherwise score every term by the best of three measures: whole-phrase Damerau-Levenshtein similarity, how much of the term appears in the query, and how much of the query appears in the term (weighted 0.85, with an exact word counting fully and a typo counting by its similarity).
+5. Otherwise score every term by the best of three measures: whole-phrase Damerau-Levenshtein similarity; how much of the term appears in the query (a typo-tolerant word counts by its similarity); and how much of the query appears in the term, weighted 0.85 (an exact word counts 1, a typo-tolerant word 0.95).
 6. Terms scoring 0.8 or more are offered as "Did you mean", one per rule, at most five, in a fixed order.
 7. Nothing at 0.8 or above means "No official rule found".
 
@@ -91,10 +92,10 @@ The engine is in `src/engine/`, with unit tests and tests against the real datas
 
 ## Accessibility
 
-- Touch targets are at least 48 by 48 CSS pixels; search text is 17 px.
+- Buttons and links are at least 48 CSS pixels tall (the language and browse source buttons also at least 48 wide); search text is 17 px.
 - Every destination has a text label and an icon as well as a colour; text contrast meets WCAG AA.
-- The answer is a labelled region announced politely to screen readers, and focus moves to it.
-- The rotating headline word is hidden from screen readers, and animations stop under `prefers-reduced-motion`.
+- After a search, a one-line status ("Goes to ...") is announced and focus moves to the labelled answer region; the destination is part of the answer's heading.
+- The rotating headline word is hidden from screen readers, and under `prefers-reduced-motion` the headline, counters and answer reveal are static.
 - The page language attribute follows the language switch, and each quote is marked with its own language.
 - Spanish interface text was translated with AI assistance and has not yet been reviewed by a native speaker; City rule text is never translated.
 
@@ -153,7 +154,7 @@ A Claude agent acted as lead: it read the hackathon rules, fetched the City page
 GPT 6.1 Sol (through Codex) wrote the matching engine and the dataset validator with their tests.
 Gemini 4 Argon (through Antigravity) generated the mock-ups, installed and adapted the third-party components, and drafted the interface copy.
 Grok 4.7 (through Cursor) audited every rule against the saved City pages.
-No outside agent wrote sorting rules; every rule was checked against the saved page before entering the dataset, and the tests above enforce it.
+No outside agent wrote sorting rules: the lead wrote each rule from the saved pages, the audit reviewed them afterwards, and the tests above check every quote against its saved page on every CI run.
 
 ## Status
 

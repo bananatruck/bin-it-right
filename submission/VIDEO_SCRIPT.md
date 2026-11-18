@@ -19,12 +19,13 @@ Bin It Right answers one question, which bin, using only the City's own publishe
 On screen: type "pizza box", press Enter.
 The green slab reads "Green organics cart"; scroll to the quote "Food-soiled paper (napkins, paper towels, pizza boxes)".
 
-Voice: "Pizza box. It goes in the green organics cart.
+Voice: "Pizza box.
+It goes in the green organics cart.
 Below the answer is the City's rule, word for word, with a link to the City page and the date that page was saved.
 Every answer works like this.
 The app never writes its own sorting advice; the rule you read is the City's text, quoted from an official City of Long Beach page."
 
-On screen: tap "Open the City's page" briefly to show the real City page, then return.
+On screen: tap the source line under the quote ("City of Long Beach, Residential Organics (Green Cart) Collection, saved ...") to show the real City page, then return.
 
 ## 0:55 to 1:20 - the honest cases
 
@@ -56,7 +57,7 @@ On screen: open "Why this answer" under a result, then the "Sources" section.
 Voice: "Under the hood there is no model call and no server.
 Matching is deterministic: it normalises your words, checks a list of synonyms that is written out in full, and only offers fuzzy matches as 'did you mean'.
 This panel shows exactly why it gave this answer.
-The dataset has 56 rules from 21 saved City pages, each stored with its address, fetch date and a hash.
+The dataset has 62 rules from 20 saved City pages, each stored with its address, fetch date and a hash.
 A test fails the build if any rule loses its source or if any quote stops matching the saved page word for word."
 
 ## 2:15 to 2:30 - impact and next steps
