@@ -1,0 +1,2249 @@
+[
+  {
+    "id": "plastic-bottles-jugs-tubs",
+    "label": {
+      "en": "Plastic Bottles, Jugs and Tubs",
+      "es": "Botellas, Frascos y Envases de Plástico"
+    },
+    "destination": "blue-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Recycle these items in your recycling cart. Place directly into the cart. Do not put in bags."
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Plastic Bottles, Jugs and Tubs"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "Botellas, Frascos y Envases de Plástico"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Lids On!"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "¡Con Tapas!"
+      },
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "Make sure all recyclables are EMPTY, CLEAN, and DRY."
+      }
+    ],
+    "terms": [
+      "plastic bottle",
+      "plastic jug",
+      "plastic tub",
+      "plastic water bottle",
+      "milk jug",
+      "yogurt tub",
+      "butter tub",
+      "laundry detergent jug",
+      "plastic soda bottle"
+    ],
+    "termsEs": [
+      "botella de plastico",
+      "frasco de plastico",
+      "envase de plastico",
+      "jarra de plastico"
+    ]
+  },
+  {
+    "id": "metal-cans-aluminum",
+    "label": {
+      "en": "Metal Cans and Aluminum",
+      "es": "Latas de Metal y Aluminio"
+    },
+    "destination": "blue-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Recycle these items in your recycling cart. Place directly into the cart. Do not put in bags."
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Metal Cans and Aluminum"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "Latas de Metal y Aluminio"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "Make sure all recyclables are EMPTY, CLEAN, and DRY."
+      }
+    ],
+    "terms": [
+      "metal can",
+      "aluminum can",
+      "soda can",
+      "beer can",
+      "tin can",
+      "food can",
+      "soup can",
+      "steel can",
+      "can"
+    ],
+    "termsEs": [
+      "lata",
+      "lata de metal",
+      "lata de aluminio",
+      "lata de refresco"
+    ]
+  },
+  {
+    "id": "paper-cardboard",
+    "label": {
+      "en": "Paper and Cardboard",
+      "es": "Papel y Cartón"
+    },
+    "destination": "blue-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Recycle these items in your recycling cart. Place directly into the cart. Do not put in bags."
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Paper and Cardboard"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "Papel y Cartón"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Flatten Boxes!"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "¡Aplanar Cajas!"
+      },
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "Make sure all recyclables are EMPTY, CLEAN, and DRY."
+      }
+    ],
+    "terms": [
+      "paper",
+      "cardboard",
+      "cardboard box",
+      "shipping box",
+      "moving box",
+      "delivery box",
+      "cereal box",
+      "newspaper",
+      "magazine",
+      "junk mail",
+      "mail",
+      "office paper",
+      "printer paper",
+      "paper envelope",
+      "paper bag",
+      "toilet paper roll",
+      "paper towel roll",
+      "cardboard egg carton"
+    ],
+    "termsEs": [
+      "papel",
+      "carton",
+      "caja de carton",
+      "periodico",
+      "revista"
+    ]
+  },
+  {
+    "id": "glass-bottles-jars",
+    "label": {
+      "en": "Glass Bottles and Jars",
+      "es": "Botellas y Frascos de Vidrio"
+    },
+    "destination": "blue-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Recycle these items in your recycling cart. Place directly into the cart. Do not put in bags."
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "en",
+        "text": "Glass Bottles and Jars"
+      },
+      {
+        "sourceId": "lb-recycle-pdf",
+        "lang": "es",
+        "text": "Botellas y Frascos de Vidrio"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "Make sure all recyclables are EMPTY, CLEAN, and DRY."
+      }
+    ],
+    "terms": [
+      "glass bottle",
+      "glass jar",
+      "wine bottle",
+      "beer bottle",
+      "glass soda bottle",
+      "pasta sauce jar",
+      "jam jar",
+      "pickle jar",
+      "baby food jar"
+    ],
+    "termsEs": [
+      "botella de vidrio",
+      "frasco de vidrio"
+    ]
+  },
+  {
+    "id": "food-scraps",
+    "label": {
+      "en": "Food Scraps",
+      "es": "Restos de Comida"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Residents are asked to place food scraps and food-soiled paper along with their yard trimmings in their new green cart instead of the trash."
+      },
+      {
+        "sourceId": "lb-3stream-pdf",
+        "lang": "en",
+        "text": "Food Scraps"
+      },
+      {
+        "sourceId": "lb-3stream-pdf",
+        "lang": "es",
+        "text": "Restos de Comida"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Store collection containers in the freezer until collection day to help prevent odors."
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Line the bottom of the green cart with cardboard or used paper to absorb liquids."
+      }
+    ],
+    "terms": [
+      "food",
+      "food waste",
+      "leftovers",
+      "leftover food",
+      "kitchen scraps",
+      "table scraps"
+    ],
+    "termsEs": [
+      "comida",
+      "sobras de comida"
+    ]
+  },
+  {
+    "id": "meat-eggs-bones-shells",
+    "label": {
+      "en": "Meat, eggs, bones, and shells"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Meat, eggs, bones, and shells"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Wrap scraps in used paper."
+      }
+    ],
+    "terms": [
+      "meat",
+      "egg",
+      "eggshell",
+      "egg shell",
+      "bone",
+      "chicken bone",
+      "meat bone",
+      "shrimp shell",
+      "crab shell",
+      "fish",
+      "chicken"
+    ],
+    "termsEs": [
+      "carne",
+      "huevo",
+      "cascara de huevo",
+      "hueso"
+    ]
+  },
+  {
+    "id": "coffee-grounds",
+    "label": {
+      "en": "Coffee grounds"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Coffee grounds"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "coffee ground",
+      "used coffee grounds"
+    ],
+    "termsEs": [
+      "cafe molido",
+      "posos de cafe"
+    ]
+  },
+  {
+    "id": "bread-pasta",
+    "label": {
+      "en": "Bread and pasta"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Bread and pasta"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "bread",
+      "pasta",
+      "noodle",
+      "stale bread",
+      "moldy bread"
+    ],
+    "termsEs": [
+      "pan",
+      "pasta cocida"
+    ]
+  },
+  {
+    "id": "cheese-dairy",
+    "label": {
+      "en": "Cheese"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Cheese"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "the City’s organics program accepts additional materials that are not suitable for at-home or small-scale systems, such as meat and bones, food-soiled paper, dairy, branches, and clean wood waste."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "dairy",
+      "moldy cheese"
+    ],
+    "termsEs": [
+      "queso"
+    ]
+  },
+  {
+    "id": "expired-spoiled-food",
+    "label": {
+      "en": "Expired or spoiled food without packaging"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Expired or spoiled food without packaging"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Food packaging"
+      },
+      {
+        "sourceId": "lb-commercial-organics",
+        "lang": "en",
+        "text": "Food must be removed from packaging."
+      }
+    ],
+    "terms": [
+      "expired food",
+      "spoiled food",
+      "rotten food",
+      "moldy food",
+      "old food",
+      "expired leftovers"
+    ],
+    "termsEs": [
+      "comida vencida",
+      "comida podrida"
+    ]
+  },
+  {
+    "id": "vegetables-fruits",
+    "label": {
+      "en": "Vegetables and fruits"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Vegetables and fruits"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "vegetable",
+      "fruit",
+      "fruit peel",
+      "vegetable peel",
+      "vegetable scraps",
+      "fruit scraps",
+      "banana peel",
+      "apple core",
+      "orange peel",
+      "potato peel",
+      "avocado"
+    ],
+    "termsEs": [
+      "verdura",
+      "fruta",
+      "cascara de fruta",
+      "cascara de platano"
+    ]
+  },
+  {
+    "id": "food-soiled-paper",
+    "label": {
+      "en": "Food-soiled paper (napkins, paper towels, pizza boxes)",
+      "es": "Papel Ensuciado por Comida"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Food-soiled paper (napkins, paper towels, pizza boxes)"
+      },
+      {
+        "sourceId": "lb-3stream-pdf",
+        "lang": "es",
+        "text": "Papel Ensuciado por Comida"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "food soiled paper",
+      "pizza box",
+      "greasy pizza box",
+      "dirty pizza box",
+      "napkin",
+      "paper napkin",
+      "used napkin",
+      "paper towel",
+      "used paper towel",
+      "greasy paper",
+      "dirty paper"
+    ],
+    "termsEs": [
+      "caja de pizza",
+      "servilleta",
+      "toalla de papel",
+      "papel sucio"
+    ]
+  },
+  {
+    "id": "yard-trimmings",
+    "label": {
+      "en": "Yard Trimmings",
+      "es": "Recortes de Jardín"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Yard trimmings can be placed in green carts unbagged."
+      },
+      {
+        "sourceId": "lb-3stream-pdf",
+        "lang": "en",
+        "text": "Yard Trimmings"
+      },
+      {
+        "sourceId": "lb-3stream-pdf",
+        "lang": "es",
+        "text": "Recortes de Jardín"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Plant trimmings"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Remove non-plant material, such as nursery tags, pots, and plastic, and dispose of it in the trash."
+      }
+    ],
+    "terms": [
+      "yard waste",
+      "garden waste",
+      "green waste",
+      "plant trimmings",
+      "plant",
+      "hedge trimmings",
+      "weeds",
+      "dead plant"
+    ],
+    "termsEs": [
+      "recorte de jardin",
+      "planta"
+    ]
+  },
+  {
+    "id": "grass-clippings",
+    "label": {
+      "en": "Grass clippings"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Grass clippings"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Yard trimmings can be placed in green carts unbagged."
+      }
+    ],
+    "terms": [
+      "grass",
+      "lawn clippings",
+      "cut grass",
+      "mowed grass"
+    ],
+    "termsEs": [
+      "cesped",
+      "pasto cortado"
+    ]
+  },
+  {
+    "id": "leaves-flowers-twigs-branches",
+    "label": {
+      "en": "Leaves, flowers, twigs, and branches"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Goes in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Leaves, flowers, twigs, and branches"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Tree branches and yard trimmings (4 ft., 40 lb. tied bundles)"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Yard trimmings can be placed in green carts unbagged."
+      }
+    ],
+    "terms": [
+      "leaf",
+      "dead leaves",
+      "flower",
+      "dead flowers",
+      "cut flowers",
+      "bouquet",
+      "twig",
+      "branch",
+      "tree branch",
+      "small branch"
+    ],
+    "termsEs": [
+      "hoja",
+      "flor",
+      "rama"
+    ]
+  },
+  {
+    "id": "natural-wreaths",
+    "label": {
+      "en": "Natural wreaths without nonorganic decorations"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "Natural wreaths without nonorganic decorations are allowed in organics (green) carts."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "wreath",
+      "natural wreath",
+      "christmas wreath",
+      "holiday wreath"
+    ],
+    "termsEs": [
+      "corona navidena"
+    ]
+  },
+  {
+    "id": "compostable-biodegradable-products",
+    "label": {
+      "en": "Products labeled compostable or biodegradable"
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "No, compostable and biodegradable plastics should not be placed in the green cart. Composting facilities cannot break down these types of products. All compostable or biodegradable products should be placed in the trash cart."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "compostable",
+      "biodegradable",
+      "compostable plastic",
+      "biodegradable plastic",
+      "compostable bag",
+      "biodegradable bag",
+      "compostable cup",
+      "compostable plate",
+      "compostable product",
+      "bioplastic"
+    ],
+    "termsEs": [
+      "compostable",
+      "biodegradable",
+      "bolsa compostable"
+    ]
+  },
+  {
+    "id": "plastic-foam-compostable-foodware",
+    "label": {
+      "en": "Plastic, Foam, and Compostable Containers, Utensils, Lids, Straws",
+      "es": "Envases, cubiertos y recipientes de plástico, unicel y materiales compostables así como tapas y popotes."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Plastic, Foam, and Compostable Containers, Utensils, Lids, Straws"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Envases, cubiertos y recipientes de plástico, unicel y materiales compostables así como tapas y popotes."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "plastic utensil",
+      "plastic fork",
+      "plastic spoon",
+      "plastic knife",
+      "plastic cutlery",
+      "straw",
+      "plastic straw",
+      "plastic lid",
+      "foam container",
+      "foam cup",
+      "styrofoam container",
+      "styrofoam cup",
+      "foam takeout container",
+      "compostable utensil",
+      "compostable container",
+      "compostable straw"
+    ],
+    "termsEs": [
+      "popote",
+      "cubierto de plastico",
+      "tenedor de plastico",
+      "envase de unicel",
+      "tapa de plastico"
+    ]
+  },
+  {
+    "id": "plastic-lined-cups-plates-containers",
+    "label": {
+      "en": "Plastic and Plastic-lined Cups, Plates, Containers",
+      "es": "Vasos, platos y recipientes de plástico o con revestimiento de plástico."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Plastic and Plastic-lined Cups, Plates, Containers"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Vasos, platos y recipientes de plástico o con revestimiento de plástico."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "plastic cup",
+      "plastic plate",
+      "plastic container",
+      "plastic lined cup",
+      "plastic lined plate",
+      "plastic lined container",
+      "disposable plastic cup"
+    ],
+    "termsEs": [
+      "vaso de plastico",
+      "plato de plastico",
+      "recipiente de plastico"
+    ]
+  },
+  {
+    "id": "plastic-bags-wrap-wrappers",
+    "label": {
+      "en": "Plastic Bags, Plastic Wrap, Snack Bags, Candy Wrappers",
+      "es": "Bolsas de plástico, film transparente, bolsas para botanas y envolturas de dulces."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Plastic Bags, Plastic Wrap, Snack Bags, Candy Wrappers"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Bolsas de plástico, film transparente, bolsas para botanas y envolturas de dulces."
+      },
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "Do not put plastic bags, food and yard trimmings, trash, or hazardous waste in your recycling cart."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "plastic bag",
+      "plastic grocery bag",
+      "plastic shopping bag",
+      "plastic wrap",
+      "cling wrap",
+      "cling film",
+      "snack bag",
+      "chip bag",
+      "candy wrapper",
+      "wrapper",
+      "plastic film"
+    ],
+    "termsEs": [
+      "bolsa de plastico",
+      "film transparente",
+      "bolsa de botana",
+      "bolsa de papitas",
+      "envoltura de dulce"
+    ]
+  },
+  {
+    "id": "beverage-pouches-freezer-trays-boxes",
+    "label": {
+      "en": "Beverage Pouches, Freezer Trays and Boxes",
+      "es": "Bolsas para bebidas, bandejas y cajas para congelador."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Beverage Pouches, Freezer Trays and Boxes"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Bolsas para bebidas, bandejas y cajas para congelador."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "beverage pouch",
+      "juice pouch",
+      "drink pouch",
+      "freezer tray",
+      "freezer box",
+      "frozen food box",
+      "frozen dinner tray",
+      "frozen dinner box"
+    ],
+    "termsEs": [
+      "bolsa para bebida",
+      "bolsita de jugo",
+      "caja para congelador",
+      "bandeja para congelador"
+    ]
+  },
+  {
+    "id": "padded-envelopes-foam-packaging",
+    "label": {
+      "en": "Padded Envelopes, Foam Packaging Material",
+      "es": "Sobres acolchados y material de empaque de unicel."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Padded Envelopes, Foam Packaging Material"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Sobres acolchados y material de empaque de unicel."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "padded envelope",
+      "bubble mailer",
+      "padded mailer",
+      "foam packaging",
+      "packing foam",
+      "styrofoam",
+      "styrofoam packaging",
+      "packing peanuts",
+      "foam peanuts",
+      "polystyrene foam",
+      "foam"
+    ],
+    "termsEs": [
+      "sobre acolchado",
+      "unicel",
+      "empaque de unicel"
+    ]
+  },
+  {
+    "id": "ceramics-broken-glass",
+    "label": {
+      "en": "Ceramics, Broken Glass",
+      "es": "Cerámica y vidrio roto."
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "en",
+        "text": "Ceramics, Broken Glass"
+      },
+      {
+        "sourceId": "lb-trash-pdf",
+        "lang": "es",
+        "text": "Cerámica y vidrio roto."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "ceramic",
+      "broken glass",
+      "broken dish",
+      "broken ceramic",
+      "ceramic mug",
+      "ceramic plate",
+      "pottery",
+      "broken pottery",
+      "porcelain"
+    ],
+    "termsEs": [
+      "ceramica",
+      "vidrio roto",
+      "plato roto"
+    ]
+  },
+  {
+    "id": "palm-fronds-large-logs",
+    "label": {
+      "en": "Palm fronds and large logs"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "For palm fronds and large logs, request a special collection. These are not accepted at composting facilities."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Please schedule a special collection by visiting longbeach.gov/specialcollection ."
+      }
+    ],
+    "terms": [
+      "palm frond",
+      "palm leaf",
+      "log",
+      "large log",
+      "tree log"
+    ],
+    "termsEs": [
+      "hoja de palma",
+      "tronco"
+    ]
+  },
+  {
+    "id": "cacti-succulents",
+    "label": {
+      "en": "Palm fronds, cacti, and succulents"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Palm fronds, cacti, and succulents SHOULD NOT BE DISPOSED OF IN GREEN CARTS."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "cactus",
+      "cacti",
+      "succulent",
+      "aloe plant"
+    ],
+    "termsEs": [
+      "cactus",
+      "nopal",
+      "suculenta"
+    ]
+  },
+  {
+    "id": "tree-stumps",
+    "label": {
+      "en": "Logs and tree stumps"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Does NOT Go in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Logs and tree stumps"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "For palm fronds and large logs, request a special collection."
+      }
+    ],
+    "terms": [
+      "tree stump",
+      "stump"
+    ],
+    "termsEs": [
+      "tocon"
+    ]
+  },
+  {
+    "id": "treated-wood",
+    "label": {
+      "en": "Treated wood, such as furniture parts"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Does NOT Go in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Treated wood, such as furniture parts"
+      },
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Hazardous wood waste or treated wood, such as furniture parts"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "treated wood",
+      "pressure treated wood",
+      "furniture part"
+    ],
+    "termsEs": [
+      "madera tratada"
+    ]
+  },
+  {
+    "id": "carpet",
+    "label": {
+      "en": "Carpet"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Items that CANNOT go in the green cart:"
+      },
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Bulky or oversized items and tires Carpet Non-compostable paper"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "carpet",
+      "rug",
+      "carpet scrap"
+    ],
+    "termsEs": [
+      "alfombra"
+    ]
+  },
+  {
+    "id": "cooking-oil-grease",
+    "label": {
+      "en": "Oil, and fats, oils, and grease"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "What Does NOT Go in the Green Cart?"
+      },
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "Trash, including items listed on the Refuse Guidelines Oil"
+      },
+      {
+        "sourceId": "lb-commercial-organics",
+        "lang": "en",
+        "text": "NO, FOG needs to be picked up by a specialty service that processes this material."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "cooking oil",
+      "used cooking oil",
+      "vegetable oil",
+      "frying oil",
+      "grease",
+      "cooking grease",
+      "bacon grease",
+      "fat",
+      "fats oils and grease",
+      "fog"
+    ],
+    "termsEs": [
+      "aceite de cocina",
+      "grasa"
+    ]
+  },
+  {
+    "id": "furniture",
+    "label": {
+      "en": "Furniture"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection Furniture"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Before throwing away an unwanted and oversized item, consider donating it for reuse. See the Donation Guide for local organizations that accept reusable goods."
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Oversized items: If an item exceeds size limits (such as a sofa), notify the City when scheduling your pickup."
+      }
+    ],
+    "terms": [
+      "couch",
+      "sofa",
+      "chair",
+      "table",
+      "desk",
+      "dresser",
+      "bookshelf",
+      "bookcase",
+      "bed frame",
+      "cabinet",
+      "recliner",
+      "ottoman",
+      "nightstand"
+    ],
+    "termsEs": [
+      "mueble",
+      "sofa",
+      "silla",
+      "mesa"
+    ]
+  },
+  {
+    "id": "appliances",
+    "label": {
+      "en": "Appliances (refrigerators and freezers must have doors removed or taped shut)"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Appliances (refrigerators and freezers must have doors removed or taped shut)"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Appliances, televisions, computer monitors, and tires are collected by a separate truck and must be kept apart from other items."
+      }
+    ],
+    "terms": [
+      "appliance",
+      "refrigerator",
+      "fridge",
+      "freezer",
+      "washing machine",
+      "washer",
+      "dryer",
+      "clothes dryer",
+      "stove",
+      "oven",
+      "dishwasher"
+    ],
+    "termsEs": [
+      "electrodomestico",
+      "refrigerador",
+      "lavadora",
+      "secadora",
+      "estufa"
+    ]
+  },
+  {
+    "id": "tires",
+    "label": {
+      "en": "Tires (up to 16 inches; max of 5 per pickup)"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Tires (up to 16 inches; max of 5 per pickup)"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-tires",
+        "lang": "en",
+        "text": "EDCO Recycling & Transfer Collection Center 2755 California Ave. Signal Hill, CA 90755 9:00 am to 2:00 pm"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Appliances, televisions, computer monitors, and tires are collected by a separate truck and must be kept apart from other items."
+      }
+    ],
+    "terms": [
+      "tire",
+      "car tire",
+      "used tire",
+      "old tire",
+      "passenger tire"
+    ],
+    "termsEs": [
+      "llanta",
+      "neumatico"
+    ]
+  },
+  {
+    "id": "bulky-items",
+    "label": {
+      "en": "Other oversized or bulky items"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Other oversized or bulky items"
+      },
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "These items require a special collection pickup request or should be disposed of at a hazardous waste collection center or collection event."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Size limits: Items may not exceed 72 x 48 inches. Bundles may not exceed 48 inches in any direction or 40 pounds. Bags may not exceed 25 pounds."
+      }
+    ],
+    "terms": [
+      "bulky item",
+      "oversized item",
+      "large item",
+      "big item",
+      "bulky waste"
+    ],
+    "termsEs": [
+      "articulo voluminoso"
+    ]
+  },
+  {
+    "id": "large-glass-items",
+    "label": {
+      "en": "Glass tabletops, mirrors, windows, and other large glass pieces"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Wrap all large glass items before pickup. This includes glass tabletops, mirrors, windows, and other large glass pieces."
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Glass items that are not properly wrapped will not be collected ."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Use sturdy materials such as cardboard, heavy-duty plastic or another covering that fully contains the item."
+      }
+    ],
+    "terms": [
+      "mirror",
+      "glass tabletop",
+      "glass table top",
+      "window",
+      "window glass",
+      "large glass",
+      "glass door"
+    ],
+    "termsEs": [
+      "espejo",
+      "ventana"
+    ]
+  },
+  {
+    "id": "mattresses",
+    "label": {
+      "en": "Used mattresses and box springs"
+    },
+    "destination": "mattress-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-mattress",
+        "lang": "en",
+        "text": "Residents can leave their old mattresses in a clearly designated space located at 970 W. Chester Place and avoid trips to the landfill and landfill fees."
+      },
+      {
+        "sourceId": "lb-mattress",
+        "lang": "en",
+        "text": "Box springs are also accepted, however other items are currently not being accepted."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-mattress",
+        "lang": "en",
+        "text": "This service is provided at no charge to residents and is paid for by the City of Long Beach’s Refuse Fund."
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Mattresses: Do not place other items on top of mattresses."
+      }
+    ],
+    "terms": [
+      "mattress",
+      "old mattress",
+      "used mattress",
+      "box spring",
+      "boxspring",
+      "futon mattress"
+    ],
+    "termsEs": [
+      "colchon",
+      "box spring"
+    ]
+  },
+  {
+    "id": "e-waste",
+    "label": {
+      "en": "Electronic waste (e-waste)"
+    },
+    "destination": "e-waste-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-ewaste",
+        "lang": "en",
+        "text": "E-waste can include computers, printers, televisions, VCRs, cell phones, fax machines, stereos, and electronic games."
+      },
+      {
+        "sourceId": "lb-ewaste",
+        "lang": "en",
+        "text": "These items may not be placed in your trash or recycling carts."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection Furniture Appliances (refrigerators and freezers must have doors removed or taped shut) Computers and monitors Televisions"
+      }
+    ],
+    "terms": [
+      "e waste",
+      "electronic waste",
+      "electronic",
+      "electronics",
+      "computer",
+      "laptop",
+      "computer monitor",
+      "monitor",
+      "television",
+      "tv",
+      "flat screen tv",
+      "printer",
+      "scanner",
+      "fax machine",
+      "cell phone",
+      "phone",
+      "smartphone",
+      "tablet",
+      "vcr",
+      "dvd player",
+      "cd player",
+      "stereo",
+      "radio",
+      "alarm clock",
+      "video game console",
+      "electronic game",
+      "keyboard",
+      "computer mouse",
+      "computer peripheral"
+    ],
+    "termsEs": [
+      "basura electronica",
+      "electronico",
+      "computadora",
+      "televisor",
+      "television",
+      "celular",
+      "telefono",
+      "impresora"
+    ]
+  },
+  {
+    "id": "household-hazardous-waste",
+    "label": {
+      "en": "Household Hazardous Waste (HHW)"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Leftover household products that can catch fire, react, or explode under certain conditions, or that are corrosive or toxic. These items may not be placed in your trash or recycling carts."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-hazardous-waste-101",
+        "lang": "en",
+        "text": "Do not transport more than the legal limit of 15 gallons or 125 pounds of HHW to a collection site."
+      },
+      {
+        "sourceId": "lb-hazardous-waste-101",
+        "lang": "en",
+        "text": "Do not mix different products into one container."
+      }
+    ],
+    "terms": [
+      "hazardous waste",
+      "household hazardous waste",
+      "hhw",
+      "chemical",
+      "toxic",
+      "toxic waste",
+      "flammable",
+      "corrosive"
+    ],
+    "termsEs": [
+      "residuo peligroso",
+      "residuos peligrosos",
+      "quimico"
+    ]
+  },
+  {
+    "id": "paint-thinners",
+    "label": {
+      "en": "Paint and paint thinners"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste: Paint and paint thinners"
+      },
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "There are various types of paint and associated products : Interior and exterior architectural paints such as latex, acrylic , and others Lacquers and varnishes Primers Thinners"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "Recycle your unused paint and prevent toxic chemicals from entering our environment."
+      },
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "Make unused paint last by clearing the rim of paint and tightly closing the lid."
+      }
+    ],
+    "terms": [
+      "paint",
+      "paint can",
+      "leftover paint",
+      "latex paint",
+      "house paint",
+      "paint thinner",
+      "thinner",
+      "primer",
+      "stain",
+      "varnish",
+      "lacquer"
+    ],
+    "termsEs": [
+      "pintura",
+      "thinner",
+      "diluyente"
+    ]
+  },
+  {
+    "id": "spray-paint-aerosols",
+    "label": {
+      "en": "Spray paint, aerosols (spray cans) and solvents"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "Spray paint"
+      },
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "The fo llowing items are not accepted at PaintCare drop-off sites. Please take these items to a Household Hazardous Waste (HHW) Collection Center or collection event . A erosols (spray cans) Solvents"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "spray paint",
+      "spray paint can",
+      "aerosol",
+      "aerosol can",
+      "spray can",
+      "solvent",
+      "paint solvent"
+    ],
+    "termsEs": [
+      "pintura en aerosol",
+      "aerosol",
+      "lata de aerosol"
+    ]
+  },
+  {
+    "id": "fluorescent-bulbs",
+    "label": {
+      "en": "Fluorescent light bulbs"
+    },
+    "destination": "battery-bulb-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Fluorescent light bulbs need to be handled with caution and disposed of responsibly."
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Unbroken bulbs should be recycled at one of the locations below."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Home Depot accepts compact fluorescent bulbs, but not long fluorescent bulbs."
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Lowe's accepts compact fluorescent bulbs at all Long Beach stores and long fluorescent bulbs at the Bellflower Blvd. store only."
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up ."
+      }
+    ],
+    "terms": [
+      "fluorescent bulb",
+      "fluorescent light bulb",
+      "fluorescent tube",
+      "fluorescent light",
+      "cfl",
+      "cfl bulb",
+      "compact fluorescent bulb",
+      "compact fluorescent"
+    ],
+    "termsEs": [
+      "foco fluorescente",
+      "tubo fluorescente"
+    ]
+  },
+  {
+    "id": "household-batteries",
+    "label": {
+      "en": "Household batteries (alkaline, zinc, mercury, silver oxide, NiCad, nickel metal hydride)"
+    },
+    "destination": "battery-bulb-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Batteries should not go into your trash as they can leak toxic chemicals when landfilled."
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Single-Use Batteries Alkaline AA, AAA, C, D, 9-volt Alkaline/Zinc-Carbon Nickel Zinc Mercury (used in hearing aids and watches) Silver Oxide (used in hearing aids)"
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Rechargeable Batteries: Nickel Cadmium (NiCad) Nickel Metal Hydride (used in cell phones)"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "The following household batteries are accepted at the locations listed in the table below:"
+      }
+    ],
+    "terms": [
+      "alkaline battery",
+      "aa battery",
+      "aaa battery",
+      "c battery",
+      "d battery",
+      "9 volt battery",
+      "9v battery",
+      "hearing aid battery",
+      "rechargeable battery",
+      "nicad battery",
+      "nimh battery",
+      "nickel metal hydride battery",
+      "zinc carbon battery"
+    ],
+    "termsEs": [
+      "pila alcalina",
+      "pila recargable"
+    ]
+  },
+  {
+    "id": "lithium-batteries",
+    "label": {
+      "en": "Lithium primary (single-use) or Lithium-Ion rechargeable batteries"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "The following household batteries are NOT accepted at the locations listed in the table above. Please drop off these batteries at a household hazardous waste (HHW) collection event"
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "Lithium primary (single-use) or Lithium-Ion rechargeable batteries (used in some computers and cell phones)"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "lithium battery",
+      "lithium ion battery",
+      "li ion battery",
+      "lithium polymer battery",
+      "lithium coin battery"
+    ],
+    "termsEs": [
+      "bateria de litio",
+      "pila de litio"
+    ]
+  },
+  {
+    "id": "household-cleaners",
+    "label": {
+      "en": "Household cleaners"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste:"
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Household cleaners"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "household cleaner",
+      "cleaner",
+      "cleaning product",
+      "cleaning supplies",
+      "bleach",
+      "drain cleaner",
+      "oven cleaner",
+      "toilet bowl cleaner",
+      "ammonia"
+    ],
+    "termsEs": [
+      "limpiador",
+      "cloro",
+      "productos de limpieza"
+    ]
+  },
+  {
+    "id": "pool-chemicals",
+    "label": {
+      "en": "Pool chemicals"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste:"
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Pool chemicals"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "pool chemical",
+      "pool chlorine",
+      "chlorine tablet",
+      "pool shock"
+    ],
+    "termsEs": [
+      "quimicos de piscina",
+      "cloro de alberca"
+    ]
+  },
+  {
+    "id": "pesticides",
+    "label": {
+      "en": "Weed killer/pesticides"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste:"
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Weed killer/pesticides"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "weed killer",
+      "pesticide",
+      "herbicide",
+      "insecticide",
+      "bug killer"
+    ],
+    "termsEs": [
+      "pesticida",
+      "herbicida",
+      "insecticida",
+      "matahierbas"
+    ]
+  },
+  {
+    "id": "metal-polish",
+    "label": {
+      "en": "Metal polishers"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste:"
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Metal polishers"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "metal polish",
+      "metal polisher",
+      "silver polish",
+      "brass polish"
+    ],
+    "termsEs": [
+      "pulidor de metal"
+    ]
+  },
+  {
+    "id": "antifreeze",
+    "label": {
+      "en": "Anti-freeze"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Examples of Household Hazardous Waste:"
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Anti-freeze"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "antifreeze",
+      "anti freeze",
+      "coolant",
+      "engine coolant"
+    ],
+    "termsEs": [
+      "anticongelante"
+    ]
+  },
+  {
+    "id": "gasoline",
+    "label": {
+      "en": "Gasoline"
+    },
+    "destination": "hazardous-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "Household hazardous waste (HHW) (paint, motor oil, gasoline, household cleaners, etc.)"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-hazardous-waste-101",
+        "lang": "en",
+        "text": "HHW must be transported in the trunk of the car or in another area away from passengers and pets."
+      }
+    ],
+    "terms": [
+      "gasoline",
+      "petrol",
+      "old gas",
+      "old gasoline"
+    ],
+    "termsEs": [
+      "gasolina"
+    ]
+  },
+  {
+    "id": "used-motor-oil-filters",
+    "label": {
+      "en": "Used motor oil and filters"
+    },
+    "destination": "used-oil",
+    "evidence": [
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Used motor oil and filters"
+      },
+      {
+        "sourceId": "lb-recycling-guidelines",
+        "lang": "en",
+        "text": "These items require a special collection pickup request or should be disposed of at a hazardous waste collection center or collection event."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-motor-oil",
+        "lang": "en",
+        "text": "On your scheduled used oil collection day, place motor oil and filters two feet away from your recycling cart (NOT inside the cart)."
+      },
+      {
+        "sourceId": "lb-motor-oil",
+        "lang": "en",
+        "text": "Motor oil and filters will be collected only after you have requested a pickup."
+      }
+    ],
+    "terms": [
+      "motor oil",
+      "used motor oil",
+      "used oil",
+      "oil filter",
+      "car oil",
+      "engine oil",
+      "used oil filter"
+    ],
+    "termsEs": [
+      "aceite de motor",
+      "aceite usado",
+      "filtro de aceite"
+    ]
+  },
+  {
+    "id": "medications",
+    "label": {
+      "en": "Expired medications"
+    },
+    "destination": "medical-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-medical-waste",
+        "lang": "en",
+        "text": "Properly dispose of all medications. Never flush medications down the toilet or put them in your garbage."
+      },
+      {
+        "sourceId": "lb-hhw",
+        "lang": "en",
+        "text": "Expired medications"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "medication",
+      "expired medication",
+      "unused medication",
+      "medicine",
+      "expired medicine",
+      "pill",
+      "prescription",
+      "prescription drug",
+      "pharmaceutical"
+    ],
+    "termsEs": [
+      "medicamento",
+      "medicina",
+      "pastilla",
+      "medicamento vencido"
+    ]
+  },
+  {
+    "id": "sharps",
+    "label": {
+      "en": "Sharps, syringes, and lancets"
+    },
+    "destination": "medical-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-medical-waste",
+        "lang": "en",
+        "text": "Home-generated medical waste includes unused medications, sharps, syringes, and lancets."
+      },
+      {
+        "sourceId": "lb-medical-waste",
+        "lang": "en",
+        "text": "Place home-generated sharps in an approved, properly labeled container and take them to an approved facility."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-medical-waste",
+        "lang": "en",
+        "text": "Physicians, hospitals, and other medical care providers are often willing to take back sharps generated at home."
+      }
+    ],
+    "terms": [
+      "sharp",
+      "needle",
+      "syringe",
+      "lancet",
+      "insulin needle",
+      "insulin syringe"
+    ],
+    "termsEs": [
+      "aguja",
+      "jeringa",
+      "lanceta"
+    ]
+  },
+  {
+    "id": "holiday-trees",
+    "label": {
+      "en": "Live holiday trees"
+    },
+    "destination": "treecycling",
+    "evidence": [
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "The Department of Energy & Environmental Services will offer Holiday Treecycling, giving Long Beach residents a convenient, responsible way to drop off live holiday trees for recycling at no cost."
+      },
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "Flocked trees are accepted."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "Residents are asked to: Remove decorations Take the tree out of the stand Cut the tree in half if it is over 12 feet tall Leave trees unwrapped"
+      },
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "If you can't visit a drop-off location, a one-time curbside collection will be available on Saturday, Jan. 9, 2027."
+      }
+    ],
+    "terms": [
+      "christmas tree",
+      "holiday tree",
+      "xmas tree",
+      "live christmas tree",
+      "flocked tree",
+      "flocked christmas tree",
+      "real christmas tree"
+    ],
+    "termsEs": [
+      "arbol de navidad",
+      "pino de navidad"
+    ]
+  },
+  {
+    "id": "clothes-household-items",
+    "label": {
+      "en": "Unwanted clothes, furniture, electronics, and household items"
+    },
+    "destination": "donate",
+    "evidence": [
+      {
+        "sourceId": "lb-donation-guide",
+        "lang": "en",
+        "text": "used items a second life by donating your unwanted clothes, furniture, electronics, and household items."
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-donation-guide",
+        "lang": "en",
+        "text": "Confirm with the organization first for a list of accepted items."
+      }
+    ],
+    "terms": [
+      "clothes",
+      "clothing",
+      "old clothes",
+      "shoes",
+      "household item",
+      "usable furniture",
+      "used clothes"
+    ],
+    "termsEs": [
+      "ropa",
+      "zapatos"
+    ]
+  },
+  {
+    "id": "rocks-concrete-dirt",
+    "label": {
+      "en": "Rocks, concrete, or dirt"
+    },
+    "destination": "no-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "What Can Never Go in Any Cart?"
+      },
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "Rocks, concrete, or dirt"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "rock",
+      "concrete",
+      "dirt",
+      "soil",
+      "stone",
+      "gravel"
+    ],
+    "termsEs": [
+      "piedra",
+      "concreto",
+      "tierra"
+    ]
+  },
+  {
+    "id": "hot-ashes",
+    "label": {
+      "en": "Hot ashes"
+    },
+    "destination": "no-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "What Can Never Go in Any Cart?"
+      },
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "Hot ashes"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "hot ash"
+    ],
+    "termsEs": [
+      "ceniza caliente"
+    ]
+  },
+  {
+    "id": "construction-debris",
+    "label": {
+      "en": "Debris from construction, remodeling, or demolition"
+    },
+    "destination": "no-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "What Can Never Go in Any Cart?"
+      },
+      {
+        "sourceId": "lb-refuse-101",
+        "lang": "en",
+        "text": "Debris from construction, remodeling, or demolition"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "construction debris",
+      "construction waste",
+      "remodeling debris",
+      "demolition debris",
+      "renovation waste",
+      "renovation debris"
+    ],
+    "termsEs": [
+      "escombro",
+      "escombros de construccion"
+    ]
+  }
+]

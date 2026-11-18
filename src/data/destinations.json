@@ -1,0 +1,165 @@
+[
+  {
+    "id": "blue-cart",
+    "label": { "en": "Blue recycling cart", "es": "Reciclar" },
+    "action": [
+      { "sourceId": "lb-recycling-guidelines", "lang": "en", "text": "Make sure all recyclables are EMPTY, CLEAN, and DRY." },
+      { "sourceId": "lb-recycle-pdf", "lang": "en", "text": "Place directly into the cart. Do not put in bags." },
+      { "sourceId": "lb-recycle-pdf", "lang": "es", "text": "RECICLAR :VACÍO • LIMPIO • SECO • SIN BOLSA" },
+      { "sourceId": "lb-recycle-pdf", "lang": "es", "text": "COLOQUE DIRECTAMENTE DENTRO DEL CONTENEDOR. NO PONGA LOS ARTÍCULOS EN BOLSAS." }
+    ],
+    "links": [
+      { "label": "Recycling Guidelines", "url": "https://www.longbeach.gov/lbrecycles/recycling/recycling-guidelines/" }
+    ]
+  },
+  {
+    "id": "green-cart",
+    "label": { "en": "Green organics cart", "es": "Orgánicos" },
+    "action": [
+      { "sourceId": "lb-green-cart", "lang": "en", "text": "Residents are asked to place food scraps and food-soiled paper along with their yard trimmings in their new green cart instead of the trash." },
+      { "sourceId": "lb-green-cart", "lang": "en", "text": "Bags are not recommended. However, if bags are used, paper bags are strongly recommended, as they can be processed along with organic material." },
+      { "sourceId": "lb-3stream-pdf", "lang": "es", "text": "ORGÁNICOS" }
+    ],
+    "links": [
+      { "label": "Residential Organics (Green Cart) Collection", "url": "https://www.longbeach.gov/lbrecycles/yard-trimmings-food-scraps/residential-yard-trimmings-and-food-scraps-collection/" }
+    ]
+  },
+  {
+    "id": "trash-cart",
+    "label": { "en": "Trash cart", "es": "Basura" },
+    "action": [
+      { "sourceId": "lb-trash-pdf", "lang": "en", "text": "TRASH NO RECYCLABLES, OVERSIZED ITEMS, YARD TRIMMINGS, FOOD SCRAPS OR HAZARDOUS WASTE" },
+      { "sourceId": "lb-refuse-101", "lang": "en", "text": "Place all contents inside your cart." },
+      { "sourceId": "lb-trash-pdf", "lang": "es", "text": "BASURA : NO SE PERMITEN ARTICULOS VOLUMINOSOS, MATERIALES RECICLABLES, RECORTES DE JARDÍN, RESTOS DE COMIDA" }
+    ],
+    "links": [
+      { "label": "Refuse Collection 101", "url": "https://www.longbeach.gov/lbrecycles/refuse/curbside-collection/refuse-collection-101/" }
+    ]
+  },
+  {
+    "id": "special-collection",
+    "label": { "en": "Special collection pickup" },
+    "action": [
+      { "sourceId": "lb-special-collection", "lang": "en", "text": "Submit a Special Collection Request or call (562) 570-2876 to schedule a special collection." },
+      { "sourceId": "lb-special-collection", "lang": "en", "text": "Place items at your regular collection location by 6 a.m. on your confirmed pickup day. Do not set out items before your scheduled day." }
+    ],
+    "links": [
+      { "label": "Request a Special Collection", "url": "https://www.longbeach.gov/lbrecycles/refuse/special-collections/request-a-special-collection/" },
+      { "label": "Special Collection 101", "url": "https://www.longbeach.gov/lbrecycles/refuse/special-collections/special-collection-101/" }
+    ]
+  },
+  {
+    "id": "hazardous-dropoff",
+    "label": { "en": "Household hazardous waste drop-off" },
+    "action": [
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Long Beach and Los Angeles County residents have access to no-cost disposal of hazardous waste at a local HHW collection event or at the following locations and times:" },
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Gaffey Street S.A.F.E. (Solvents/Automotive/Flammables/Electronics) Center 1400 N. Gaffey St. San Pedro, CA 90731 Open Saturday and Sunday from 9:00 am to 3:00 pm" },
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "Los Angeles County EDCO HHW Collection Event Upcoming Dates: November 14, 2026 December 12, 2026 January 9, 2027" },
+      { "sourceId": "lb-hazardous-waste-101", "lang": "en", "text": "All containers must be sealed and not leaking." }
+    ],
+    "links": [
+      { "label": "Hazardous Waste 101", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/" }
+    ]
+  },
+  {
+    "id": "e-waste-dropoff",
+    "label": { "en": "E-waste drop-off" },
+    "action": [
+      { "sourceId": "lb-ewaste", "lang": "en", "text": "If you have workable electronics, consider donating them to a local donation center." },
+      { "sourceId": "lb-ewaste", "lang": "en", "text": "If your e-waste is unable to be reused, refurbished, or donated, please drop off your items at a local recycling center such as EDCO Recycling and Transfer Station" },
+      { "sourceId": "lb-ewaste", "lang": "en", "text": "or at an HHW collection event near you." }
+    ],
+    "links": [
+      { "label": "E-Waste", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/ewaste/" }
+    ]
+  },
+  {
+    "id": "battery-bulb-dropoff",
+    "label": { "en": "Battery and bulb drop-off" },
+    "action": [
+      { "sourceId": "lb-universal-waste", "lang": "en", "text": "It’s better to recycle them responsibly at a drop-off site or household hazardous waste collection event." },
+      { "sourceId": "lb-universal-waste", "lang": "en", "text": "Environmental Services Bureau 2929 E. Willow St. Long Beach, CA 90806 (562) 570-2850" }
+    ],
+    "links": [
+      { "label": "Universal Waste", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/universal-waste/" }
+    ]
+  },
+  {
+    "id": "medical-dropoff",
+    "label": { "en": "Medical waste take-back" },
+    "action": [
+      { "sourceId": "lb-medical-waste", "lang": "en", "text": "Drop it off at a designated bin location listed on the California Product Stewardship Council website." },
+      { "sourceId": "lb-medical-waste", "lang": "en", "text": "Visit pharmacies such as Walgreens and CVS" },
+      { "sourceId": "lb-medical-waste", "lang": "en", "text": "Take to a local HHW collection center or collection event" }
+    ],
+    "links": [
+      { "label": "Medical Waste", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/medical-waste/" }
+    ]
+  },
+  {
+    "id": "used-oil",
+    "label": { "en": "Used motor oil pickup or drop-off" },
+    "action": [
+      { "sourceId": "lb-motor-oil", "lang": "en", "text": "Drop off at a local Used Oil Certified Collection Center" },
+      { "sourceId": "lb-motor-oil", "lang": "en", "text": "Request a free pickup of used oil and oil filters" },
+      { "sourceId": "lb-motor-oil", "lang": "en", "text": "Take to a local HHW collection center or HHW collection event" }
+    ],
+    "links": [
+      { "label": "Used Motor Oil", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/used-motor-oil-recycling/" }
+    ]
+  },
+  {
+    "id": "mattress-dropoff",
+    "label": { "en": "24/7 mattress drop-off" },
+    "action": [
+      { "sourceId": "lb-mattress", "lang": "en", "text": "Residents can leave their old mattresses in a clearly designated space located at 970 W. Chester Place and avoid trips to the landfill and landfill fees." },
+      { "sourceId": "lb-mattress", "lang": "en", "text": "Yes, the 24/7 Mattress Drop-Off service is only open to Long Beach residents at this time." }
+    ],
+    "links": [
+      { "label": "24/7 Mattress Drop-Off", "url": "https://www.longbeach.gov/pw/services/247-mattress-drop-off/" }
+    ]
+  },
+  {
+    "id": "treecycling",
+    "label": { "en": "Holiday Treecycling drop-off" },
+    "action": [
+      { "sourceId": "lb-treecycling", "lang": "en", "text": "Drop-off sites are available at 13 locations throughout the city; see below for the exact locations." },
+      { "sourceId": "lb-treecycling", "lang": "en", "text": "Dec. 26, 2026 – Jan. 8, 2027" }
+    ],
+    "links": [
+      { "label": "Annual Holiday Treecycling Drop-Off Program", "url": "https://www.longbeach.gov/lbrecycles/news/2027-holiday-treecycling/" }
+    ]
+  },
+  {
+    "id": "donate",
+    "label": { "en": "Donate for reuse" },
+    "action": [
+      { "sourceId": "lb-donation-guide", "lang": "en", "text": "Confirm with the organization first for a list of accepted items. Some organizations may also provide a free pickup." }
+    ],
+    "links": [
+      { "label": "Donation Guide", "url": "https://www.longbeach.gov/lbrecycles/waste-reduction/reduce-waste/donation-guide/" }
+    ]
+  },
+  {
+    "id": "no-cart",
+    "label": { "en": "Not in any cart" },
+    "action": [
+      { "sourceId": "lb-refuse-101", "lang": "en", "text": "What Can Never Go in Any Cart?" },
+      { "sourceId": "lb-recycling-faqs", "lang": "en", "text": "If you would like to call us instead, please call our Customer Service line at (562) 570-2876." }
+    ],
+    "links": [
+      { "label": "Refuse Collection 101", "url": "https://www.longbeach.gov/lbrecycles/refuse/curbside-collection/refuse-collection-101/" }
+    ]
+  },
+  {
+    "id": "ask-the-city",
+    "label": { "en": "Ask the City" },
+    "action": [
+      { "sourceId": "lb-recycling-guidelines", "lang": "en", "text": "Email lbrecycles@longbeach.gov" },
+      { "sourceId": "lb-recycling-faqs", "lang": "en", "text": "If you would like to call us instead, please call our Customer Service line at (562) 570-2876." }
+    ],
+    "links": [
+      { "label": "Long Beach Recycles", "url": "https://www.longbeach.gov/lbrecycles/" }
+    ]
+  }
+]

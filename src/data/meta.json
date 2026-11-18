@@ -1,0 +1,16 @@
+{
+  "city": "Long Beach, California",
+  "scope": {
+    "sourceId": "lb-refuse-101",
+    "lang": "en",
+    "text": "If one of the permitted private haulers services your household, please contact them directly for service details."
+  },
+  "contact": {
+    "email": "lbrecycles@longbeach.gov",
+    "phone": "(562) 570-2876",
+    "evidence": [
+      { "sourceId": "lb-recycling-guidelines", "lang": "en", "text": "Email lbrecycles@longbeach.gov" },
+      { "sourceId": "lb-recycling-faqs", "lang": "en", "text": "If you would like to call us instead, please call our Customer Service line at (562) 570-2876." }
+    ]
+  }
+}

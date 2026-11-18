@@ -46,7 +46,11 @@ export const DestinationIdSchema = z.enum([
   'used-oil',
   'mattress-dropoff',
   'treecycling',
+  'donate',
+  // The City says "never in any cart" but names no place to take it.
   'no-cart',
+  // The City excludes it from a cart but does not say where it goes.
+  'ask-the-city',
 ])
 export type DestinationId = z.infer<typeof DestinationIdSchema>
 
