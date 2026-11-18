@@ -163,13 +163,18 @@ No outside agent wrote sorting rules: the lead wrote each rule from the saved pa
 Working and deployed.
 Known limits:
 
-- The dataset covers what the City publishes; many specific items (for example aluminum foil) have no published rule, and the app says so.
+- The dataset covers the City pages it saved; many specific items (for example aluminum foil) match no rule in it, and the app says so and points to the City, which may have guidance the app does not include.
 - Rules are for City-serviced accounts; private haulers may differ.
 - Dated items (the HHW event dates and the 2026 to 2027 Treecycling window) are quoted as published on 2026-11-17 and need a refresh after they pass.
 - Spanish interface text has not been reviewed by a native speaker.
 
+## Demo video
+
+The submission video is recorded from the live site by `scripts/record-demo.ts`; see [docs/RECORDING.md](docs/RECORDING.md) to re-record it or to add a voice.
+
 ## License
 
 MIT for the code; see [LICENSE](LICENSE).
+The third-party UI components keep their own licenses, reproduced in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 The saved City pages and quoted rule text belong to the City of Long Beach.
 Bin It Right is an independent student project, not a City of Long Beach service.

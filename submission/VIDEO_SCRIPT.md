@@ -1,69 +1,70 @@
 # Demo video script
 
 The rules ask for "A demo video, [2 to 3] minutes max, showing the project working", uploaded to YouTube or Vimeo and linked.
-This script runs about 2 minutes 30 seconds when read at a calm pace.
-Record the live site, https://bananatruck.github.io/bin-it-right/, on a phone-sized browser window (390 by 844) with the voice-over below.
-Every on-screen answer named here was checked against the live build; re-check them on recording day in case the data was refreshed.
+The video is recorded from the live site, https://bananatruck.github.io/bin-it-right/, by `scripts/record-demo.ts`; see `docs/RECORDING.md`.
+It runs about 2 minutes 35 seconds, at 1920 by 1080, with English captions and no voice, music or third-party branding.
+The captions describe what is on screen; nothing is presented as anyone speaking.
+For a narrated version, read the same lines over the uncaptioned file, using the exact times in `submission/video/timed-script.md`.
 
-## 0:00 to 0:20 - the problem
+## Scenes and captions
 
-On screen: the Bin It Right home page, the rotating headline.
+Times are from the recording of 2026-11-18 and shift by a second or two between recordings.
 
-Voice: "In Long Beach, every home has three carts: blue for recycling, green for organics, and trash.
-The City publishes detailed rules for what goes where, but they are spread across flyers and a dozen web pages.
-When people guess, recycling and compost get contaminated.
-Bin It Right answers one question, which bin, using only the City's own published words."
+### 0:00 to 0:11, what it is
 
-## 0:20 to 0:55 - an answer with its proof
+On screen: the home page with its rotating headline.
 
-On screen: type "pizza box", press Enter.
-The green slab reads "Green organics cart"; scroll to the quote "Food-soiled paper (napkins, paper towels, pizza boxes)".
+- "Bin It Right answers one question for Long Beach residents: which cart or drop-off does this go in?"
+- "Every answer quotes the City of Long Beach's own published sorting rules."
 
-Voice: "Pizza box.
-It goes in the green organics cart.
-Below the answer is the City's rule, word for word, with a link to the City page and the date that page was saved.
-Every answer works like this.
-The app never writes its own sorting advice; the rule you read is the City's text, quoted from an official City of Long Beach page."
+### 0:11 to 0:40, an answer with its proof
 
-On screen: tap the source line under the quote ("City of Long Beach, Residential Organics (Green Cart) Collection, saved ...") to show the real City page, then return.
+On screen: "pizza box" is typed; the green slab reads "Green organics cart"; the quotes, a source link and the private-hauler note are shown.
 
-## 0:55 to 1:20 - the honest cases
+- "Search: pizza box."
+- "Answer: the green organics cart."
+- "Below it: the City's rule, word for word, with the City page it came from and the date that page was saved."
+- "Each quote links to the official City page."
+- "Cart rules apply to homes with City collection; the app notes that a private hauler may differ."
 
-On screen: type "battery".
+### 0:40 to 0:59, a word with two meanings
 
-Voice: "Some words are ambiguous.
-'Battery' could mean an alkaline battery, which goes to a battery drop-off, or a lithium-ion battery, which the City sends to a hazardous waste event.
-So Bin It Right does not guess; it asks which one you mean."
+On screen: "battery" is typed; "Did you mean" offers household and lithium batteries; the lithium answer opens on an amber slab.
 
-On screen: tap the lithium suggestion, show the amber slab.
-Then type "aluminum foil".
+- "Some words could mean more than one thing."
+- "So the app asks which one, instead of guessing."
+- "Lithium-ion batteries: a household hazardous waste drop-off, as the City says."
 
-Voice: "And when none of the City rules in the app match, it says so: no official rule found in this app.
-It gives the City's email and phone number, and a ready-made gap report you can send them."
+### 0:59 to 1:24, no matching rule
 
-## 1:20 to 1:45 - Spanish and accessibility
+On screen: "aluminum foil" is typed; "No official rule found in this app" appears with the City's email, phone and a copyable question; "Why this answer" is opened.
 
-On screen: switch the language toggle to ES, search "bolsa de plástico".
+- "Search: aluminum foil."
+- "No City rule in the app matches, and the app says so instead of guessing."
+- "It shows the City's email and phone, and a ready-made question to send them."
+- "\"Why this answer\" shows how the words were matched and how close each listed term came."
 
-Voice: "The City prints its cart guidelines in English and Spanish.
-In Spanish mode, Bin It Right shows the City's own Spanish wording.
-Where the City only publishes English, it shows the English rule and says so, instead of machine-translating an official rule.
-Buttons are large, everything works with a keyboard and a screen reader, and the app keeps working offline after the first visit."
+### 1:24 to 1:55, Spanish
 
-## 1:45 to 2:15 - how it is built
+On screen: the language switch is set to Spanish; "bolsa de plástico" answers "Basura" with the City's Spanish wording; "pintura" shows the note that the City publishes that rule only in English.
 
-On screen: open "Why this answer" under a result, then the "Sources" section.
+- "Spanish mode."
+- "It shows the City's own Spanish wording from its printed guidelines: Basura (trash)."
+- "Search: pintura (paint)."
+- "Where the City publishes a rule only in English, the app shows the English rule and says so."
 
-Voice: "Under the hood there is no model call and no server.
-Matching is deterministic: it normalises your words, checks a list of synonyms that is written out in full, and only offers fuzzy matches as 'did you mean'.
-This panel shows exactly why it gave this answer.
-The dataset has 62 rules from 20 saved City pages, each stored with its address, fetch date and a hash.
-A test fails the build if any rule loses its source or if any quote stops matching the saved page word for word."
+### 1:55 to 2:10, offline
 
-## 2:15 to 2:30 - impact and next steps
+On screen: the browser's network is switched off (by the recording script) and the page is reloaded; "mattress" still answers "24/7 mattress drop-off".
 
-On screen: the numbers section, then the GitHub repository.
+- "Offline test: the network is switched off and the page is reloaded."
+- "After one visit, it still answers with no connection."
 
-Voice: "Success is measurable: fewer wrong-bin items in the City's cart audits, and a falling share of questions with no official rule.
-Next, I want to give the City the gap reports, add their bulky-item and drop-off maps, and offer it to other cities that publish their rules.
-Bin It Right: the City's rules, in your pocket, with the receipts."
+### 2:10 to 2:35, the data and the close
+
+On screen: the rule list by destination, the "Sources" list with dates and hashes, then the home page.
+
+- "All 62 rules, from 20 saved City pages, can be browsed by destination."
+- "Each source page is saved with its address, the date it was fetched, and a SHA-256 fingerprint."
+- "An automated test fails the build if any quote stops matching its saved page."
+- "Bin It Right: the City's own rules, with the receipts."

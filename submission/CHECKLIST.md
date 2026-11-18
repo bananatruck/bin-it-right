@@ -21,10 +21,10 @@ The steps below need the entrant, because they need a Devpost login or a recordi
 
 1. Log in to Devpost and register for Arbiter Hacks V1 at https://arbiter-hacks-v1.devpost.com/ if not already registered, choosing the Theme Track.
    Registration was not done tonight (agents do not log in or submit on the entrant's behalf).
-2. Record the demo video from `VIDEO_SCRIPT.md` on the live app, https://bananatruck.github.io/bin-it-right/.
-   Keep it between 2 and 3 minutes; the script runs about 2 minutes 30 seconds.
-   The script narrates in the first person, so it should be the entrant's own voice.
-3. Upload the video to YouTube (Public or Unlisted) or Vimeo, and copy the link.
+2. The demo video is already recorded from the live site: `submission/video/bin-it-right-demo-captioned.mp4` (about 2:35, captions burned in, no voice).
+   Watch it once; if the site changed since, re-record with `pnpm demo:record` (see `docs/RECORDING.md`).
+   Optional: to narrate it yourself instead, read `submission/video/timed-script.md` over `bin-it-right-demo-nocaptions.mp4` and run `scripts/add-narration.sh your-voice.m4a`.
+3. Upload the video to YouTube (Public or Unlisted) or Vimeo, add `submission/video/bin-it-right-demo.srt` as the English subtitle track, and copy the link.
 4. Start a new project on Devpost and paste each field from `DEVPOST.md`.
    Put the video link in the "Video demo link" field.
    If the form shows questions that `DEVPOST.md` does not cover, answer them plainly; the form could not be seen tonight without logging in.
@@ -44,5 +44,10 @@ If a judge or organizer asks, the agents and what each one did are listed in the
 
 - The quick picks give the answers the script names: "Pizza box" to the green organics cart, "Battery" to "Did you mean" with household and lithium batteries, "Aluminum foil" to "No official rule found in this app", and in Spanish "Bolsa de plástico" to "Basura".
 - The CI badge or Actions tab shows the latest run passing.
-- Dated content (household hazardous waste event dates from Dec. 12, 2026, the Treecycling window of Dec. 26, 2026 to Jan. 8, 2027) is still current, or run `pnpm sources:fetch` and `pnpm check` to refresh it.
-  After a refresh, a test fails if any quoted "Month D, YYYY" date is earlier than the day its page was saved, which points at the dates to trim.
+- Dated content (household hazardous waste event dates from Dec. 12, 2026, the Treecycling window of Dec. 26, 2026 to Jan. 8, 2027) is still current.
+  If not, refresh it in this order:
+  1. `pnpm sources:fetch` re-saves the City pages (it changes only `data/snapshots/` and `src/data/sources.json`).
+  2. `pnpm test`: the date test lists every quoted "Month D, YYYY" date earlier than the day its page was saved, and the provenance test lists any quote the City changed.
+  3. Edit those quotes in `src/data/destinations.json` and `src/data/rules.json` so they start at the first date that is still ahead, keeping the City's exact wording.
+  4. `pnpm check`, then commit and push to `main`, and wait for the "Deploy to GitHub Pages" run to pass.
+  5. Re-record the video with `pnpm demo:record` before uploading.

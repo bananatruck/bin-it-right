@@ -11,7 +11,7 @@ Bin It Right
 ## Elevator pitch
 
 Which Long Beach cart does it go in?
-Bin It Right answers with the City's own rule, quoted word for word and linked, and says so when no official rule exists.
+Bin It Right answers with the City's own rule, quoted word for word and linked, and says so when none of the City rules it includes match.
 
 ## Track
 
