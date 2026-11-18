@@ -3,12 +3,21 @@ import { z } from 'zod'
 // Every fact the app shows comes from an official page listed in sources.json.
 // A quote's text must appear, after normalisation, in that source's snapshot file.
 
+// Zod still runs refinements after z.url() reports a bad URL, so parsing must never throw here.
+function parseUrl(url: string): URL | undefined {
+  try {
+    return new URL(url)
+  } catch {
+    return undefined
+  }
+}
+
 export const LangSchema = z.enum(['en', 'es'])
 export type Lang = z.infer<typeof LangSchema>
 
 export const SourceSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
-  url: z.url().refine((url) => new URL(url).hostname === 'www.longbeach.gov', {
+  url: z.url().refine((url) => parseUrl(url)?.hostname === 'www.longbeach.gov', {
     message: 'source must be an official www.longbeach.gov URL',
   }),
   title: z.string().min(1),
@@ -57,8 +66,8 @@ export type DestinationId = z.infer<typeof DestinationIdSchema>
 
 // longbeach.gov itself or a subdomain of it, over HTTPS. A bare suffix check would accept look-alikes such as notlongbeach.gov.
 export function isOfficialCityUrl(url: string): boolean {
-  const parsed = new URL(url)
-  return parsed.protocol === 'https:' && (parsed.hostname === 'longbeach.gov' || parsed.hostname.endsWith('.longbeach.gov'))
+  const parsed = parseUrl(url)
+  return parsed?.protocol === 'https:' && (parsed.hostname === 'longbeach.gov' || parsed.hostname.endsWith('.longbeach.gov'))
 }
 
 export const LinkSchema = z.object({
