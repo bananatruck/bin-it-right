@@ -36,12 +36,37 @@ export function tokenContainment(queryTokens: readonly string[], termTokens: rea
   const query = [...new Set(queryTokens)]
   const term = [...new Set(termTokens)]
   if (query.length === 0 || term.length === 0) return 0
-  const present = term.filter((token) => query.some((word) => phraseSimilarity(word, token) >= 0.8)).length
+  // Each term token earns its best similarity to a query word, if that is at least 0.8.
+  // An exact word earns 1, so a typo ("glass" for "grass") never scores like the real word.
+  let present = 0
+  for (const token of term) {
+    const best = Math.max(...query.map((word) => phraseSimilarity(word, token)))
+    if (best >= 0.8) present += best
+  }
   // Term coverage times a small extra-query-token penalty:
   // present / termCount * (0.85 + 0.15 * min(1, termCount / queryCount)).
   return present / term.length * (0.85 + 0.15 * Math.min(1, term.length / query.length))
 }
 
+export function queryCoverage(queryTokens: readonly string[], termTokens: readonly string[]): number {
+  const query = [...new Set(queryTokens)]
+  if (query.length === 0 || termTokens.length === 0) return 0
+  // An exact word counts 1; a typo-tolerant word (similarity >= 0.8) counts 0.95,
+  // so "glass" ranks glass rules above "grass" while "batery" still finds batteries.
+  let present = 0
+  for (const word of query) {
+    if (termTokens.includes(word)) present += 1
+    else if (termTokens.some((token) => phraseSimilarity(word, token) >= 0.8)) present += 0.95
+  }
+  return present / query.length
+}
+
 export function score(query: NormalizedText, term: NormalizedText): number {
-  return Math.max(phraseSimilarity(query.normalized, term.normalized), tokenContainment(query.tokens, term.tokens))
+  // max(phraseSimilarity, tokenContainment, 0.85 * queryCoverage).
+  // Complete query coverage clears the suggestion threshold; only exact normalized matches answer.
+  return Math.max(
+    phraseSimilarity(query.normalized, term.normalized),
+    tokenContainment(query.tokens, term.tokens),
+    0.85 * queryCoverage(query.tokens, term.tokens),
+  )
 }
