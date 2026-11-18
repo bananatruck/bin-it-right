@@ -34,7 +34,6 @@ export const SOURCES: SourceSpec[] = [
   { id: 'lb-refuse-101', format: 'html', title: 'Refuse Collection 101', url: `${LB}/lbrecycles/refuse/curbside-collection/refuse-collection-101/` },
   { id: 'lb-green-cart', format: 'html', title: 'Residential Organics (Green Cart) Collection', url: `${LB}/lbrecycles/yard-trimmings-food-scraps/residential-yard-trimmings-and-food-scraps-collection/` },
   { id: 'lb-organics-101', format: 'html', title: 'Organics 101: Feed the Green, Not the Landfill', url: `${LB}/lbrecycles/news/organics-101-feed-the-green-not-the-landfill/` },
-  { id: 'lb-commercial-organics', format: 'html', title: 'Food Scraps and Yard Debris Guidelines', url: `${LB}/lbrecycles/yard-trimmings-food-scraps/commercial-organics/food-scraps-and-yard-debris-guidelines/` },
   { id: 'lb-hazardous-waste-101', format: 'html', title: 'Hazardous Waste 101', url: `${LB}/lbrecycles/hazardous-waste-101/` },
   { id: 'lb-hhw', format: 'html', title: 'Household Hazardous Waste', url: `${LB}/lbrecycles/hazardous-waste-101/household-hazardous-waste/` },
   { id: 'lb-ewaste', format: 'html', title: 'E-Waste', url: `${LB}/lbrecycles/hazardous-waste-101/ewaste/` },

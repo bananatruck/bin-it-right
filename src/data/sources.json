@@ -80,16 +80,6 @@
     "snapshot": "data/snapshots/lb-organics-101.txt"
   },
   {
-    "id": "lb-commercial-organics",
-    "format": "html",
-    "title": "Food Scraps and Yard Debris Guidelines",
-    "url": "https://www.longbeach.gov/lbrecycles/yard-trimmings-food-scraps/commercial-organics/food-scraps-and-yard-debris-guidelines/",
-    "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.234Z",
-    "sha256": "cfe1028af612b155ea5aa00a16ca186c1996bbeee48d087b18351c0fd6e50d94",
-    "snapshot": "data/snapshots/lb-commercial-organics.txt"
-  },
-  {
     "id": "lb-hazardous-waste-101",
     "format": "html",
     "title": "Hazardous Waste 101",

@@ -54,7 +54,6 @@
     "termsEs": [
       "botella de plastico",
       "frasco de plastico",
-      "envase de plastico",
       "jarra de plastico"
     ]
   },
@@ -97,11 +96,9 @@
       "tin can",
       "food can",
       "soup can",
-      "steel can",
-      "can"
+      "steel can"
     ],
     "termsEs": [
-      "lata",
       "lata de metal",
       "lata de aluminio",
       "lata de refresco"
@@ -149,7 +146,6 @@
       }
     ],
     "terms": [
-      "paper",
       "cardboard",
       "cardboard box",
       "shipping box",
@@ -159,17 +155,12 @@
       "newspaper",
       "magazine",
       "junk mail",
-      "mail",
       "office paper",
       "printer paper",
       "paper envelope",
-      "paper bag",
-      "toilet paper roll",
-      "paper towel roll",
       "cardboard egg carton"
     ],
     "termsEs": [
-      "papel",
       "carton",
       "caja de carton",
       "periodico",
@@ -260,15 +251,11 @@
       }
     ],
     "terms": [
-      "food",
       "food waste",
-      "leftovers",
-      "leftover food",
       "kitchen scraps",
       "table scraps"
     ],
     "termsEs": [
-      "comida",
       "sobras de comida"
     ]
   },
@@ -342,7 +329,8 @@
     ],
     "termsEs": [
       "cafe molido",
-      "posos de cafe"
+      "posos de cafe",
+      "borra de cafe"
     ]
   },
   {
@@ -401,7 +389,6 @@
     ],
     "tips": [],
     "terms": [
-      "dairy",
       "moldy cheese"
     ],
     "termsEs": [
@@ -426,18 +413,7 @@
         "text": "Expired or spoiled food without packaging"
       }
     ],
-    "tips": [
-      {
-        "sourceId": "lb-green-cart",
-        "lang": "en",
-        "text": "Food packaging"
-      },
-      {
-        "sourceId": "lb-commercial-organics",
-        "lang": "en",
-        "text": "Food must be removed from packaging."
-      }
-    ],
+    "tips": [],
     "terms": [
       "expired food",
       "spoiled food",
@@ -519,9 +495,7 @@
       "pizza box",
       "greasy pizza box",
       "dirty pizza box",
-      "napkin",
       "paper napkin",
-      "used napkin",
       "paper towel",
       "used paper towel",
       "greasy paper",
@@ -529,9 +503,9 @@
     ],
     "termsEs": [
       "caja de pizza",
-      "servilleta",
       "toalla de papel",
-      "papel sucio"
+      "papel sucio",
+      "servilleta de papel"
     ]
   },
   {
@@ -573,16 +547,12 @@
     "terms": [
       "yard waste",
       "garden waste",
-      "green waste",
       "plant trimmings",
-      "plant",
       "hedge trimmings",
-      "weeds",
-      "dead plant"
+      "weeds"
     ],
     "termsEs": [
-      "recorte de jardin",
-      "planta"
+      "recorte de jardin"
     ]
   },
   {
@@ -641,11 +611,6 @@
     ],
     "tips": [
       {
-        "sourceId": "lb-special-collection",
-        "lang": "en",
-        "text": "Tree branches and yard trimmings (4 ft., 40 lb. tied bundles)"
-      },
-      {
         "sourceId": "lb-green-cart",
         "lang": "en",
         "text": "Yard trimmings can be placed in green carts unbagged."
@@ -659,14 +624,33 @@
       "cut flowers",
       "bouquet",
       "twig",
-      "branch",
-      "tree branch",
       "small branch"
     ],
     "termsEs": [
       "hoja",
-      "flor",
-      "rama"
+      "flor"
+    ]
+  },
+  {
+    "id": "clean-wood-waste",
+    "label": {
+      "en": "Clean wood waste"
+    },
+    "destination": "green-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-green-cart",
+        "lang": "en",
+        "text": "the City’s organics program accepts additional materials that are not suitable for at-home or small-scale systems, such as meat and bones, food-soiled paper, dairy, branches, and clean wood waste."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "clean wood",
+      "untreated wood"
+    ],
+    "termsEs": [
+      "madera limpia"
     ]
   },
   {
@@ -684,13 +668,33 @@
     ],
     "tips": [],
     "terms": [
-      "wreath",
-      "natural wreath",
-      "christmas wreath",
-      "holiday wreath"
+      "natural wreath"
+    ],
+    "termsEs": []
+  },
+  {
+    "id": "nursery-pots-tags",
+    "label": {
+      "en": "Nursery tags, pots, and plastic from yard trimmings"
+    },
+    "destination": "trash-cart",
+    "evidence": [
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Remove non-plant material, such as nursery tags, pots, and plastic, and dispose of it in the trash."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "nursery pot",
+      "nursery tag",
+      "plant tag",
+      "plastic plant pot",
+      "plastic nursery pot"
     ],
     "termsEs": [
-      "corona navidena"
+      "maceta de plastico"
     ]
   },
   {
@@ -716,8 +720,7 @@
       "biodegradable bag",
       "compostable cup",
       "compostable plate",
-      "compostable product",
-      "bioplastic"
+      "compostable product"
     ],
     "termsEs": [
       "compostable",
@@ -756,9 +759,7 @@
       "plastic spoon",
       "plastic knife",
       "plastic cutlery",
-      "straw",
       "plastic straw",
-      "plastic lid",
       "foam container",
       "foam cup",
       "styrofoam container",
@@ -769,11 +770,10 @@
       "compostable straw"
     ],
     "termsEs": [
-      "popote",
       "cubierto de plastico",
       "tenedor de plastico",
       "envase de unicel",
-      "tapa de plastico"
+      "popote de plastico"
     ]
   },
   {
@@ -804,7 +804,6 @@
     "terms": [
       "plastic cup",
       "plastic plate",
-      "plastic container",
       "plastic lined cup",
       "plastic lined plate",
       "plastic lined container",
@@ -812,8 +811,7 @@
     ],
     "termsEs": [
       "vaso de plastico",
-      "plato de plastico",
-      "recipiente de plastico"
+      "plato de plastico"
     ]
   },
   {
@@ -856,7 +854,6 @@
       "snack bag",
       "chip bag",
       "candy wrapper",
-      "wrapper",
       "plastic film"
     ],
     "termsEs": [
@@ -898,9 +895,7 @@
       "drink pouch",
       "freezer tray",
       "freezer box",
-      "frozen food box",
-      "frozen dinner tray",
-      "frozen dinner box"
+      "frozen dinner tray"
     ],
     "termsEs": [
       "bolsa para bebida",
@@ -1018,19 +1013,52 @@
     "terms": [
       "palm frond",
       "palm leaf",
-      "log",
-      "large log",
-      "tree log"
+      "large log"
     ],
     "termsEs": [
-      "hoja de palma",
-      "tronco"
+      "hoja de palma"
+    ]
+  },
+  {
+    "id": "tree-branch-bundles",
+    "label": {
+      "en": "Tree branches and yard trimmings (4 ft., 40 lb. tied bundles)"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Tree branches and yard trimmings (4 ft., 40 lb. tied bundles)"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Do not place sharp objects in plastic bags , such as branches, sticks or broken glass. All bags and bundles must be securely tied."
+      }
+    ],
+    "terms": [
+      "large branch",
+      "big branch",
+      "branch bundle",
+      "bundled branches",
+      "tree trimmings"
+    ],
+    "termsEs": [
+      "ramas grandes"
     ]
   },
   {
     "id": "cacti-succulents",
     "label": {
-      "en": "Palm fronds, cacti, and succulents"
+      "en": "Cacti and succulents"
     },
     "destination": "ask-the-city",
     "evidence": [
@@ -1056,7 +1084,7 @@
   {
     "id": "tree-stumps",
     "label": {
-      "en": "Logs and tree stumps"
+      "en": "Tree stumps"
     },
     "destination": "ask-the-city",
     "evidence": [
@@ -1071,13 +1099,7 @@
         "text": "Logs and tree stumps"
       }
     ],
-    "tips": [
-      {
-        "sourceId": "lb-green-cart",
-        "lang": "en",
-        "text": "For palm fronds and large logs, request a special collection."
-      }
-    ],
+    "tips": [],
     "terms": [
       "tree stump",
       "stump"
@@ -1112,8 +1134,7 @@
     "tips": [],
     "terms": [
       "treated wood",
-      "pressure treated wood",
-      "furniture part"
+      "pressure treated wood"
     ],
     "termsEs": [
       "madera tratada"
@@ -1134,13 +1155,12 @@
       {
         "sourceId": "lb-organics-101",
         "lang": "en",
-        "text": "Bulky or oversized items and tires Carpet Non-compostable paper"
+        "text": "Carpet"
       }
     ],
     "tips": [],
     "terms": [
       "carpet",
-      "rug",
       "carpet scrap"
     ],
     "termsEs": [
@@ -1150,7 +1170,7 @@
   {
     "id": "cooking-oil-grease",
     "label": {
-      "en": "Oil, and fats, oils, and grease"
+      "en": "Oil"
     },
     "destination": "ask-the-city",
     "evidence": [
@@ -1162,12 +1182,7 @@
       {
         "sourceId": "lb-green-cart",
         "lang": "en",
-        "text": "Trash, including items listed on the Refuse Guidelines Oil"
-      },
-      {
-        "sourceId": "lb-commercial-organics",
-        "lang": "en",
-        "text": "NO, FOG needs to be picked up by a specialty service that processes this material."
+        "text": "Oil"
       }
     ],
     "tips": [],
@@ -1178,10 +1193,7 @@
       "frying oil",
       "grease",
       "cooking grease",
-      "bacon grease",
-      "fat",
-      "fats oils and grease",
-      "fog"
+      "bacon grease"
     ],
     "termsEs": [
       "aceite de cocina",
@@ -1232,7 +1244,8 @@
       "mueble",
       "sofa",
       "silla",
-      "mesa"
+      "mesa",
+      "sillon"
     ]
   },
   {
@@ -1264,14 +1277,15 @@
       "appliance",
       "refrigerator",
       "fridge",
-      "freezer",
       "washing machine",
       "washer",
       "dryer",
       "clothes dryer",
       "stove",
       "oven",
-      "dishwasher"
+      "dishwasher",
+      "chest freezer",
+      "upright freezer"
     ],
     "termsEs": [
       "electrodomestico",
@@ -1312,10 +1326,7 @@
       }
     ],
     "terms": [
-      "tire",
       "car tire",
-      "used tire",
-      "old tire",
       "passenger tire"
     ],
     "termsEs": [
@@ -1468,21 +1479,22 @@
       {
         "sourceId": "lb-special-collection",
         "lang": "en",
-        "text": "Examples of Items Eligible for Special Collection Furniture Appliances (refrigerators and freezers must have doors removed or taped shut) Computers and monitors Televisions"
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Computers and monitors"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Televisions"
       }
     ],
     "terms": [
       "e waste",
       "electronic waste",
-      "electronic",
-      "electronics",
-      "computer",
-      "laptop",
-      "computer monitor",
-      "monitor",
-      "television",
-      "tv",
-      "flat screen tv",
       "printer",
       "scanner",
       "fax machine",
@@ -1504,13 +1516,65 @@
     ],
     "termsEs": [
       "basura electronica",
-      "electronico",
-      "computadora",
-      "televisor",
-      "television",
       "celular",
       "telefono",
       "impresora"
+    ]
+  },
+  {
+    "id": "computers-monitors-televisions",
+    "label": {
+      "en": "Computers, monitors, and televisions"
+    },
+    "destination": "special-collection",
+    "evidence": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Examples of Items Eligible for Special Collection"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Computers and monitors"
+      },
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Televisions"
+      }
+    ],
+    "tips": [
+      {
+        "sourceId": "lb-special-collection",
+        "lang": "en",
+        "text": "Appliances, televisions, computer monitors, and tires are collected by a separate truck and must be kept apart from other items."
+      },
+      {
+        "sourceId": "lb-ewaste",
+        "lang": "en",
+        "text": "If you have workable electronics, consider donating them to a local donation center."
+      },
+      {
+        "sourceId": "lb-ewaste",
+        "lang": "en",
+        "text": "If your e-waste is unable to be reused, refurbished, or donated, please drop off your items at a local recycling center such as EDCO Recycling and Transfer Station"
+      }
+    ],
+    "terms": [
+      "computer",
+      "desktop computer",
+      "laptop",
+      "computer monitor",
+      "monitor",
+      "television",
+      "tv",
+      "flat screen tv"
+    ],
+    "termsEs": [
+      "computadora",
+      "televisor",
+      "television"
     ]
   },
   {
@@ -1541,17 +1605,11 @@
     "terms": [
       "hazardous waste",
       "household hazardous waste",
-      "hhw",
-      "chemical",
-      "toxic",
-      "toxic waste",
-      "flammable",
-      "corrosive"
+      "hhw"
     ],
     "termsEs": [
       "residuo peligroso",
-      "residuos peligrosos",
-      "quimico"
+      "residuos peligrosos"
     ]
   },
   {
@@ -1570,13 +1628,18 @@
         "sourceId": "lb-paint",
         "lang": "en",
         "text": "There are various types of paint and associated products : Interior and exterior architectural paints such as latex, acrylic , and others Lacquers and varnishes Primers Thinners"
+      },
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "Auto and marine paint"
       }
     ],
     "tips": [
       {
         "sourceId": "lb-paint",
         "lang": "en",
-        "text": "Recycle your unused paint and prevent toxic chemicals from entering our environment."
+        "text": "Recycle paint you are not going to use."
       },
       {
         "sourceId": "lb-paint",
@@ -1586,7 +1649,6 @@
     ],
     "terms": [
       "paint",
-      "paint can",
       "leftover paint",
       "latex paint",
       "house paint",
@@ -1595,7 +1657,11 @@
       "primer",
       "stain",
       "varnish",
-      "lacquer"
+      "lacquer",
+      "auto paint",
+      "car paint",
+      "marine paint",
+      "boat paint"
     ],
     "termsEs": [
       "pintura",
@@ -1640,7 +1706,7 @@
   {
     "id": "fluorescent-bulbs",
     "label": {
-      "en": "Fluorescent light bulbs"
+      "en": "Unbroken fluorescent light bulbs"
     },
     "destination": "battery-bulb-dropoff",
     "evidence": [
@@ -1665,11 +1731,6 @@
         "sourceId": "lb-universal-waste",
         "lang": "en",
         "text": "Lowe's accepts compact fluorescent bulbs at all Long Beach stores and long fluorescent bulbs at the Bellflower Blvd. store only."
-      },
-      {
-        "sourceId": "lb-universal-waste",
-        "lang": "en",
-        "text": "CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up ."
       }
     ],
     "terms": [
@@ -1685,6 +1746,34 @@
     "termsEs": [
       "foco fluorescente",
       "tubo fluorescente"
+    ]
+  },
+  {
+    "id": "broken-fluorescent-bulbs",
+    "label": {
+      "en": "Broken fluorescent bulbs"
+    },
+    "destination": "ask-the-city",
+    "evidence": [
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "They contain a small amount of mercury in them and can pose a threat to human health if broken."
+      },
+      {
+        "sourceId": "lb-universal-waste",
+        "lang": "en",
+        "text": "CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up ."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "broken fluorescent bulb",
+      "broken cfl",
+      "broken fluorescent tube"
+    ],
+    "termsEs": [
+      "foco fluorescente roto"
     ]
   },
   {
@@ -1719,22 +1808,22 @@
     ],
     "terms": [
       "alkaline battery",
-      "aa battery",
-      "aaa battery",
-      "c battery",
-      "d battery",
-      "9 volt battery",
-      "9v battery",
-      "hearing aid battery",
-      "rechargeable battery",
+      "alkaline aa battery",
+      "alkaline aaa battery",
+      "alkaline c battery",
+      "alkaline d battery",
+      "alkaline 9 volt battery",
+      "zinc carbon battery",
+      "nickel zinc battery",
       "nicad battery",
+      "nickel cadmium battery",
       "nimh battery",
       "nickel metal hydride battery",
-      "zinc carbon battery"
+      "mercury battery",
+      "silver oxide battery"
     ],
     "termsEs": [
-      "pila alcalina",
-      "pila recargable"
+      "pila alcalina"
     ]
   },
   {
@@ -1789,7 +1878,6 @@
     "tips": [],
     "terms": [
       "household cleaner",
-      "cleaner",
       "cleaning product",
       "cleaning supplies",
       "bleach",
@@ -2063,15 +2151,14 @@
       }
     ],
     "terms": [
-      "sharp",
-      "needle",
       "syringe",
       "lancet",
       "insulin needle",
-      "insulin syringe"
+      "insulin syringe",
+      "syringe needle",
+      "hypodermic needle"
     ],
     "termsEs": [
-      "aguja",
       "jeringa",
       "lanceta"
     ]
@@ -2104,6 +2191,11 @@
         "sourceId": "lb-treecycling",
         "lang": "en",
         "text": "If you can't visit a drop-off location, a one-time curbside collection will be available on Saturday, Jan. 9, 2027."
+      },
+      {
+        "sourceId": "lb-treecycling",
+        "lang": "en",
+        "text": "If collection is needed after January 9, 2027, residents should submit a Special Collections request ."
       }
     ],
     "terms": [
@@ -2144,14 +2236,35 @@
       "clothes",
       "clothing",
       "old clothes",
-      "shoes",
-      "household item",
-      "usable furniture",
       "used clothes"
     ],
     "termsEs": [
-      "ropa",
-      "zapatos"
+      "ropa"
+    ]
+  },
+  {
+    "id": "extra-food",
+    "label": {
+      "en": "Extra food"
+    },
+    "destination": "donate",
+    "evidence": [
+      {
+        "sourceId": "lb-organics-101",
+        "lang": "en",
+        "text": "Donate extra food: Visit the City’s Edible Food Recovery page to learn where to donate food."
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "extra food",
+      "surplus food",
+      "unopened food",
+      "food donation"
+    ],
+    "termsEs": [
+      "comida extra",
+      "donar comida"
     ]
   },
   {
