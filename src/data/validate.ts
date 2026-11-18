@@ -11,6 +11,14 @@ export function normalizeForQuote(text: string): string {
   return text.normalize('NFKC').replace(/\s+/gu, ' ').trim()
 }
 
+// Snapshots start with a generated header (source, URL, fetch time, hash) ending in a "---" line.
+// Quotes are checked against the City's text below it, never against the header.
+export function snapshotBody(snapshot: string): string {
+  const lines = snapshot.split('\n')
+  const separator = lines.indexOf('---')
+  return separator === -1 ? snapshot : lines.slice(separator + 1).join('\n')
+}
+
 export function validateDataset(
   raw: unknown,
   readSnapshot: (path: string) => string | undefined,
@@ -56,7 +64,7 @@ export function validateDataset(
     cited.add(source.id)
     if (!snapshots.has(source.snapshot)) {
       const snapshot = readSnapshot(source.snapshot)
-      snapshots.set(source.snapshot, snapshot === undefined ? undefined : normalizeForQuote(snapshot))
+      snapshots.set(source.snapshot, snapshot === undefined ? undefined : normalizeForQuote(snapshotBody(snapshot)))
     }
     const snapshot = snapshots.get(source.snapshot)
     if (snapshot === undefined) add(`${path}.text`, `Missing snapshot "${source.snapshot}"`)

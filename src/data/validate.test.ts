@@ -176,4 +176,15 @@ describe('validateDataset', () => {
     const paths = validateDataset(dataset, readSnapshot).map((issue) => issue.path)
     expect(paths).toEqual([...paths].sort())
   })
+
+  it('does not accept a quote that appears only in the generated snapshot header (round 3 review)', () => {
+    const withHeader = (path: string) =>
+      path === 'data/snapshots/fixture.txt' ? `Source: Fictional test source\nPublisher: City of Long Beach\n---\n${snapshot}` : undefined
+    const dataset = changeRule((rule) => {
+      rule.evidence = [...rule.evidence, { sourceId: 'fixture', lang: 'en', text: 'Publisher: City of Long Beach' }]
+    })
+    expect(validateDataset(dataset, withHeader).some((issue) => issue.path === 'rules.0.evidence.2.text')).toBe(true)
+    expect(validateDataset(fixture(), withHeader)).toEqual([])
+  })
 })
+
