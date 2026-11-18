@@ -46,7 +46,8 @@ self.addEventListener('fetch', (event) => {
         .then((response) => {
           if (response.ok) {
             const copy = response.clone()
-            void caches.open(CACHE).then((cache) => cache.put('./index.html', copy))
+            // waitUntil keeps the worker alive until the copy is stored; a failed write only loses the update.
+            event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => undefined))
             return response
           }
           return caches.match('./index.html', MATCH).then((cached) => cached ?? response)
@@ -62,7 +63,7 @@ self.addEventListener('fetch', (event) => {
         fetch(request).then((response) => {
           if (response.ok) {
             const copy = response.clone()
-            void caches.open(CACHE).then((cache) => cache.put(request, copy))
+            event.waitUntil(caches.open(CACHE).then((cache) => cache.put(request, copy)).catch(() => undefined))
           }
           return response
         }),

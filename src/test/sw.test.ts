@@ -46,14 +46,15 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
   }
   const source = readFileSync(join(import.meta.dirname, '..', '..', 'public', 'sw.js'), 'utf8')
   runInNewContext(source, { self, caches, fetch: fetchImpl, URL, Response, Array, Promise })
+  const waited: Array<Promise<unknown>> = []
   const fire = async (type: string, extra: Record<string, unknown> = {}) => {
     const waits: Array<Promise<unknown>> = []
     let responded: Promise<Response> | undefined
-    handlers.get(type)?.({ ...extra, waitUntil: (p: Promise<unknown>) => { waits.push(p) }, respondWith: (p: Promise<Response>) => { responded = p } })
+    handlers.get(type)?.({ ...extra, waitUntil: (p: Promise<unknown>) => { waits.push(p); waited.push(p) }, respondWith: (p: Promise<Response>) => { responded = p } })
     await Promise.all(waits)
     return responded === undefined ? undefined : await responded
   }
-  return { stores, open, fire, matchOptions }
+  return { stores, open, fire, matchOptions, waited }
 }
 
 const navigate = (url: string) => ({ url, method: 'GET', mode: 'navigate', clone: () => navigate(url) }) as unknown as Request
@@ -99,5 +100,14 @@ describe('service worker (round 2 review)', () => {
     const asset = new Request('https://example.github.io/bin-it-right/assets/index.js')
     await worker.fire('fetch', { request: asset })
     expect(worker.matchOptions).toContainEqual(expect.objectContaining({ ignoreVary: true }))
+  })
+
+  it('keeps the worker alive until each cache write finishes', async () => {
+    const worker = loadWorker(() => Promise.resolve(new Response('ok')))
+    await worker.fire('install')
+    const before = worker.waited.length
+    await worker.fire('fetch', { request: new Request('https://example.github.io/bin-it-right/assets/new.js') })
+    await worker.fire('fetch', { request: navigate('https://example.github.io/bin-it-right/') })
+    expect(worker.waited.length - before).toBe(2)
   })
 })
