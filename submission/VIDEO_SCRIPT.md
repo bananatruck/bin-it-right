@@ -64,7 +64,7 @@ On screen: the browser's network is switched off (by the recording script) and t
 
 On screen: the rule list by destination, the "Sources" list with dates and hashes, then the home page.
 
-- "All 62 rules, from 20 saved City pages, can be browsed by destination."
+- "All 63 rules, from 20 saved City pages, can be browsed by destination."
 - "Each source page is saved with its address, the date it was fetched, and a SHA-256 fingerprint."
 - "An automated test fails the build if any quote stops matching its saved page."
 - "Bin It Right: the City's own rules, with the receipts."
