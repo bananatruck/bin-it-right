@@ -102,12 +102,42 @@ describe('service worker (round 2 review)', () => {
     expect(worker.matchOptions).toContainEqual(expect.objectContaining({ ignoreVary: true }))
   })
 
-  it('keeps the worker alive until each cache write finishes', async () => {
+  it('keeps the worker alive until each asset cache write finishes', async () => {
     const worker = loadWorker(() => Promise.resolve(new Response('ok')))
     await worker.fire('install')
     const before = worker.waited.length
     await worker.fire('fetch', { request: new Request('https://example.github.io/bin-it-right/assets/new.js') })
     await worker.fire('fetch', { request: navigate('https://example.github.io/bin-it-right/') })
-    expect(worker.waited.length - before).toBe(2)
+    // The asset is written; the page is not (the saved page changes only through the precache message).
+    expect(worker.waited.length - before).toBe(1)
+  })
+
+  describe('offline delivery and shell updates (round 3 review)', () => {
+    const page = 'https://example.github.io/bin-it-right/'
+    const asset = 'https://example.github.io/bin-it-right/assets/index.js'
+
+    it('serves a cached asset and the cached app page when the network fails', async () => {
+      let online = true
+      const worker = loadWorker(() => (online ? Promise.resolve(new Response('fresh')) : Promise.reject(new Error('offline'))))
+      await worker.fire('install')
+      await worker.fire('message', { data: { type: 'precache', urls: [page, asset] } })
+      online = false
+      const script = await worker.fire('fetch', { request: new Request(asset) })
+      expect(await script?.text()).toBe(`cached ${asset}`)
+      const shell = await worker.fire('fetch', { request: navigate(page) })
+      expect(await shell?.text()).toBe(`cached ${page}`)
+    })
+
+    it('does not replace the saved app page on navigation, only once its files are cached', async () => {
+      const worker = loadWorker(() => Promise.resolve(new Response('new page')))
+      await worker.fire('install')
+      await worker.fire('fetch', { request: navigate(page) })
+      const [name] = [...worker.stores.keys()]
+      const cache = await worker.open(name ?? '')
+      expect(await (await cache.match('./index.html'))?.text()).toBe('cached ./index.html')
+      await worker.fire('message', { data: { type: 'precache', urls: [page, asset] } })
+      expect(await (await cache.match('./index.html'))?.text()).toBe(`cached ${page}`)
+    })
   })
 })
+
