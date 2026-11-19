@@ -127,6 +127,18 @@ describe('the real Long Beach dataset', () => {
     })
   })
 
+  describe('round 4', () => {
+    const matcher = createMatcher(dataset)
+
+    it.each(['sealer', 'shellac', 'clear coating'])('answers %j with PaintCare, quoting the paint page', (query) => {
+      const result = matcher.search(query)
+      expect(result.kind).toBe('answer')
+      if (result.kind !== 'answer') return
+      expect(result.destination.id).toBe('paintcare-dropoff')
+      expect(result.rule.evidence.map((quote) => quote.text).join(' ')).toContain('Sealers Clear coatings (e.g., shellac and varnish)')
+    })
+  })
+
   it('builds a matcher with no term claimed by two rules', () => {
     expect(() => createMatcher(dataset)).not.toThrow()
   })

@@ -1,7 +1,7 @@
 Source: Organics 101: Feed the Green, Not the Landfill
 URL: https://www.longbeach.gov/lbrecycles/news/organics-101-feed-the-green-not-the-landfill/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.132Z
+Fetched: 2026-11-19T07:58:33.369Z
 SHA-256 of raw HTML: 7dbdb0a21564e575469295b990145903ca55c9bf26401a9630c1086acd867719
 ---
 Home »
@@ -16,7 +16,7 @@ It’s state law. California’s Senate Bill 1383 (SB 1383) requires residents a
 It keeps organics out of the landfill. When food scraps and yard trimmings break down in a landfill, they release methane, a harmful gas that traps the sun’s heat, contributes to climate change, and can harm our health. Turning organics into compost helps cut pollution and protects our community.
 Who is my hauler?
 The City of Long Beach picks up trash and organics from all single-family homes and some businesses and apartment buildings. The City contracts with WM to pick up recycling. The City also has a Non-Exclusive Franchise system for other businesses and apartment buildings, as well as construction and demolition debris. Your hauler’s name will be printed on your trash, recycling, and organics carts or bins. You can find a list of permitted haulers in Long Beach and learn how to contact them on the City’s Private Waste Haulers page.
-If you want to self-haul organics as a business, including landscaping businesses, you must comply with the self-haul requirements of Section 8.60.370.G of the Municode .
+If you want to self-haul organics as a business, including landscaping businesses, you must comply with the self-haul requirements of Section 8.60.370.G of the Municode.
 What can go in the organics (green) cart?
 Items
 Tips
@@ -51,12 +51,12 @@ Hazardous wood waste or treated wood, such as furniture parts
 Recyclables, including items listed on the Recycling Guidelines
 Trash, including items listed on the Refuse Guidelines
 Oil
-Household Hazardous Waste (HHW) and electronic waste (e-waste). View more information on drop-off locations .
+Household Hazardous Waste (HHW) and electronic waste (e-waste). View more information on drop-off locations.
 Bulky or oversized items and tires
 Carpet
 Non-compostable paper
 Where does the organic material go?
-Organic material from the green cart first goes to a transfer station. It is then sent to one of three industrial composting facilities: Recology Blossom Valley Organics , Sage Ranch Compost , or American Organics Composting Facility . Yard trimmings and food scraps are turned into compost, which helps improve soil quality.
+Organic material from the green cart first goes to a transfer station. It is then sent to one of three industrial composting facilities: Recology Blossom Valley Organics, Sage Ranch Compost, or American Organics Composting Facility. Yard trimmings and food scraps are turned into compost, which helps improve soil quality.
 By using your organics cart correctly, you help keep organic material out of landfills, cut methane pollution, and create healthy compost for our soil.
 How Can I Reduce Waste?
 In addition to participating in curbside recycling and organics collection service, there are many ways to reduce waste at home:
@@ -68,4 +68,4 @@ Request paperless billing: Save paper by paying your monthly bills online.
 Use rechargeable batteries: Save money and avoid waste by choosing rechargeable batteries over single-use ones.
 Switch to reusables: Avoid single-use disposables like water bottles, straws, and utensils by bringing your own.
 You can join a waste‑reduction workshop on the City’s Waste Reduction Workshops page.
-You can also learn how to compost at home on the Composting at Home page or learn about community composting on the LB Community Compost website .
+You can also learn how to compost at home on the Composting at Home page or learn about community composting on the LB Community Compost website.

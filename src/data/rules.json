@@ -1001,7 +1001,7 @@
       {
         "sourceId": "lb-green-cart",
         "lang": "en",
-        "text": "Please schedule a special collection by visiting longbeach.gov/specialcollection ."
+        "text": "Please schedule a special collection by visiting longbeach.gov/specialcollection."
       }
     ],
     "terms": [
@@ -1035,7 +1035,7 @@
       {
         "sourceId": "lb-special-collection",
         "lang": "en",
-        "text": "Do not place sharp objects in plastic bags , such as branches, sticks or broken glass. All bags and bundles must be securely tied."
+        "text": "Do not place sharp objects in plastic bags, such as branches, sticks or broken glass. All bags and bundles must be securely tied."
       }
     ],
     "terms": [
@@ -1383,7 +1383,7 @@
       {
         "sourceId": "lb-special-collection",
         "lang": "en",
-        "text": "Glass items that are not properly wrapped will not be collected ."
+        "text": "Glass items that are not properly wrapped will not be collected."
       }
     ],
     "tips": [
@@ -1620,7 +1620,7 @@
       {
         "sourceId": "lb-paint",
         "lang": "en",
-        "text": "There are various types of paint and associated products : Interior and exterior architectural paints such as latex, acrylic , and others Lacquers and varnishes Primers Thinners"
+        "text": "There are various types of paint and associated products: Interior and exterior architectural paints such as latex, acrylic, and others Lacquers and varnishes Primers Thinners"
       },
       {
         "sourceId": "lb-paint",
@@ -1677,7 +1677,7 @@
       {
         "sourceId": "lb-paint",
         "lang": "en",
-        "text": "The fo llowing items are not accepted at PaintCare drop-off sites. Please take these items to a Household Hazardous Waste (HHW) Collection Center or collection event . A erosols (spray cans) Solvents"
+        "text": "The following items are not accepted at PaintCare drop-off sites. Please take these items to a Household Hazardous Waste (HHW) Collection Center or collection event. Aerosols (spray cans) Solvents"
       }
     ],
     "tips": [],
@@ -1695,6 +1695,29 @@
       "aerosol",
       "lata de aerosol"
     ]
+  },
+  {
+    "id": "sealers-clear-coatings",
+    "label": {
+      "en": "Sealers and clear coatings (e.g., shellac and varnish)"
+    },
+    "destination": "paintcare-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "PaintCare sites accept: House paint Primers Stains Sealers Clear coatings (e.g., shellac and varnish)"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "sealer",
+      "wood sealer",
+      "clear coating",
+      "clear coat",
+      "shellac"
+    ],
+    "termsEs": []
   },
   {
     "id": "fluorescent-bulbs",
@@ -1745,7 +1768,7 @@
       {
         "sourceId": "lb-universal-waste",
         "lang": "en",
-        "text": "CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up ."
+        "text": "CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up."
       }
     ],
     "tips": [],
@@ -2185,7 +2208,7 @@
       {
         "sourceId": "lb-treecycling",
         "lang": "en",
-        "text": "If collection is needed after January 9, 2027, residents should submit a Special Collections request ."
+        "text": "If collection is needed after January 9, 2027, residents should submit a Special Collections request."
       }
     ],
     "terms": [

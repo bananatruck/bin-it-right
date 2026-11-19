@@ -1,8 +1,8 @@
 Source: Recycling Collection FAQs
 URL: https://www.longbeach.gov/lbrecycles/recycling/recycling-collection-faqs/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:27.809Z
-SHA-256 of raw HTML: 2962b374950f06969721255e4c09d83f94f4a61ac0ad32887463c11c3c87e32e
+Fetched: 2026-11-19T07:58:33.035Z
+SHA-256 of raw HTML: 665348f9469fd53b0bda19082a92876d31006cbce06350a2d969714e790eae2c
 ---
 Home »
 Long Beach Recycles »
@@ -14,8 +14,8 @@ New look, same simple recycling!
 In compliance with SB 1383, all Long Beach residents with City‑serviced trash, recycling and organics service had their purple recycling carts exchanged for blue recycling carts beginning in February 2026. The exchange took place under the residential recycling contract with WM (formerly Waste Management), which oversaw the process and used a third‑party contractor because of the scale of the effort.
 The recycling cart exchange occurred on each customer’s regularly scheduled service day. We delivered blue recycling carts to all City‑serviced customers, providing the same size and number of carts.
 If a resident’s cart exchange was missed, please report any remaining purple recycling cart(s) for collection and/or request a blue recycling cart through our online form or by calling (562) 570‑2876. We will add the request to the queue and complete it on the resident’s next service day, or within three service‑cycle days, depending on queue volume. We ask customers to leave their recycling cart out on their regular service day, empty, until it is collected.
-To find your service day, click this link to use the City’s Map-It tool .
-This information applies only to City‑serviced residents . Other service providers may not be participating in a cart‑exchange process, as their customers may already have blue recycling carts. For service information about non‑City‑serviced addresses, see the following page:
+To find your service day, click this link to use the City’s Map-It tool.
+This information applies only to City‑serviced residents. Other service providers may not be participating in a cart‑exchange process, as their customers may already have blue recycling carts. For service information about non‑City‑serviced addresses, see the following page:
 Multifamily apartments, condos, & businesses serviced by a private hauler
 Purple to Blue Recycling Cart Exchange FAQs
 Why is the City switching from purple to blue recycling carts?
@@ -35,13 +35,13 @@ If your cart exchange was missed, please report any remaining purple recycling c
 What if I received a blue recycling cart, but my purple recycling cart wasn’t picked up?
 If your cart exchange was missed, please report any remaining purple recycling cart(s) for collection and/or request a blue recycling cart through our online form or by calling (562) 570-2876. We will add the request to the queue and complete it on your next service day, or within three service cycle days, depending on queue volume. Please leave your recycling cart out on your regular service day, empty, until it is collected.
 What can go in the new blue recycling cart?
-The recycling guidelines have not changed. You can place the same items previously accepted in the purple recycling cart in the blue recycling cart. View the City's Recycling Guidelines .
+The recycling guidelines have not changed. You can place the same items previously accepted in the purple recycling cart in the blue recycling cart. View the City's Recycling Guidelines.
 Will my service cost more with the new cart?
 There is no additional cost to swap your purple recycling cart for the new blue recycling cart. You will receive the same number and size of carts you currently have; only the color and design will change.
 What if I want a different size or an additional recycling cart?
-During the recycling cart exchange period, all requests for different‑size or additional recycling carts will be postponed until July 2026 and then completed in the order received. Those requests can be placed by clicking the link to access the using the c art request form .
+During the recycling cart exchange period, all requests for different‑size or additional recycling carts will be postponed until July 2026 and then completed in the order received. Those requests can be placed by clicking the link to access the using the cart request form.
 What will happen to the purple recycling carts?
-All purple recycling carts will be collected and returned to the manufacturer for recycling. The materials will be responsibly processed and reused to produce new carts. To learn how the cart manufacturer recycles the carts, visit their website by clicking this link, Sustainable Waste Management Solutions | Rehrig Pacific .
+All purple recycling carts will be collected and returned to the manufacturer for recycling. The materials will be responsibly processed and reused to produce new carts. To learn how the cart manufacturer recycles the carts, visit their website by clicking this link, Sustainable Waste Management Solutions | Rehrig Pacific.
 What if I already have a blue recycling cart, will I get a new one?
 No. If you already have a blue recycling cart, it will not be exchanged unless it is damaged or stolen.
 Recycling FAQs
@@ -50,7 +50,7 @@ Recycling prevents usable material from going to waste and conserves our natural
 What can I put in my recycling cart?
 Please see our recycling guidelines to find out what should and should not go into your recycling cart.
 What day is my collection?
-Find your collection day . If you would like to call us instead, please call our Customer Service line at (562) 570-2876.
+Find your collection day. If you would like to call us instead, please call our Customer Service line at (562) 570-2876.
 What time does my cart need to be out for service?
 Place your carts out for service by 6:00 AM on your service day and bring them in within 12 hours of being serviced.
 Where should I place my cart for collection?
@@ -58,12 +58,12 @@ You should place your recycling and trash carts on the street, with approximatel
 If my cart is not full, should I set it out anyway?
 No. It is not necessary to roll out your cart if you feel you have enough room to get you through the next week.
 Who collects the recyclables?
-The City contracts with Waste Management, Inc. for the collection of recyclable materials. Waste Management takes the recyclables to Potential Industries , a Materials Recovery Facility in Wilmington, where they are sorted and prepared for the marketplace.
+The City contracts with Waste Management, Inc. for the collection of recyclable materials. Waste Management takes the recyclables to Potential Industries, a Materials Recovery Facility in Wilmington, where they are sorted and prepared for the marketplace.
 Why do I have to pay for recycling?
 The charge to residents for recycling service is minimal in comparison to trash, but with the trucks, workers, facilities needed to pick up and process recyclables, there is still a cost for the service.
 I do my own recycling/ I don’t recycle. Why am I charged for recycling?
 By Municipal Code, all City serviced accounts are charged for trash/recycling collection service. The cost of the service is evenly distributed, with everyone paying the same amount for recycling. Even if you do your own recycling, the truck comes down your street or alley, and any recycling you set out will be collected.
 What about scavengers?
-If you see someone scavenging through recycling carts, call the Long Beach Police Department at (562) 435-6711 or use our online report form .
+If you see someone scavenging through recycling carts, call the Long Beach Police Department at (562) 435-6711 or use our online report form.
 My recycling and/or refuse is too big. Are there other cart sizes?
-32 gallon and 64-gallon carts are available. If you’d like to request one, call our Call Center at (562) 570-2876 or use our online form .
+32 gallon and 64-gallon carts are available. If you’d like to request one, call our Call Center at (562) 570-2876 or use our online form.

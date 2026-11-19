@@ -1,7 +1,7 @@
 Source: Hazardous Waste 101
 URL: https://www.longbeach.gov/lbrecycles/hazardous-waste-101/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.334Z
+Fetched: 2026-11-19T07:58:33.475Z
 SHA-256 of raw HTML: 313452480cb116a81c25faca4f9fdc55c5ec3851f0db2678948101a935a25e16
 ---
 Home »
@@ -51,7 +51,7 @@ Los Angeles County EDCO Recycling and Transfer Environmental Collection Center
 2755 California Ave.
 Signal Hill, CA 90755
 View the schedule of upcoming dates
-For questions, please call (562) 570-2876 or email lbrecycles@longbeach.gov .
+For questions, please call (562) 570-2876 or email lbrecycles@longbeach.gov.
 What is the Criteria for Reuse Center Products?
 All items available at the Reuse Center are only from the EDCO HHW/E-Waste collection events. During HHW/E-Waste collection event at EDCO, residents will drop off their waste and it will be sorted by the contracted HHW technicians (Contractor). The Contractor will visually inspect each container and apply the following criteria to sort materials eligible for reuse:
 The product is not electronic waste.

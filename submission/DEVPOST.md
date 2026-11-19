@@ -42,7 +42,7 @@ Under it is the City of Long Beach's rule quoted word for word, a link to the Ci
 If a word is ambiguous or misspelled ("battery" could be alkaline or lithium-ion), it asks "Did you mean" instead of guessing.
 If none of the City rules in the app match ("aluminum foil"), it says "No official rule found in this app" and gives the City's email, phone and a ready-made gap report, because the City may have guidance the app does not include.
 In Spanish mode it shows the City's own Spanish wording where the City publishes it, and says when a rule exists only in English, instead of machine-translating an official rule.
-You can browse all 62 rules by destination, see the 20 saved City sources, and open "Why this answer" to see exactly how your words were matched.
+You can browse all 63 rules by destination, see the 20 saved City sources, and open "Why this answer" to see exactly how your words were matched.
 It works offline after the first visit and has no accounts, no tracking and no AI model at runtime.
 
 ### How I built it

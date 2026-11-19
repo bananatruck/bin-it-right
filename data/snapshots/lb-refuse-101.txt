@@ -1,8 +1,8 @@
 Source: Refuse Collection 101
 URL: https://www.longbeach.gov/lbrecycles/refuse/curbside-collection/refuse-collection-101/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:27.927Z
-SHA-256 of raw HTML: c15f69943a0e72f5b979bd4a3e31f759ac3cbee8fabcb3c9b8da44f079a3b623
+Fetched: 2026-11-19T07:58:33.145Z
+SHA-256 of raw HTML: dc12c18cdf6eb6403666c7f7f45d48bda90c153b302c60dd5e37679341578cfa
 ---
 Home »
 Long Beach Recycles »
@@ -17,27 +17,27 @@ Reporting dumped items: New Report Form
 Requesting a cart exchange/replacement: Request a Trash, Recycling, Organics Cart Form
 Reporting a missed pickup after 6:00 PM on your collection day: Report a Problem Form
 The City of Long Beach, Energy and Environmental Services Department, operates a collection program that currently serves approximately 118,000 commercial and residential accounts. If serviced by the City of Long Beach, City staff collect refuse (trash) and organics, while the City contracts with Waste Management for recycling collection services.
-There are also a limited number of private waste haulers permitted to haul solid waste from customers within the City of Long Beach. If one of the permitted private haulers services your household, please contact them directly for service details. View private hauler information .
+There are also a limited number of private waste haulers permitted to haul solid waste from customers within the City of Long Beach. If one of the permitted private haulers services your household, please contact them directly for service details. View private hauler information.
 Frequently Asked Questions (FAQs)
 When and where should I set my cart(s) out for collection?
 Follow the guide below to ensure your trash, recycling, and organics carts are set up correctly on your designated collection day.
 Collection can occur anytime between 7:00 AM and 6:00 PM.
-Place all carts out in the alley or curbside by 6:00 AM on your collection day . Carts must be returned to the property premises within 12 hours after they have been emptied.
+Place all carts out in the alley or curbside by 6:00 AM on your collection day. Carts must be returned to the property premises within 12 hours after they have been emptied.
 Leave two (2) feet of space between trash, recycling, and organics carts (or parked cars).
 Place all contents inside your cart. The automated system cannot collect trash, recycling, or organics set out in containers other than those provided, such as bags or boxes.
 Make sure the arrow on the lid is pointing toward the street and the lid is closed.
 Avoid overfilling the cart. The automated system works most effectively when the lid is completely closed. Do not place more than 200 pounds in your 95-gallon cart, or more than 150 pounds in your 65-gallon cart.
 What should I do if my collection is missed?
 Account holders are advised to ensure that carts are placed at the curb or in the alley by 6:00 AM on the scheduled service date and left out until 6:00 PM.
-Missed collections may be reported after 6:00 PM via : Report a Problem Form.
+Missed collections may be reported after 6:00 PM via: Report a Problem Form.
 The cart should be left out and accessible for collection the following day.
 What is the process to exchange my cart(s)?
 Exchanges are processed at the earliest available date based on inventory and delivery schedules.
-To request a cart, submit a request online .
+To request a cart, submit a request online.
 Cart sizes are available in 95-gallon, 65-gallon, and 35-gallon.
-If you recently received a new cart , customers are asked to wait at least two weeks, preferably longer, after receiving their new cart before submitting a size-change request.
-In accordance with Chapter 8.60.020 of the Long Beach Municipal Code, exchanges are permitted once every six months . For residents opting to reduce their cart size, City staff will monitor for potential overage issues. If no concerns are identified, the new size will be maintained; however, if safety, overage, or service complications arise, the cart will be reverted to the standard 95-gallon size.
-If a reduced organics cart is requested and no concerns are identified, and the size was not available at the time of the request , a bill credit will be provided to the customer’s account backdated to the date of the exchange requested through the online form.
+If you recently received a new cart, customers are asked to wait at least two weeks, preferably longer, after receiving their new cart before submitting a size-change request.
+In accordance with Chapter 8.60.020 of the Long Beach Municipal Code, exchanges are permitted once every six months. For residents opting to reduce their cart size, City staff will monitor for potential overage issues. If no concerns are identified, the new size will be maintained; however, if safety, overage, or service complications arise, the cart will be reverted to the standard 95-gallon size.
+If a reduced organics cart is requested and no concerns are identified, and the size was not available at the time of the request, a bill credit will be provided to the customer’s account backdated to the date of the exchange requested through the online form.
 When is my collection day?
 Use the MapIt Application to access your trash, recycling, and organics collection day, street sweeping information, and more.
 How To Use MapIt:
@@ -47,11 +47,11 @@ Scroll down to “Trash, Recycling, and Organics Pickup Day” and find your ser
 Trash, recycling, and organics are collected on all holidays except*:
 Christmas (December 25)
 New Year's Day (January 1).
-* When Christmas and New Year’s Day fall on a weekday , collection for the holiday and the remainder of that week will be delayed one day, ending on Saturday. When Christmas and New Year's Day fall on a Saturday , collection will occur on the Friday before the holiday.
-For all other holidays , refuse and recycling collection will occur on your regular collection day.
+*When Christmas and New Year’s Day fall on a weekday, collection for the holiday and the remainder of that week will be delayed one day, ending on Saturday. When Christmas and New Year's Day fall on a Saturday, collection will occur on the Friday before the holiday.
+For all other holidays, refuse and recycling collection will occur on your regular collection day.
 What CAN go in the Trash, Recycling, and Organics carts?
 Trash, Recycling, and Organics Guidelines (English and Spanish)
-To request the guidelines in an alternative format, contact LBRecycles@longbeach.gov .
+To request the guidelines in an alternative format, contact LBRecycles@longbeach.gov.
 What Can Never Go in Any Cart?
 Household hazardous waste (HHW) (paint, motor oil, gasoline, household cleaners, etc.)
 Rocks, concrete, or dirt

@@ -1,7 +1,7 @@
 Source: Paint
 URL: https://www.longbeach.gov/lbrecycles/hazardous-waste-101/paint-use-recycling/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.863Z
+Fetched: 2026-11-19T07:58:34.038Z
 SHA-256 of raw HTML: fc56e4c3956bfbec2dce21c1e8113d71569dfad03e904fe0aac928be79c27c13
 ---
 Home »
@@ -9,8 +9,8 @@ Long Beach Recycles »
 Household Hazardous Waste »
 Paint
 Paint
-There are various types of paint and associated products :
-Interior and exterior architectural paints such as latex, acrylic , and others
+There are various types of paint and associated products:
+Interior and exterior architectural paints such as latex, acrylic, and others
 Lacquers and varnishes
 Primers
 Thinners
@@ -18,30 +18,30 @@ Spray paint
 Auto and marine paint
 See the full list of paints, paint products, and what can be recycled through PaintCare
 Why is it important to dispose of paint properly?
-Most paints contain Volatile Organic Compounds or VOC s. VOC s are solvents that are released into the air as paint dries. It’s what makes paint smell the way that it does and why a freshly painted room can make a person not feel well.
+Most paints contain Volatile Organic Compounds or VOCs. VOCs are solvents that are released into the air as paint dries. It’s what makes paint smell the way that it does and why a freshly painted room can make a person not feel well.
 Recycle your unused paint and prevent toxic chemicals from entering our environment.
-Follow these tips to reduce paint waste :
-Whenever possible, b uy recycled paint or eco-friendly paints that specifically state that they have low or zero Volatile Organic Compounds (VOC s).
-Buy the right amount of paint. E stimate the square footage you will be painting and allow paint store staff to assist you in purchasing the right amount.
+Follow these tips to reduce paint waste:
+Whenever possible, buy recycled paint or eco-friendly paints that specifically state that they have low or zero Volatile Organic Compounds (VOCs).
+Buy the right amount of paint. Estimate the square footage you will be painting and allow paint store staff to assist you in purchasing the right amount.
 Make unused paint last by clearing the rim of paint and tightly closing the lid. Store in a cool, dry location.
 Recycle paint you are not going to use.
 Where can I recycle my paint?
-The American Coatings Association established PaintCare ® , a non-profit organization responsible for implementing state-mandated paint stewardship programs on behalf of paint manufacturers . A PaintCare Recovery Fee is now included in the purchase price of products that will be accepted at PaintCare drop-off sites, as required by the California Paint Stewardship Law.
+The American Coatings Association established PaintCare®, a non-profit organization responsible for implementing state-mandated paint stewardship programs on behalf of paint manufacturers. A PaintCare Recovery Fee is now included in the purchase price of products that will be accepted at PaintCare drop-off sites, as required by the California Paint Stewardship Law.
 Fees are based on container size:
 Half-pint or less | No fee
 Half-pint to 1 gallon | $0.35
 1 gallon | $0.75
 1 to 5 gallons | $1.60
 PaintCare sites accept:
-H ouse paint
-P rimers
-S tains
-S ealers
-C lear coatings (e.g., shellac and varnish)
-The fo llowing items are not accepted at PaintCare drop-off sites. Please take these items to a Household Hazardous Waste (HHW) Collection Center or collection event .
-A erosols (spray cans)
+House paint
+Primers
+Stains
+Sealers
+Clear coatings (e.g., shellac and varnish)
+The following items are not accepted at PaintCare drop-off sites. Please take these items to a Household Hazardous Waste (HHW) Collection Center or collection event.
+Aerosols (spray cans)
 Solvents
 Products intended for industrial or non-architectural use
-Drop - Off Locations
+Drop-Off Locations
 + Local weekend HHW Collection Events
 + PaintCare® Partner Drop-Off Sites
