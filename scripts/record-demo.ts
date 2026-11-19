@@ -282,6 +282,8 @@ async function main(): Promise<void> {
   const last = cues.at(-1)
   if (last === undefined) throw new Error('No captions were recorded')
   const duration = last.end + 0.5
+  // The hackathon allows 2 to 3 minutes. Scene lengths stretch on a busy machine, so keep a 5 s margin.
+  if (duration > 175) throw new Error(`The footage runs ${clock(duration)}, over the 2:55 margin; re-record on a less busy machine.`)
   const srt = cues.map((cue, i) => `${String(i + 1)}\n${srtTime(cue.start)} --> ${srtTime(cue.end)}\n${cue.text}\n`).join('\n')
   const srtPath = join(outDir, 'bin-it-right-demo.srt')
   writeFileSync(srtPath, srt)

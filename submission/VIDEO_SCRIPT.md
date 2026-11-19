@@ -2,7 +2,7 @@
 
 The rules ask for "A demo video, [2 to 3] minutes max, showing the project working", uploaded to YouTube or Vimeo and linked.
 The video is recorded from the live site, https://bananatruck.github.io/bin-it-right/, by `scripts/record-demo.ts`; see `docs/RECORDING.md`.
-It runs about 2 minutes 38 seconds, at 1920 by 1080, with English captions and no voice, music or third-party branding.
+It runs about 2 minutes 45 seconds (2:46 in the recording of 2026-11-18, 23:00 PST), at 1920 by 1080, with English captions and no voice, music or third-party branding.
 The captions describe what is on screen; nothing is presented as anyone speaking.
 For a narrated version, read the same lines over the uncaptioned file, using the exact times in `submission/video/timed-script.md`.
 
@@ -60,7 +60,7 @@ On screen: the browser's network is switched off (by the recording script) and t
 - "Offline test: the network is switched off and the page is reloaded."
 - "After one visit, it still answers with no connection."
 
-### 2:10 to 2:38, the data and the close
+### 2:10 to 2:46, the data and the close
 
 On screen: the rule list by destination, the "Sources" list with dates and hashes, then the home page.
 
