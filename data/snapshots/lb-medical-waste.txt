@@ -1,7 +1,7 @@
 Source: Medical Waste
 URL: https://www.longbeach.gov/lbrecycles/hazardous-waste-101/medical-waste/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.769Z
+Fetched: 2026-11-19T07:58:33.941Z
 SHA-256 of raw HTML: 4c7db4b1485be8c0dcbf0291c372daa105884de887bf18fe748cd7906c99f5d1
 ---
 Home »
@@ -17,7 +17,7 @@ Properly dispose of all medications. Never flush medications down the toilet or 
 Physicians, hospitals, and other medical care providers are often willing to take back sharps generated at home.
 Where Can I Safely Dispose of My Medical Waste?
 Residents can safely dispose of their medical waste through the following options:
-Drop it off at a designated bin location listed on the California Product Stewardship Council website. You can also find more information on their unused medication collection program called Don’t Rush to Flush .
+Drop it off at a designated bin location listed on the California Product Stewardship Council website. You can also find more information on their unused medication collection program called Don’t Rush to Flush.
 Visit pharmacies such as Walgreens and CVS
 Take to a local HHW collection center or collection event
 + Local weekend HHW Collection Events

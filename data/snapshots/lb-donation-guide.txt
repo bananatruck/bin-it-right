@@ -1,7 +1,7 @@
 Source: Donation Guide
 URL: https://www.longbeach.gov/lbrecycles/waste-reduction/reduce-waste/donation-guide/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:29.451Z
+Fetched: 2026-11-19T07:58:34.853Z
 SHA-256 of raw HTML: 7db0107ac5676d6ce989971a9526fa6696b9ef245e0d2140f2465ea54d8e0ab8
 ---
 Home »
@@ -10,14 +10,14 @@ Waste Reduction »
 Reduce Waste »
 Donation Guide
 Donation Guide
-Give you r used items a second life by donating your unwanted clothes, furniture, electronics, and household items. There are multiple reasons to donate your used goods in Long Beach.
+Give your used items a second life by donating your unwanted clothes, furniture, electronics, and household items. There are multiple reasons to donate your used goods in Long Beach.
 Support non-profits and community organizations in providing jobs and training
 Give items a second life
-R educe waste by diverting your items from your trash
+Reduce waste by diverting your items from your trash
 Donations are tax-deductible
 It feels good to give back!
 Where Can I Donate?
-See below for a list of organizations that accept donations . Confirm with the organization first for a list of accepted items. Some organizations may also provide a free pickup.
+See below for a list of organizations that accept donations. Confirm with the organization first for a list of accepted items. Some organizations may also provide a free pickup.
 Non-Profits/Charitable Organizations:
 AIDS Assistance Thrift Store 2749 E. Anaheim St. Long Beach, CA 90804 (562) 987-5353
 The AIDS Assistance Thrift Store Inc. collects and sells donated items through the AIDS Assistance Thrift Store, performs fundraising activities, provides facilities for volunteers and people choosing to perform community service, and directly engages in the business of raising funds to be distributed to various agencies and programs in the Long Beach community who provide direct services and support to men, women, and children living with HIV and AIDS, and their families.
@@ -29,19 +29,19 @@ With stores throughout California, American Cancer Society Discovery Shops help 
 AMVETS Thrift Store
 3315 E. South St.
 Long Beach, CA 90805
-( 562) 272-7300
+(562) 272-7300
 AMVETS Department of California Service Foundation is dedicated to serving California Veterans, their families, and survivors by providing professional assistance, guidance, and advocacy in accessing the benefits and services they have earned through the U.S. Department of Veterans Affairs (VA). Through our programs, Veterans and their families receive knowledgeable, compassionate support navigating the VA and benefits process. These vital services are provided at no cost to Veterans or their families.
 Your support helps make it possible for us to continue serving California Veterans and ensuring they receive the benefits, resources, and assistance they have earned.
 Assistance League of Long Beach Thrift & Vintage Shop
-2100 E. 4 th St.
+2100 E. 4th St.
 Long Beach, CA 90814
-( 562) 434-7121
+(562) 434-7121
 Assistance League of Long Beach is a volunteer, nonprofit organization that puts caring and commitment into action through philanthropic programs in the Greater Long Beach community.
 Beacon House Thrift Shop
 3220 E. Anaheim St.
 Long Beach, CA 90804
 (310) 903-4515
-Before making a donation, please review their donation acceptance policy. Small donations could be dropped off daily between 11 am and 7 pm or you can schedule a pick-up here . For large/bulky donations, they ask that you DO NOT drop off, but rather schedule a pick-up .
+Before making a donation, please review their donation acceptance policy. Small donations could be dropped off daily between 11 am and 7 pm or you can schedule a pick-up here. For large/bulky donations, they ask that you DO NOT drop off, but rather schedule a pick-up.
 Beacon House Thrift Shop is a social enterprise program of the Beacon House Association of San Pedro, a state-certified, residential substance abuse recovery program for men and a 501(c)(3) non-profit organization. The men of Beacon House work at the thrift shop to practice the life and job skills they need to build a successful future, while proceeds from second-hand donation sales benefit the recovery program that gives these men a second chance at life!
 Boys & Girls Clubs of Long Beach
 3635 N. Long Beach Blvd.
@@ -50,7 +50,7 @@ Long Beach, CA 90807
 Monetary and age-appropriate in-kind items are accepted.
 To enable all young people, especially those who need us most, to reach their full potential as productive, caring, responsible citizens. Our purpose is to provide caring, adult professionals, and a safe place for youth to learn and grow where hope and opportunity is provided through life-enhancing programs and character development experiences. Before school, after school, during the summer months and on Friday nights, the Boys & Girls Club of Long Beach engages members in fun and educational activities that help develop a sound moral compass and influence their ability to succeed in life.
 Christian Outreach in Action Clark & Atherton Mercantile
-515 E. 3 rd St.
+515 E. 3rd St.
 Long Beach, CA 90802
 (562) 342-6487
 Food donations are also accepted.
@@ -89,16 +89,16 @@ Salvation Army Family Store and Donation Center
 1370 Alamitos Ave.
 Long Beach, CA 90813
 (562) 218-2355
-Visit satruck.org or call 1-800-SA-TRUCK (1-800-728-7825) to find a d rop- o ff l ocation , schedule a free pickup, or donate your vehicle.
-The Salvation Army , an international movement, is an evangelical part of the universal Christian Church. Its mission is to meet human needs in His name without discrimination.
+Visit satruck.org or call 1-800-SA-TRUCK (1-800-728-7825) to find a drop-off location, schedule a free pickup, or donate your vehicle.
+The Salvation Army, an international movement, is an evangelical part of the universal Christian Church. Its mission is to meet human needs in His name without discrimination.
 Resale Retailers
-Selling your used clothes is a great way to help out the environment while earning a little extra cash or trade towards a new wardrobe. If you’re looking to sell or trade your clothes and accessories you’re no longer wearing, simply bring them to the following clothes exchange businesses in Long Beach. Please note that you must be at le ast 18-years-old and have a valid photo ID to sell items. Cash and store credit received may vary.
+Selling your used clothes is a great way to help out the environment while earning a little extra cash or trade towards a new wardrobe. If you’re looking to sell or trade your clothes and accessories you’re no longer wearing, simply bring them to the following clothes exchange businesses in Long Beach. Please note that you must be at least 18-years-old and have a valid photo ID to sell items. Cash and store credit received may vary.
 Tattered
-5555 E . Stearns St . #106
+5555 E. Stearns St. #106
 Long Beach, CA 90815
 (562) 431-4001
-If you are a Long Beach business or organization that accepts donations and would like to be added to this donation list, please email lbrecycles@longbeach.gov .
+If you are a Long Beach business or organization that accepts donations and would like to be added to this donation list, please email lbrecycles@longbeach.gov.
 Food Item Donations
-According to CalRecycle , Californians throw away nearly 6 million tons of food scraps or food waste each year. If you or your business have excess food available, consider working with a food rescue organization to help feed our communit y and prevent food waste. To see a list of food rescue organizations, please visit our Donate to a Food Rescue Organization webpage.
+According to CalRecycle, Californians throw away nearly 6 million tons of food scraps or food waste each year. If you or your business have excess food available, consider working with a food rescue organization to help feed our community and prevent food waste. To see a list of food rescue organizations, please visit our Donate to a Food Rescue Organization webpage.
 Bulky Items
-For bulky or oversized items that are not acceptable for donation , please submit a Special Collection request or call (562) 570-2876 to request to schedule a pickup .
+For bulky or oversized items that are not acceptable for donation, please submit a Special Collection request or call (562) 570-2876 to request to schedule a pickup.

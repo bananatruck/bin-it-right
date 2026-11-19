@@ -5,7 +5,7 @@
     "title": "Trash, Recycling, and Organics Guidelines (English and Spanish)",
     "url": "https://www.longbeach.gov/globalassets/long-beach-recycles/media-library/documents/3-streamguidelines_remediated",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:42:48.554Z",
+    "fetchedAt": "2026-11-19T07:58:30.341Z",
     "sha256": "67a466b0ad283c68a69e5f9d75bc48470955db73b2e4891387761faed95c6e1b",
     "snapshot": "data/snapshots/lb-3stream-pdf.txt"
   },
@@ -15,7 +15,7 @@
     "title": "Recycling Guidelines (English and Spanish)",
     "url": "https://www.longbeach.gov/globalassets/long-beach-recycles/media-library/documents/recycling/recycleguidelines_remediated",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:42:53.072Z",
+    "fetchedAt": "2026-11-19T07:58:32.242Z",
     "sha256": "9730acb922cd0746cdf5ee4ae5428a21b101b91e942ee6d19fe7ddb11e84d82e",
     "snapshot": "data/snapshots/lb-recycle-pdf.txt"
   },
@@ -25,7 +25,7 @@
     "title": "Trash Guidelines (English and Spanish)",
     "url": "https://www.longbeach.gov/globalassets/long-beach-recycles/media-library/documents/refuse/trashguidelines_remediated",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:25.940Z",
+    "fetchedAt": "2026-11-19T07:58:32.741Z",
     "sha256": "a1c8eba8f2bb6206cfb6c91d9345234d4d46a0b3c17fb56b938ae7ea3e479900",
     "snapshot": "data/snapshots/lb-trash-pdf.txt"
   },
@@ -35,7 +35,7 @@
     "title": "Recycling Guidelines",
     "url": "https://www.longbeach.gov/lbrecycles/recycling/recycling-guidelines/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:27.669Z",
+    "fetchedAt": "2026-11-19T07:58:32.917Z",
     "sha256": "ef79fddf3d69afb6de7bc099dfab398806d7d9c425674337f9edeb7e4b2c402c",
     "snapshot": "data/snapshots/lb-recycling-guidelines.txt"
   },
@@ -45,8 +45,8 @@
     "title": "Recycling Collection FAQs",
     "url": "https://www.longbeach.gov/lbrecycles/recycling/recycling-collection-faqs/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:27.809Z",
-    "sha256": "2962b374950f06969721255e4c09d83f94f4a61ac0ad32887463c11c3c87e32e",
+    "fetchedAt": "2026-11-19T07:58:33.035Z",
+    "sha256": "665348f9469fd53b0bda19082a92876d31006cbce06350a2d969714e790eae2c",
     "snapshot": "data/snapshots/lb-recycling-faqs.txt"
   },
   {
@@ -55,8 +55,8 @@
     "title": "Refuse Collection 101",
     "url": "https://www.longbeach.gov/lbrecycles/refuse/curbside-collection/refuse-collection-101/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:27.927Z",
-    "sha256": "c15f69943a0e72f5b979bd4a3e31f759ac3cbee8fabcb3c9b8da44f079a3b623",
+    "fetchedAt": "2026-11-19T07:58:33.145Z",
+    "sha256": "dc12c18cdf6eb6403666c7f7f45d48bda90c153b302c60dd5e37679341578cfa",
     "snapshot": "data/snapshots/lb-refuse-101.txt"
   },
   {
@@ -65,8 +65,8 @@
     "title": "Residential Organics (Green Cart) Collection",
     "url": "https://www.longbeach.gov/lbrecycles/yard-trimmings-food-scraps/residential-yard-trimmings-and-food-scraps-collection/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.036Z",
-    "sha256": "8ed85270f6625805b48f7974eb80e5cd11d81f5a2b4d9b9436bdca56969d53a6",
+    "fetchedAt": "2026-11-19T07:58:33.262Z",
+    "sha256": "fd8fd7920154a051821cee669241de1f6205e04449e3cbe54ba304cb15088e05",
     "snapshot": "data/snapshots/lb-green-cart.txt"
   },
   {
@@ -75,7 +75,7 @@
     "title": "Organics 101: Feed the Green, Not the Landfill",
     "url": "https://www.longbeach.gov/lbrecycles/news/organics-101-feed-the-green-not-the-landfill/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.132Z",
+    "fetchedAt": "2026-11-19T07:58:33.369Z",
     "sha256": "7dbdb0a21564e575469295b990145903ca55c9bf26401a9630c1086acd867719",
     "snapshot": "data/snapshots/lb-organics-101.txt"
   },
@@ -85,7 +85,7 @@
     "title": "Hazardous Waste 101",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.334Z",
+    "fetchedAt": "2026-11-19T07:58:33.475Z",
     "sha256": "313452480cb116a81c25faca4f9fdc55c5ec3851f0db2678948101a935a25e16",
     "snapshot": "data/snapshots/lb-hazardous-waste-101.txt"
   },
@@ -95,7 +95,7 @@
     "title": "Household Hazardous Waste",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/household-hazardous-waste/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.424Z",
+    "fetchedAt": "2026-11-19T07:58:33.590Z",
     "sha256": "1929fccca265557b544d6ca367859af505d909e45ed4f7984dfbf2f1d40d1f7f",
     "snapshot": "data/snapshots/lb-hhw.txt"
   },
@@ -105,7 +105,7 @@
     "title": "E-Waste",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/ewaste/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.511Z",
+    "fetchedAt": "2026-11-19T07:58:33.741Z",
     "sha256": "47bd2af3aeb8c775e0fad4461f166050f78db4754609f7dc388a4201ba077408",
     "snapshot": "data/snapshots/lb-ewaste.txt"
   },
@@ -115,7 +115,7 @@
     "title": "Universal Waste",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/universal-waste/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.635Z",
+    "fetchedAt": "2026-11-19T07:58:33.844Z",
     "sha256": "146d670b4573a892af88253488ddf27ab68595264ec2971db83a8cd924c5f59f",
     "snapshot": "data/snapshots/lb-universal-waste.txt"
   },
@@ -125,7 +125,7 @@
     "title": "Medical Waste",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/medical-waste/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.769Z",
+    "fetchedAt": "2026-11-19T07:58:33.941Z",
     "sha256": "4c7db4b1485be8c0dcbf0291c372daa105884de887bf18fe748cd7906c99f5d1",
     "snapshot": "data/snapshots/lb-medical-waste.txt"
   },
@@ -135,7 +135,7 @@
     "title": "Paint",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/paint-use-recycling/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.863Z",
+    "fetchedAt": "2026-11-19T07:58:34.038Z",
     "sha256": "fc56e4c3956bfbec2dce21c1e8113d71569dfad03e904fe0aac928be79c27c13",
     "snapshot": "data/snapshots/lb-paint.txt"
   },
@@ -145,7 +145,7 @@
     "title": "Used Motor Oil",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/used-motor-oil-recycling/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:28.960Z",
+    "fetchedAt": "2026-11-19T07:58:34.139Z",
     "sha256": "e865f0a760c87eb38ec4a1445d5a5de5934a44b64c137298958ea372a0e1e963",
     "snapshot": "data/snapshots/lb-motor-oil.txt"
   },
@@ -155,7 +155,7 @@
     "title": "Tires",
     "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/tire-recycling/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:29.057Z",
+    "fetchedAt": "2026-11-19T07:58:34.246Z",
     "sha256": "f0e137d7135df521999ad568e49943873805b0ac624c774959dedc99419a5177",
     "snapshot": "data/snapshots/lb-tires.txt"
   },
@@ -165,7 +165,7 @@
     "title": "Special Collection 101",
     "url": "https://www.longbeach.gov/lbrecycles/refuse/special-collections/special-collection-101/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:29.147Z",
+    "fetchedAt": "2026-11-19T07:58:34.557Z",
     "sha256": "e23dd15fce29875e9860ef004a2655b0fe17d6a9336f193e38985b6eb5747fae",
     "snapshot": "data/snapshots/lb-special-collection.txt"
   },
@@ -175,8 +175,8 @@
     "title": "24/7 Mattress Drop-Off",
     "url": "https://www.longbeach.gov/pw/services/247-mattress-drop-off/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:29.223Z",
-    "sha256": "e6a2d7261de9b04cde9a2a2b85f6ce399f998d35aec150cfb9816f49bc6f7d65",
+    "fetchedAt": "2026-11-19T07:58:34.651Z",
+    "sha256": "aaa48ae3865c09b08944216e194cd726c76d57d7238c97afb3e725a03f18c49d",
     "snapshot": "data/snapshots/lb-mattress.txt"
   },
   {
@@ -185,7 +185,7 @@
     "title": "Annual Holiday Treecycling Drop-Off Program",
     "url": "https://www.longbeach.gov/lbrecycles/news/2027-holiday-treecycling/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:29.315Z",
+    "fetchedAt": "2026-11-19T07:58:34.751Z",
     "sha256": "f7dd500e9588d3982b2619cb7266e03f5c6d0017e7dc57126a2647aae2e1a93e",
     "snapshot": "data/snapshots/lb-treecycling.txt"
   },
@@ -195,7 +195,7 @@
     "title": "Donation Guide",
     "url": "https://www.longbeach.gov/lbrecycles/waste-reduction/reduce-waste/donation-guide/",
     "publisher": "City of Long Beach",
-    "fetchedAt": "2026-11-18T07:43:29.451Z",
+    "fetchedAt": "2026-11-19T07:58:34.853Z",
     "sha256": "7db0107ac5676d6ce989971a9526fa6696b9ef245e0d2140f2465ea54d8e0ab8",
     "snapshot": "data/snapshots/lb-donation-guide.txt"
   }

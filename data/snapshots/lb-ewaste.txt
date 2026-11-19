@@ -1,7 +1,7 @@
 Source: E-Waste
 URL: https://www.longbeach.gov/lbrecycles/hazardous-waste-101/ewaste/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.511Z
+Fetched: 2026-11-19T07:58:33.741Z
 SHA-256 of raw HTML: 47bd2af3aeb8c775e0fad4461f166050f78db4754609f7dc388a4201ba077408
 ---
 Home »
@@ -27,5 +27,5 @@ Fax machines
 Why is it important to dispose of E-Waste properly?
 Please properly dispose of E-Waste so that toxic chemicals don’t end up in places where they can harm humans, wildlife, or the environment.
 How do I safely dispose of my E-Waste?
-If your e-waste is unable to be reused, refurbished, or donated, please drop off your items at a local recycling center such as EDCO Recycling and Transfer Station , Secure E-Waste Destruction , or at an HHW collection event near you.
+If your e-waste is unable to be reused, refurbished, or donated, please drop off your items at a local recycling center such as EDCO Recycling and Transfer Station, Secure E-Waste Destruction, or at an HHW collection event near you.
 + Local weekend HHW Collection Events
