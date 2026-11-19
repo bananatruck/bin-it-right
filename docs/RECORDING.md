@@ -41,4 +41,4 @@ Extract one frame per caption and look at it before uploading:
 ffmpeg -ss 30 -i submission/video/bin-it-right-demo-captioned.mp4 -frames:v 1 frame.png
 ```
 
-The hackathon allows 2 to 3 minutes; the recording is about 2 minutes 30 seconds.
+The hackathon allows 2 to 3 minutes; the recording is about 2 minutes 40 seconds.

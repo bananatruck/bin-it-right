@@ -47,7 +47,7 @@ That is enough detail to answer common questions from the City's own words, so L
 |---|---|
 | Official rules | 62 |
 | City pages and PDFs saved | 20 |
-| Search terms (English and Spanish) | 543 |
+| Search terms (English and Spanish) | 542 |
 | Rules with the City's own Spanish wording | 13 |
 
 Each source in `src/data/sources.json` records its URL, title, format, fetch time, the SHA-256 hash of the bytes fetched, and the path of its text snapshot in `data/snapshots/`.

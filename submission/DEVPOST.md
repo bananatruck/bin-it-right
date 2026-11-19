@@ -93,7 +93,7 @@ react, typescript, vite, tailwindcss, motion, vitest, testing-library, github-ac
 
 ## Video demo link
 
-TO FILL: the YouTube or Vimeo URL after recording `submission/VIDEO_SCRIPT.md` (2 to 3 minutes).
+TO FILL: the YouTube or Vimeo URL after uploading `submission/video/bin-it-right-demo-captioned.mp4` (about 2:38, recorded from the live site by `pnpm demo:record`) with `submission/video/bin-it-right-demo.srt` as its English subtitles.
 
 ## Image gallery
 
