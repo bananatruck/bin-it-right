@@ -10,7 +10,7 @@
 
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { htmlToText, extractMainContent } from './extract.ts'
@@ -145,17 +145,46 @@ export async function refresh(options: RefreshOptions = {}): Promise<ManifestEnt
     result.push(fetched.entry)
   }
 
-  // Publish snapshots and manifest together; if any write fails, put every file back as it was.
+  // Publish snapshots and manifest together. Every new file is first written beside its target as
+  // "<name>.staging", so a failed write (a full disk, say) leaves every original untouched. Only then
+  // are the staged files renamed over the originals, which needs no extra space.
   const targets = [...pending.map((fetched) => ({ path: join(root, fetched.entry.snapshot), text: fetched.snapshotText })),
     { path: manifestPath, text: `${JSON.stringify(result, null, 2)}\n` }]
-  const backups = targets.map(({ path }) => ({ path, text: existsSync(path) ? readFileSync(path, 'utf8') : undefined }))
-  try {
-    for (const target of targets) writeFile(target.path, target.text)
-  } catch (error) {
-    for (const backup of backups) {
-      if (backup.text === undefined) rmSync(backup.path, { force: true })
-      else writeFileSync(backup.path, backup.text)
+  const staged = (path: string) => `${path}.staging`
+  const removeStaged = () => {
+    for (const { path } of targets) {
+      try {
+        rmSync(staged(path), { force: true })
+      } catch {
+        // Keep removing the others.
+      }
     }
+  }
+  try {
+    for (const target of targets) writeFile(staged(target.path), target.text)
+  } catch (error) {
+    removeStaged()
+    throw error
+  }
+  const backups = targets.map(({ path }) => ({ path, text: existsSync(path) ? readFileSync(path, 'utf8') : undefined }))
+  const replaced: typeof backups = []
+  try {
+    for (const [index, target] of targets.entries()) {
+      renameSync(staged(target.path), target.path)
+      const backup = backups[index]
+      if (backup !== undefined) replaced.push(backup)
+    }
+  } catch (error) {
+    // Undo every rename that happened; one failed restore must not stop the others.
+    for (const backup of replaced) {
+      try {
+        if (backup.text === undefined) rmSync(backup.path, { force: true })
+        else writeFileSync(backup.path, backup.text)
+      } catch {
+        log(`could not restore ${backup.path}; restore it from git`)
+      }
+    }
+    removeStaged()
     throw error
   }
   log(`wrote ${String(result.length)} sources to src/data/sources.json`)

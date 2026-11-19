@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync, existsSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
@@ -44,13 +44,27 @@ describe('refresh (round 2 review)', () => {
   it('restores the previous snapshots and manifest if publishing fails partway (round 3 review)', async () => {
     const fetchImpl = (() => Promise.resolve(new Response(page(longText)))) as typeof fetch
     const failingWrite = (path: string, data: string) => {
-      if (path.endsWith('sources.json') && data !== '[]\n') throw new Error('disk full')
+      if (path.includes('sources.json') && data !== '[]\n') throw new Error('disk full')
       writeFileSync(path, data)
     }
     await expect(refresh({ root, specs, fetchImpl, log: () => undefined, writeFile: failingWrite })).rejects.toThrow('disk full')
     expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toBe('old snapshot\n')
     expect(existsSync(join(root, 'data', 'snapshots', 'b.txt'))).toBe(false)
     expect(readFileSync(join(root, 'src', 'data', 'sources.json'), 'utf8')).toBe('[]\n')
+  })
+
+  it('stages every file before replacing any original (round 3 follow-up)', async () => {
+    const fetchImpl = (() => Promise.resolve(new Response(page(longText)))) as typeof fetch
+    const written: string[] = []
+    const spyWrite = (path: string, data: string) => {
+      written.push(path)
+      writeFileSync(path, data)
+    }
+    await refresh({ root, specs, fetchImpl, log: () => undefined, writeFile: spyWrite })
+    expect(written.length).toBe(3)
+    expect(written.every((path) => path.endsWith('.staging'))).toBe(true)
+    expect(readdirSync(join(root, 'data', 'snapshots')).filter((name) => name.endsWith('.staging'))).toEqual([])
+    expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toContain('URL: https://www.longbeach.gov/a/')
   })
 })
 
