@@ -1697,6 +1697,29 @@
     ]
   },
   {
+    "id": "sealers-clear-coatings",
+    "label": {
+      "en": "Sealers and clear coatings (e.g., shellac and varnish)"
+    },
+    "destination": "paintcare-dropoff",
+    "evidence": [
+      {
+        "sourceId": "lb-paint",
+        "lang": "en",
+        "text": "PaintCare sites accept: House paint Primers Stains Sealers Clear coatings (e.g., shellac and varnish)"
+      }
+    ],
+    "tips": [],
+    "terms": [
+      "sealer",
+      "wood sealer",
+      "clear coating",
+      "clear coat",
+      "shellac"
+    ],
+    "termsEs": []
+  },
+  {
     "id": "fluorescent-bulbs",
     "label": {
       "en": "Unbroken fluorescent light bulbs"
