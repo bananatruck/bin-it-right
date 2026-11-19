@@ -10,7 +10,12 @@ pnpm demo:record                     # records https://bananatruck.github.io/bin
 pnpm demo:record http://localhost:4791/bin-it-right/   # or any other build
 ```
 
-It needs `ffmpeg` with libx264 and libass, and a Chromium binary (set `CHROMIUM_PATH`, or keep Playwright's browser cache in `~/.cache/ms-playwright`).
+It needs:
+
+- `ffmpeg` on the PATH with the libx264 encoder and the subtitles (libass), drawtext and pad filters; the script checks these before it opens a browser.
+- A Chromium binary: set `CHROMIUM_PATH`, or keep Playwright's browser cache in `~/.cache/ms-playwright`.
+- Playwright's own ffmpeg build, which its video recording uses: `pnpm exec playwright-core install ffmpeg`.
+- The live site or a production preview (`pnpm build && pnpm preview`): the development server registers no service worker, so the offline scene cannot work there, and the script stops after 20 seconds with that message.
 The run takes about three minutes and writes four files to `submission/video/`, which is git-ignored:
 
 - `bin-it-right-demo-captioned.mp4`: 1920 by 1080, H.264, English captions burned in, no audio.

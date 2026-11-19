@@ -5,8 +5,13 @@
 //   submission/video/timed-script.md                   the captions as a timed script to read over the footage
 //
 // Usage: pnpm demo:record [url]     (default: the live site)
-// Needs ffmpeg with libx264 and libass, and a Chromium binary: set CHROMIUM_PATH, or have
-// Playwright's browser cache in ~/.cache/ms-playwright. The video files are git-ignored.
+// Needs:
+//   - ffmpeg on PATH with the libx264 encoder and the subtitles (libass), drawtext and pad filters;
+//     the script checks these before it starts a browser;
+//   - a Chromium binary: set CHROMIUM_PATH, or have Playwright's browser cache in ~/.cache/ms-playwright;
+//   - Playwright's own ffmpeg build, which recordVideo uses: `pnpm exec playwright-core install ffmpeg`.
+// Record the live site or a production preview (`pnpm build && pnpm preview`); the dev server has no
+// service worker, so the offline scene cannot work there. The video files are git-ignored.
 //
 // Captions are neutral descriptions of what is on screen. Nothing is presented as anyone speaking.
 
@@ -25,6 +30,23 @@ const BAR = 1080 - PAGE_HEIGHT
 // CSS zoom lays the page out as if it were 1280 pixels wide while rendering at the full 1920,
 // so text is large and sharp in a 1080p video.
 const ZOOM = 1.5
+
+// Names each ffmpeg feature the export needs that the installed build lacks.
+export function missingFfmpegFeatures(filtersOutput: string, encodersOutput: string): string[] {
+  const hasFilter = (name: string) => new RegExp(`^\\s*\\S+\\s+${name}\\s`, 'm').test(filtersOutput)
+  const missing: string[] = []
+  if (!/\blibx264\b/.test(encodersOutput)) missing.push('libx264 encoder')
+  if (!hasFilter('subtitles')) missing.push('subtitles filter (libass)')
+  if (!hasFilter('drawtext')) missing.push('drawtext filter (libfreetype)')
+  if (!hasFilter('pad')) missing.push('pad filter')
+  return missing
+}
+
+function checkFfmpeg(): void {
+  const run = (flag: string) => execFileSync('ffmpeg', ['-hide_banner', flag], { encoding: 'utf8' })
+  const missing = missingFfmpegFeatures(run('-filters'), run('-encoders'))
+  if (missing.length > 0) throw new Error(`ffmpeg lacks: ${missing.join(', ')}. Install a full ffmpeg build before recording.`)
+}
 
 function findChromium(): string {
   const fromEnv = process.env.CHROMIUM_PATH
@@ -93,6 +115,7 @@ function clock(seconds: number): string {
 }
 
 async function main(): Promise<void> {
+  checkFfmpeg()
   rmSync(rawDir, { recursive: true, force: true })
   mkdirSync(rawDir, { recursive: true })
   const browser = await chromium.launch({ executablePath: findChromium() })
@@ -140,7 +163,12 @@ async function main(): Promise<void> {
 
   // Load, let the service worker take its offline copy, and start the footage after that.
   await page.goto(url, { waitUntil: 'networkidle' })
-  await page.evaluate('navigator.serviceWorker.ready.then(() => undefined)')
+  const workerReady = await page.evaluate(
+    'Promise.race([navigator.serviceWorker.ready.then(() => true), new Promise((resolve) => setTimeout(() => resolve(false), 20000))])',
+  )
+  if (workerReady !== true) {
+    throw new Error('No service worker became active within 20 s; record the live site or a production preview (pnpm build && pnpm preview).')
+  }
   await pause(3)
   await page.mouse.move(WIDTH / 2, PAGE_HEIGHT / 2)
   const footageStart = timeline.now()
@@ -294,4 +322,5 @@ async function main(): Promise<void> {
   console.log(`wrote ${captioned}\nwrote ${plain}\nwrote ${srtPath}`)
 }
 
-await main()
+// Only record when run as a script, so tests can import the helpers above.
+if (import.meta.main) await main()

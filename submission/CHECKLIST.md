@@ -22,7 +22,8 @@ The steps below need the entrant, because they need a Devpost login or a recordi
 1. Log in to Devpost and register for Arbiter Hacks V1 at https://arbiter-hacks-v1.devpost.com/ if not already registered, choosing the Theme Track.
    Registration was not done tonight (agents do not log in or submit on the entrant's behalf).
 2. The demo video is already recorded from the live site: `submission/video/bin-it-right-demo-captioned.mp4` (about 2:38, captions burned in, no voice).
-   Watch it once; if the site changed since, re-record with `pnpm demo:record` (see `docs/RECORDING.md`).
+   The video files are git-ignored, so they exist only on the machine that recorded them: if `submission/video/` is missing or empty, or the site changed since, run `pnpm demo:record` first (see `docs/RECORDING.md`).
+   Then watch it once.
    Optional: to narrate it yourself instead, read `submission/video/timed-script.md` over `bin-it-right-demo-nocaptions.mp4` and run `scripts/add-narration.sh your-voice.m4a`.
 3. Upload the video to YouTube (Public or Unlisted) or Vimeo, add `submission/video/bin-it-right-demo.srt` as the English subtitle track, and copy the link.
 4. Start a new project on Devpost and paste each field from `DEVPOST.md`.
