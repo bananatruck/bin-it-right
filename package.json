@@ -16,7 +16,8 @@
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "sources:fetch": "node scripts/fetch-sources.ts",
     "screenshots": "node scripts/screenshots.ts",
-    "demo:record": "node scripts/record-demo.ts"
+    "demo:record": "node scripts/record-demo.ts",
+    "smoke": "node scripts/smoke.ts"
   },
   "packageManager": "pnpm@10.28.0",
   "engines": {

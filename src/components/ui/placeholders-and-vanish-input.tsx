@@ -100,6 +100,9 @@ export function PlaceholdersAndVanishInput({
   const inputRef = useRef<HTMLInputElement>(null);
   const [internalValue, setInternalValue] = useState(initialValue);
   const [animating, setAnimating] = useState(false);
+  // Bin It Right: each vanish animation gets a number; typing starts a new number, which cancels the
+  // running animation, so a quick next search is never dropped while the old text dissolves.
+  const runRef = useRef(0);
 
   const isControlled = controlledValue !== undefined;
   const value = isControlled ? controlledValue : internalValue;
@@ -170,8 +173,10 @@ export function PlaceholdersAndVanishInput({
   // 800 by 800 canvas per change, and the redraw after the app clears the field erased the particles.
 
   const animate = (start: number) => {
+    const run = ++runRef.current;
     const animateFrame = (pos = 0) => {
       requestAnimationFrame(() => {
+        if (run !== runRef.current) return;
         const newArr: AnimatedPixel[] = [];
         for (let i = 0; i < newDataRef.current.length; i++) {
           const current = newDataRef.current[i];
@@ -265,10 +270,14 @@ export function PlaceholdersAndVanishInput({
         id={id}
         aria-label={ariaLabel}
         onChange={(e) => {
-          if (!animating) {
-            updateValue(e.target.value);
-            onChange?.(e);
+          if (animating) {
+            runRef.current++;
+            newDataRef.current = [];
+            canvasRef.current?.getContext("2d", { willReadFrequently: true })?.clearRect(0, 0, 800, 800);
+            setAnimating(false);
           }
+          updateValue(e.target.value);
+          onChange?.(e);
         }}
         ref={inputRef}
         value={value}
