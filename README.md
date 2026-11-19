@@ -117,6 +117,8 @@ pnpm test           # engine, dataset provenance, UI, service worker and source 
 pnpm build && pnpm preview --port 4791 &
 pnpm screenshots    # headless Chromium screenshots into docs/screenshots/
 pnpm sources:fetch  # re-fetch every City page (needs network and pdftotext)
+pnpm smoke [url]    # quick searches, Spanish and offline in headless Chromium (live site by default)
+pnpm demo:record    # record the submission video (see docs/RECORDING.md)
 ```
 
 `pnpm sources:fetch` rewrites `data/snapshots/` and `src/data/sources.json` with new fetch times and hashes.
