@@ -49,6 +49,7 @@ export const DestinationIdSchema = z.enum([
   'trash-cart',
   'special-collection',
   'hazardous-dropoff',
+  'paintcare-dropoff',
   'e-waste-dropoff',
   'battery-dropoff',
   'bulb-dropoff',

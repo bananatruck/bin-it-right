@@ -34,8 +34,10 @@ export function decodeEntities(text: string): string {
 export function htmlToText(html: string): string {
   let text = html.replace(/<(script|style|noscript)[^>]*>[\s\S]*?<\/\1>/gi, '')
   text = text.replace(/<br\s*\/?>/gi, '\n')
-  text = text.replace(/<\/(p|div|li|h\d|tr|td|th|ul|ol|section|header|footer|article)>/gi, '\n')
-  text = text.replace(/<[^>]+>/g, ' ')
+  text = text.replace(/<\/?(p|div|li|h\d|tr|td|th|ul|ol|dl|dt|dd|table|section|header|footer|article|main|nav|aside|blockquote|figure|form)\b[^>]*>/gi, '\n')
+  // Every other tag is inline: a browser draws adjacent inline elements with no gap, and the City's pages
+  // split words across them (<span>S</span><span>ealers</span>), so they are removed, not replaced by a space.
+  text = text.replace(/<[^>]+>/g, '')
   text = decodeEntities(text)
   return text
     .split('\n')

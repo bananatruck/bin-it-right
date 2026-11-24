@@ -1,7 +1,7 @@
 Source: Trash Guidelines (English and Spanish)
 URL: https://www.longbeach.gov/globalassets/long-beach-recycles/media-library/documents/refuse/trashguidelines_remediated
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:25.940Z
+Fetched: 2026-11-19T07:58:32.741Z
 SHA-256 of raw PDF: a1c8eba8f2bb6206cfb6c91d9345234d4d46a0b3c17fb56b938ae7ea3e479900
 ---
 TRASH

@@ -64,7 +64,7 @@ On screen: the browser's network is switched off (by the recording script) and t
 
 On screen: the rule list by destination, the "Sources" list with dates and hashes, then the home page.
 
-- "All 62 rules, from 20 saved City pages, can be browsed by destination."
+- "All N rules, from M saved City pages, can be browsed by destination." (`pnpm demo:record` fills in N and M from the dataset when it records: 63 and 20 from round 4 on; the recording of 2026-11-18 predates the PaintCare rule and says 62, so re-record it once round 4 is deployed.)
 - "Each source page is saved with its address, the date it was fetched, and a SHA-256 fingerprint."
 - "An automated test fails the build if any quote stops matching its saved page."
 - "Bin It Right: the City's own rules, with the receipts."

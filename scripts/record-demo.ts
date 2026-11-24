@@ -20,6 +20,8 @@ import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync }
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { chromium, type Locator, type Page } from 'playwright-core'
+import rules from '../src/data/rules.json' with { type: 'json' }
+import savedSources from '../src/data/sources.json' with { type: 'json' }
 
 const url = process.argv[2] ?? 'https://bananatruck.github.io/bin-it-right/'
 const outDir = join(import.meta.dirname, '..', 'submission', 'video')
@@ -252,7 +254,7 @@ async function main(): Promise<void> {
 
   // 7. The data.
   await reveal(page.locator('#browse-title'))
-  timeline.caption('All 62 rules, from 20 saved City pages, can be browsed by destination.')
+  timeline.caption(`All ${String(rules.length)} rules, from ${String(savedSources.length)} saved City pages, can be browsed by destination.`)
   await pause(5)
   const sources = page.getByRole('button', { name: /^Sources/ })
   await reveal(sources)

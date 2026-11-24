@@ -64,6 +64,17 @@
     ]
   },
   {
+    "id": "paintcare-dropoff",
+    "label": { "en": "PaintCare paint drop-off" },
+    "action": [
+      { "sourceId": "lb-paint", "lang": "en", "text": "Recycle paint you are not going to use." },
+      { "sourceId": "lb-paint", "lang": "en", "text": "A PaintCare Recovery Fee is now included in the purchase price of products that will be accepted at PaintCare drop-off sites, as required by the California Paint Stewardship Law." }
+    ],
+    "links": [
+      { "label": "Paint", "url": "https://www.longbeach.gov/lbrecycles/hazardous-waste-101/paint-use-recycling/" }
+    ]
+  },
+  {
     "id": "e-waste-dropoff",
     "label": { "en": "E-waste drop-off" },
     "action": [

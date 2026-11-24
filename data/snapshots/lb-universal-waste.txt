@@ -1,7 +1,7 @@
 Source: Universal Waste
 URL: https://www.longbeach.gov/lbrecycles/hazardous-waste-101/universal-waste/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:28.635Z
+Fetched: 2026-11-19T07:58:33.844Z
 SHA-256 of raw HTML: 146d670b4573a892af88253488ddf27ab68595264ec2971db83a8cd924c5f59f
 ---
 Home »
@@ -53,12 +53,12 @@ of Long Beach (CCLB)
 3251 E. 19th St.
 Signal Hill, CA 90755
 (562) 597-8071
-The following household batteries are NOT accepted at the locations listed in the table above. Please drop off these batteries at a household hazardous waste (HHW) collection event :
+The following household batteries are NOT accepted at the locations listed in the table above. Please drop off these batteries at a household hazardous waste (HHW) collection event:
 Lithium primary (single-use) or Lithium-Ion rechargeable batteries (used in some computers and cell phones)
 Batteries generated from businesses (household sources only)
 Fluorescent Light Bulbs
 Fluorescent light bulbs need to be handled with caution and disposed of responsibly. They contain a small amount of mercury in them and can pose a threat to human health if broken. Unbroken bulbs should be recycled at one of the locations below.
-CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up .
+CAUTION: If you should break a fluorescent bulb of any kind, evacuate the general area and follow the Environmental Protection Agency’s guide for cleaning it up.
 Expired, unbroken fluorescent light bulbs can be recycled at the following retail locations:
 Home Depot accepts compact fluorescent bulbs, but not long fluorescent bulbs.
 Lowe's accepts compact fluorescent bulbs at all Long Beach stores and long fluorescent bulbs at the Bellflower Blvd. store only.

@@ -27,7 +27,7 @@ Generic "is this recyclable?" tools answer from general knowledge, which can con
 
 ## What it does
 
-- Answers "which bin?" for 62 items and categories, each one an official City of Long Beach rule.
+- Answers "which bin?" for 63 items and categories, each one an official City of Long Beach rule.
 - Shows the destination as a large slab in the cart's colour, with an icon and a text label, so colour is never the only signal.
 - Quotes the City's wording exactly, with the page title, a link, and the date the page was saved.
 - Adds the City's own tips (such as "Lids On!" and "Flatten Boxes!") and how to use the destination (pickup forms, drop-off sites, hours).
@@ -39,15 +39,15 @@ Generic "is this recyclable?" tools answer from general knowledge, which can con
 
 ## Where the rules come from
 
-Every rule comes from a page or PDF published by the City of Long Beach Energy and Environmental Services Department, fetched on 2026-11-17 (Pacific time).
+Every rule comes from a page or PDF published by the City of Long Beach Energy and Environmental Services Department, first fetched on 2026-11-17 and fetched again on 2026-11-18 (Pacific time), after the text extractor was fixed to join words the City's pages split across inline tags ("S ealers" became "Sealers").
 The City publishes item-level guidelines for all three carts as bilingual English and Spanish PDFs, and web pages for organics, household hazardous waste, e-waste, batteries and bulbs, medical waste, paint, used motor oil, tires, special collections, the 24/7 mattress drop-off, holiday tree recycling and donations.
 That is enough detail to answer common questions from the City's own words, so Long Beach was chosen over Los Angeles County guidance.
 
 | | |
 |---|---|
-| Official rules | 62 |
+| Official rules | 63 |
 | City pages and PDFs saved | 20 |
-| Search terms (English and Spanish) | 542 |
+| Search terms (English and Spanish) | 547 |
 | Rules with the City's own Spanish wording | 13 |
 
 Each source in `src/data/sources.json` records its URL, title, format, fetch time, the SHA-256 hash of the bytes fetched, and the path of its text snapshot in `data/snapshots/`.
@@ -167,7 +167,7 @@ Known limits:
 
 - The dataset covers the City pages it saved; many specific items (for example aluminum foil) match no rule in it, and the app says so and points to the City, which may have guidance the app does not include.
 - Rules are for City-serviced accounts; private haulers may differ.
-- Dated items (the HHW event dates and the 2026 to 2027 Treecycling window) are quoted as published on 2026-11-17 and need a refresh after they pass.
+- Dated items (the HHW event dates and the 2026 to 2027 Treecycling window) are quoted as published on 2026-11-18 and need a refresh after they pass.
 - Spanish interface text has not been reviewed by a native speaker.
 
 ## Demo video

@@ -1,8 +1,8 @@
 Source: 24/7 Mattress Drop-Off
 URL: https://www.longbeach.gov/pw/services/247-mattress-drop-off/
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:43:29.223Z
-SHA-256 of raw HTML: e6a2d7261de9b04cde9a2a2b85f6ce399f998d35aec150cfb9816f49bc6f7d65
+Fetched: 2026-11-19T07:58:34.651Z
+SHA-256 of raw HTML: aaa48ae3865c09b08944216e194cd726c76d57d7238c97afb3e725a03f18c49d
 ---
 Home »
 Public Works »
@@ -13,7 +13,7 @@ Service Information
 The City of Long Beach's Clean Team continues to make it easier for residents to dispose of used mattresses responsibly through the 24/7 Mattress Drop-Off program. This service offers a sustainable and accessible option for Long Beach residents to dispose of used mattresses 24 hours a day, seven days a week. Residents can leave their old mattresses in a clearly designated space located at 970 W. Chester Place and avoid trips to the landfill and landfill fees. This service is provided at no charge to residents and is paid for by the City of Long Beach’s Refuse Fund.
 Service Background
 About 18,000 mattresses are illegally dumped in Long Beach each year, contributing to blight in the community and health risks posed by pests like rats and insects that make homes of them. By offering this service year-round, the City’s Clean Team is able to redirect their efforts from collecting illegally dumped mattresses in public spaces to other critical services that maintain a healthy and safe environment.
-Even when mattresses are collected and properly disposed of, they are often sent to landfills. When decomposing in landfills, mattresses release methane, a greenhouse gas that is more harmful than carbon dioxide. To address this issue, the City partnered with the Mattress Recycling Council , an organization that recycles discarded mattresses throughout California. The City sends collected mattresses to an MRC facility, where they are cut open and sorted by material type, 75% of which is recyclable. From there, the components are repurposed and used in items like carpet padding and construction materials.
+Even when mattresses are collected and properly disposed of, they are often sent to landfills. When decomposing in landfills, mattresses release methane, a greenhouse gas that is more harmful than carbon dioxide. To address this issue, the City partnered with the Mattress Recycling Council, an organization that recycles discarded mattresses throughout California. The City sends collected mattresses to an MRC facility, where they are cut open and sorted by material type, 75% of which is recyclable. From there, the components are repurposed and used in items like carpet padding and construction materials.
 Beginning August 1, 2024, the City piloted the 24/7 drop-off service, which resulted in 607 sustainably repurposed mattresses. Due to the success of the initiative, the service was made permanent as of November 2024.
 Frequently Asked Questions (FAQ)
 Do I need to be a Long Beach resident to drop off my mattress?

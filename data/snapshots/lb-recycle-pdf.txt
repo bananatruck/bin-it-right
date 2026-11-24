@@ -1,7 +1,7 @@
 Source: Recycling Guidelines (English and Spanish)
 URL: https://www.longbeach.gov/globalassets/long-beach-recycles/media-library/documents/recycling/recycleguidelines_remediated
 Publisher: City of Long Beach
-Fetched: 2026-11-18T07:42:53.072Z
+Fetched: 2026-11-19T07:58:32.242Z
 SHA-256 of raw PDF: 9730acb922cd0746cdf5ee4ae5428a21b101b91e942ee6d19fe7ddb11e84d82e
 ---
 RECYCLE EMPTY • CLEAN • DRY • UNBAGGED

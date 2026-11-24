@@ -25,7 +25,7 @@ describe('Bin It Right', () => {
     const region = answer()
     expect(within(region).getByText('Green organics cart')).toBeInTheDocument()
     expect(within(region).getByRole('heading', { name: 'Food-soiled paper (napkins, paper towels, pizza boxes)' })).toBeInTheDocument()
-    const sourceLinks = within(region).getAllByRole('link', { name: /Residential Organics \(Green Cart\) Collection, saved Nov 17, 2026/ })
+    const sourceLinks = within(region).getAllByRole('link', { name: /Residential Organics \(Green Cart\) Collection, saved [A-Z][a-z]{2} \d{1,2}, \d{4}/ })
     expect(sourceLinks[0]).toHaveAttribute(
       'href',
       'https://www.longbeach.gov/lbrecycles/yard-trimmings-food-scraps/residential-yard-trimmings-and-food-scraps-collection/',
