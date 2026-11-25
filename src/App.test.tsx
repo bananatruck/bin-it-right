@@ -159,6 +159,29 @@ describe('round 3 review', () => {
     expect(within(screen.getByRole('region', { name: 'Respuesta' })).getByRole('button', { name: 'Copiar consulta para la Ciudad' })).toBeInTheDocument()
   })
 
+  it.each(['denied', 'unavailable'])('offers a selectable report when the clipboard is %s', async (failure) => {
+    const user = renderApp()
+    const descriptor = Object.getOwnPropertyDescriptor(navigator, 'clipboard')
+    if (failure === 'denied') vi.spyOn(navigator.clipboard, 'writeText').mockRejectedValue(new Error('denied'))
+    else Object.defineProperty(navigator, 'clipboard', { configurable: true, value: undefined })
+    try {
+      await user.click(screen.getByRole('button', { name: 'Aluminum foil' }))
+      await user.click(within(answer()).getByRole('button', { name: 'Copy a gap report' }))
+      expect(within(answer()).getByRole('alert')).toHaveTextContent('Could not copy. Select and copy the report below.')
+      const fallback = within(answer()).getByRole('textbox', { name: 'Gap report' })
+      expect(fallback).toHaveAttribute('readonly')
+      const mailto = within(answer()).getByRole('link', { name: /lbrecycles@longbeach.gov/ }).getAttribute('href')
+      if (mailto === null) throw new Error('Missing report email link')
+      expect(fallback).toHaveValue(new URL(mailto).searchParams.get('body'))
+      expect(within(answer()).queryByRole('button', { name: 'Copied' })).not.toBeInTheDocument()
+      await user.click(screen.getByRole('button', { name: 'Español' }))
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+    } finally {
+      if (descriptor !== undefined) Object.defineProperty(navigator, 'clipboard', descriptor)
+      vi.restoreAllMocks()
+    }
+  })
+
   it('pins each saved-copy link to the commit the dataset was built from', async () => {
     const user = renderApp()
     await user.click(screen.getByRole('button', { name: /^Sources/ }))

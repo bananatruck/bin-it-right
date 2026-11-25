@@ -42,6 +42,8 @@ export interface UiStrings {
   searchSubmit: string
   announceAnswer: (destination: string, item: string) => string
   announceSuggestions: (count: number) => string
+  copyFailed: string
+  gapReportLabel: string
   copied: string
   explainTitle: string
   explainTyped: string
@@ -132,6 +134,8 @@ export const strings: Record<Locale, UiStrings> = {
     searchSubmit: 'Search',
     announceAnswer: (destination, item) => `${item}: ${destination}`,
     announceSuggestions: (count) => `No exact match. ${count} ${count === 1 ? 'suggestion' : 'suggestions'}.`,
+    copyFailed: 'Could not copy. Select and copy the report below.',
+    gapReportLabel: 'Gap report',
     copied: 'Copied',
     explainTitle: 'Why this answer',
     explainTyped: 'You typed',
@@ -251,6 +255,8 @@ export const strings: Record<Locale, UiStrings> = {
     searchSubmit: 'Buscar',
     announceAnswer: (destination, item) => `${item}: ${destination}`,
     announceSuggestions: (count) => `No hay coincidencia exacta. ${count} ${count === 1 ? 'sugerencia' : 'sugerencias'}.`,
+    copyFailed: 'No se pudo copiar. Selecciona y copia la consulta de abajo.',
+    gapReportLabel: 'Consulta para la Ciudad',
     copied: 'Copiado',
     explainTitle: 'Cómo se obtuvo esta respuesta',
     explainTyped: 'Escribiste',
