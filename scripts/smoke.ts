@@ -3,6 +3,7 @@
 // It types each query right after the previous answer, as a person would. This caught a bug where the search
 // box ignored typing while the previous query's vanish animation played, so each answer lagged one query behind.
 
+import { isMain } from './is-main.ts'
 import { existsSync, readdirSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
@@ -38,34 +39,42 @@ const expectations: Array<[string, string]> = [
   ['gasoline', 'Gasoline: Household hazardous waste drop-off'],
 ]
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
   const browser = await chromium.launch({ executablePath: findChromium() })
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 } })
-  const page = await context.newPage()
   const problems: string[] = []
-  page.on('pageerror', (error) => problems.push(`page error: ${error.message}`))
-  page.on('console', (message) => {
-    if (message.type() === 'error' || message.type() === 'warning') problems.push(`console ${message.type()}: ${message.text()}`)
-  })
-  page.on('requestfailed', (request) => problems.push(`failed request: ${request.url()}`))
-  await page.goto(url, { waitUntil: 'networkidle' })
+  try {
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 } })
+    const page = await context.newPage()
+    page.on('pageerror', (error) => problems.push(`page error: ${error.message}`))
+    page.on('console', (message) => {
+      if (message.type() === 'error' || message.type() === 'warning') problems.push(`console ${message.type()}: ${message.text()}`)
+    })
+    page.on('requestfailed', (request) => problems.push(`failed request: ${request.url()}`))
+    await page.goto(url, { waitUntil: 'networkidle' })
 
-  for (const [query, expected] of expectations) {
-    const status = await ask(page, query)
-    if (status !== expected) problems.push(`"${query}" announced "${status}", expected "${expected}"`)
+    for (const [query, expected] of expectations) {
+      const status = await ask(page, query)
+      if (status !== expected) problems.push(`"${query}" announced "${status}", expected "${expected}"`)
+    }
+    await page.getByRole('button', { name: 'Español' }).click()
+    const spanish = await ask(page, 'café molido')
+    if (spanish !== 'Coffee grounds: Orgánicos') problems.push(`"café molido" announced "${spanish}"`)
+
+    const ready = await page.evaluate(
+      'Promise.race([navigator.serviceWorker.ready.then(() => true), new Promise((resolve) => setTimeout(() => resolve(false), 20000))])',
+    )
+    if (!ready) throw new Error('Service worker was not ready within 20 seconds')
+    await page.waitForTimeout(3000)
+    await context.setOffline(true)
+    await page.reload({ waitUntil: 'domcontentloaded' })
+    await page.locator('#search').waitFor({ timeout: 10_000 })
+    const offline = await ask(page, 'colchón')
+    if (!offline.endsWith('24/7 mattress drop-off')) problems.push(`offline "colchón" announced "${offline}"`)
+  } catch (error) {
+    problems.push(error instanceof Error ? error.message : String(error))
+  } finally {
+    await browser.close()
   }
-  await page.getByRole('button', { name: 'Español' }).click()
-  const spanish = await ask(page, 'café molido')
-  if (spanish !== 'Coffee grounds: Orgánicos') problems.push(`"café molido" announced "${spanish}"`)
-
-  await page.evaluate('navigator.serviceWorker.ready.then(() => undefined)')
-  await page.waitForTimeout(3000)
-  await context.setOffline(true)
-  await page.reload({ waitUntil: 'domcontentloaded' })
-  await page.locator('#search').waitFor({ timeout: 10_000 })
-  const offline = await ask(page, 'colchón')
-  if (!offline.endsWith('24/7 mattress drop-off')) problems.push(`offline "colchón" announced "${offline}"`)
-  await browser.close()
 
   if (problems.length > 0) {
     console.error(problems.join('\n'))
@@ -75,4 +84,4 @@ async function main(): Promise<void> {
   }
 }
 
-await main()
+if (isMain(import.meta)) await main()
