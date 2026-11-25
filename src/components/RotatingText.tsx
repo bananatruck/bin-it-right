@@ -193,7 +193,9 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>((props, ref)
   const [hovered, setHovered] = useState(false);
   const indexRef = useRef(0);
   const onNextRef = useRef(onNext);
-  onNextRef.current = onNext;
+  useIsomorphicLayoutEffect(() => {
+    onNextRef.current = onNext;
+  }, [onNext]);
 
   const contentRef = useRef<HTMLSpanElement | null>(null);
   const width = useMotionValue<number | string>('auto');
