@@ -104,7 +104,7 @@ describe('createMatcher', () => {
     }
     expect(matcher.autocomplete('household batteri').map((entry) => entry.rule.id)).toEqual(['household batteries'])
     const aliases = createMatcher(fixture([rule('box', ['box', 'boxes'])]))
-    expect(aliases.autocomplete('boxe')).toEqual([{ rule: expect.objectContaining({ id: 'box' }), term: 'boxes' }])
+    expect(aliases.autocomplete('boxe').map(({ rule, term }) => ({ id: rule.id, term }))).toEqual([{ id: 'box', term: 'boxes' }])
     expect(aliases.autocomplete('box')).toHaveLength(1)
   })
 
