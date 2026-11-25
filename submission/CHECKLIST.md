@@ -39,7 +39,7 @@ The steps below need the entrant, because they need a Devpost login or a recordi
 The rules do not ask about AI assistance, and they do not forbid AI-built entries or require the work to be done by the student personally.
 This project was built overnight by AI coding agents directed by the entrant, and the submission says so in plain words: see "How I built it" in `DEVPOST.md` and "How it was built" in the README.
 Keep that disclosure in the Devpost description.
-If a judge or organizer asks, the agents and what each one did are listed in the README.
+If a judge or organizer asks, the README describes how the project was built and reviewed.
 
 ## Before recording, re-check
 

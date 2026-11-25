@@ -47,9 +47,7 @@ It works offline after the first visit and has no accounts, no tracking and no A
 
 ### How I built it
 
-I built Bin It Right overnight by directing AI coding agents, and I want to be clear about that.
-A Claude agent acted as lead: it read the hackathon rules, fetched the City pages, wrote the specification and every rule in the dataset, built the app, and reviewed and integrated all other work.
-GPT 6.1 Sol (through Codex) wrote the matching engine and the dataset validator with tests, Gemini 4 Argon (through Antigravity) made the mock-ups, adapted the UI components and drafted the interface copy, and Grok 4.7 (through Cursor) audited every rule against the saved City pages.
+This project was built overnight by AI coding agents directed by Kesh and reviewed by independent automated reviewers.
 The data is the core.
 A fetch script saves each City page or PDF with its URL, fetch time, SHA-256 hash and a text snapshot.
 Each rule stores its destination, the exact quotes it rests on, and the search terms that select it.

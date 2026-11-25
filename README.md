@@ -162,13 +162,9 @@ Fonts: Overpass (inspired by US highway signage) for headings and Atkinson Hyper
 
 ## How it was built
 
-This project was built overnight on 2026-11-17 by AI coding agents directed by its author (GitHub: bananatruck), the student entering the hackathon.
-A Claude agent acted as lead: it read the hackathon rules, fetched the City pages, wrote the specification and every rule in the dataset, built the app, and reviewed and integrated all other work.
-GPT 6.1 Sol (through Codex) wrote the matching engine and the dataset validator with their tests.
-Gemini 4 Argon (through Antigravity) generated the mock-ups, installed and adapted the third-party components, and drafted the interface copy.
-Grok 4.7 (through Cursor) audited every rule against the saved City pages.
-On 2026-11-18, GPT 6.1 Sol (through Codex) reviewed the whole project as a judge and as a resident; its findings on over-broad terms, missing City conditions, accessibility, Spanish wording and the offline cache were fixed with tests.
-No outside agent wrote sorting rules: the lead wrote each rule from the saved pages, the audit reviewed them afterwards, and the tests above check every quote against its saved page on every CI run.
+This project was built overnight on 2026-11-17 by AI coding agents directed by Kesh and reviewed by independent automated reviewers.
+The work covered the specification, source fetching, dataset, interface, matching engine, and validation tests.
+Every sorting rule was written from the saved City pages, audited against those pages, and checked by the provenance tests on every CI run.
 
 ## Status
 
