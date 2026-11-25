@@ -8,6 +8,7 @@
 // PDF text extraction needs `pdftotext` from poppler-utils on PATH.
 // This script talks to the live City website, so it is run by hand, never in CI.
 
+import { isMain } from './is-main.ts'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
@@ -191,6 +192,6 @@ export async function refresh(options: RefreshOptions = {}): Promise<ManifestEnt
   return result
 }
 
-if (import.meta.main) {
+if (isMain(import.meta)) {
   await refresh({ only: new Set(process.argv.slice(2)) })
 }
