@@ -48,7 +48,13 @@ If a judge or organizer asks, the agents and what each one did are listed in the
 - Dated content (household hazardous waste event dates from Dec. 12, 2026, the Treecycling window of Dec. 26, 2026 to Jan. 8, 2027) is still current.
   If not, refresh it in this order:
   1. `pnpm sources:fetch` re-saves the City pages (it changes only `data/snapshots/` and `src/data/sources.json`).
-  2. `pnpm test`: the date test lists every quoted "Month D, YYYY" date earlier than the day its page was saved, and the provenance test lists any quote the City changed.
-  3. Edit those quotes in `src/data/destinations.json` and `src/data/rules.json` so they start at the first date that is still ahead, keeping the City's exact wording.
-  4. `pnpm check`, then commit and push to `main`, and wait for the "Deploy to GitHub Pages" run to pass.
-  5. Re-record the video with `pnpm demo:record` before uploading.
+  2. Open the [Treecycling source](https://www.longbeach.gov/lbrecycles/news/2027-holiday-treecycling/) and compare its dates with today's Pacific date and every `lb-treecycling` quote in `src/data/destinations.json` and `src/data/rules.json`.
+     Check the drop-off window, currently Dec. 26, 2026 to Jan. 8, 2027, and the separate Jan. 9, 2027 pickup with its 6 a.m. deadline.
+     After Jan. 8, update or remove the expired drop-off quote; after Jan. 9, update or remove the expired pickup quotes too.
+     If the City still shows the old season, remove the expired quotes rather than re-publishing them with a new fetch date.
+     Remove the seasonal rule and destination if no usable current guidance remains, and remove any source that is no longer cited.
+     Re-fetching alone does not make dates current, and the date test does not recognize abbreviated months such as `Dec.` and `Jan.`.
+  3. `pnpm test`: the date test lists every quoted "Month D, YYYY" date earlier than the day its page was saved, and the provenance test lists any quote the City changed.
+  4. Edit those quotes in `src/data/destinations.json` and `src/data/rules.json` so they start at the first date that is still ahead, keeping the City's exact wording.
+  5. `pnpm check`, then commit and push to `main`, and wait for the "Deploy to GitHub Pages" run to pass.
+  6. Re-record the video with `pnpm demo:record` before uploading.
