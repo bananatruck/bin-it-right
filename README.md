@@ -121,6 +121,16 @@ pnpm smoke [url]    # quick searches, Spanish and offline in headless Chromium (
 pnpm demo:record    # record the submission video (see docs/RECORDING.md)
 ```
 
+Before running screenshots, smoke checks, or demo recording, install Chromium separately:
+
+```sh
+pnpm exec playwright-core install chromium
+```
+
+`pnpm install` installs the browser library but does not download Chromium.
+The scripts look in `~/.cache/ms-playwright`, or you can set `CHROMIUM_PATH` to an existing Chromium executable, for example `CHROMIUM_PATH=/usr/bin/chromium pnpm smoke`.
+On Linux, install missing browser system libraries with `pnpm exec playwright-core install-deps chromium`.
+
 `pnpm sources:fetch` rewrites `data/snapshots/` and `src/data/sources.json` with new fetch times and hashes.
 If the City changes a page, the provenance tests then fail on any quote that no longer matches, which shows exactly which rules need review.
 
