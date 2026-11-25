@@ -50,7 +50,9 @@ export function createMatcher(dataset: Dataset) {
     return destination
   }
 
+  // Exact answers share a singular key. Fuzzy scores and prefixes retain each folded surface.
   const index = new Map<string, IndexedTerm>()
+  const surfaces = new Map<string, IndexedTerm>()
   for (const rule of dataset.rules) {
     destinationFor(rule)
     const terms = [...rule.terms, ...rule.termsEs, rule.label.en]
@@ -61,6 +63,10 @@ export function createMatcher(dataset: Dataset) {
       const existing = index.get(normalized.normalized)
       if (existing !== undefined && existing.rule.id !== rule.id) {
         throw new Error(`Term "${normalized.normalized}" selects both "${existing.rule.id}" and "${rule.id}"`)
+      }
+      const surface = surfaces.get(normalized.surface)
+      if (surface === undefined || alphabetical(term, surface.term) < 0) {
+        surfaces.set(normalized.surface, { term, rule, normalized })
       }
       if (existing === undefined || alphabetical(term, existing.term) < 0) {
         index.set(normalized.normalized, { term, rule, normalized })
@@ -75,7 +81,7 @@ export function createMatcher(dataset: Dataset) {
       threshold: SUGGEST_THRESHOLD, candidates: [],
     }
     if (!normalized.normalized) return { kind: 'none', explanation }
-    const ranked = [...index.values()].map((entry) => ({ ...entry, score: score(normalized, entry.normalized) }))
+    const ranked = [...surfaces.values()].map((entry) => ({ ...entry, score: score(normalized, entry.normalized) }))
       .sort((a, b) => b.score - a.score || alphabetical(a.term, b.term) || alphabetical(a.rule.id, b.rule.id))
     explanation.candidates = ranked.slice(0, 5).map((entry) => ({
       term: entry.term, ruleId: entry.rule.id, score: Math.round(entry.score * 1000) / 1000,
@@ -99,12 +105,14 @@ export function createMatcher(dataset: Dataset) {
   }
 
   function autocomplete(prefix: string, limit = 8): Array<{ rule: Rule; term: string }> {
-    const normalized = normalize(prefix).normalized
+    const query = normalize(prefix)
+    const normalized = query.normalized
     if (!normalized || limit < 1 || !Number.isFinite(limit)) return []
-    const entries = [...index.values()].map((entry) => ({
+    const entries = [...surfaces.values()].map((entry) => ({
       ...entry,
-      group: entry.normalized.normalized.startsWith(normalized) ? 0 : 1,
-    })).filter((entry) => entry.group === 0 || entry.normalized.tokens.some((token) => token.startsWith(normalized)))
+      group: entry.normalized.normalized.startsWith(normalized) || entry.normalized.surface.startsWith(query.surface) ? 0 : 1,
+    })).filter((entry) => entry.group === 0 || entry.normalized.tokens.some((token) => token.startsWith(normalized))
+      || entry.normalized.surfaceTokens.some((token) => token.startsWith(query.surface)))
       .sort((a, b) => a.group - b.group || alphabetical(a.term, b.term) || alphabetical(a.rule.id, b.rule.id))
     const seen = new Set<string>()
     const results: Array<{ rule: Rule; term: string }> = []
