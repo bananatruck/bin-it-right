@@ -1,0 +1,11 @@
+{
+  "name": "Bin It Right",
+  "short_name": "Bin It Right",
+  "description": "Which Long Beach cart does it go in? Answers quoted from the City's official sorting rules.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef2f1",
+  "theme_color": "#0e2a3b",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

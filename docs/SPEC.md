@@ -2,7 +2,7 @@
 
 Bin It Right tells a Long Beach resident which cart or drop-off an item goes to, using only the City of Long Beach's own published sorting rules.
 Every answer quotes the exact official sentence it rests on, links to the page it came from, and shows the date that page was fetched.
-When the City has not published a rule for an item, the app says so and gives the City's contact route instead of guessing.
+When none of the City rules in the app match an item, the app says so and gives the City's contact route instead of guessing.
 
 ## 1. The hackathon as read on 2026-11-17 (Pacific time)
 
@@ -12,7 +12,7 @@ Track: Theme Track, "Rethinking Waste": "Build something that helps people or sy
 The overview names "a tool that identifies whether an item is recyclable" as an example project.
 "Judges will check that the theme is central to the project, not bolted on."
 Eligibility: ages 13 and over, students only, teams of 1 to 4, solo entries allowed, one submission per team to one track only.
-Submission period: October 20, 2026 9:00am PDT to December 20, 2026 9:00pm PST (dates page).
+Submission period: October 20, 2026 9:00am PDT to December 20, 2026 9:00pm PST (dates page, https://arbiter-hacks-v1.devpost.com/details/dates).
 Every submission must include a public code repository, a demo video of 2 to 3 minutes maximum on YouTube or Vimeo, and a written description of what it does, how it was built, and what comes next.
 The Theme Track also requires one paragraph stating the specific waste problem targeted and how success would be measured.
 Missing the repo or the video makes a submission ineligible.
@@ -57,7 +57,7 @@ The dataset lives in `src/data/` as JSON validated by a Zod schema in `src/data/
 ### Destination
 
 A destination is where an item goes: the blue recycling cart, the green organics cart, the trash cart, a special collection pickup, a hazardous waste drop-off, and so on.
-Each destination has an English label, a Spanish label only when the City publishes one, a colour token, and an action with its own quoted source.
+Each destination has an English label, a Spanish label only when the City publishes one, and an action with its own quoted source; its colour and icon live in `src/lib/destinationStyle.ts`.
 
 ### Rule
 
@@ -78,7 +78,7 @@ Each destination has an English label, a Spanish label only when the City publis
 - No search term selects two different rules.
 - Rule ids and source ids are unique.
 
-Rules are written by hand by the lead, never by an outside agent from memory, and each one is audited against the saved snapshot.
+Rules are written by hand by the lead from the saved snapshots, never by an outside agent from memory; an outside model then audited every rule against the snapshots, and the tests recheck every quote on every CI run.
 
 ## 4. Matching design
 
@@ -90,7 +90,7 @@ Matching is deterministic, runs in the browser, makes no network or model calls,
 4. Exact match: if the normalised query equals a normalised term, return that rule as an answer.
 5. Fuzzy match: otherwise score every term by similarity (Damerau-Levenshtein on the whole phrase, and token overlap), and return terms above a fixed threshold as "Did you mean" suggestions.
 6. A fuzzy match never becomes an answer by itself; the resident picks a suggestion, which then runs as an exact match.
-7. No match above the threshold returns "No official rule found" with the City's published contact route.
+7. No match above the threshold returns "No official rule found in this app" with the City's published contact route.
 
 The explanation lists the normalised text, the dropped words, the term matched or the top scores, and the threshold used.
 
@@ -100,7 +100,7 @@ The explanation lists the normalised text, the dropped words, the term matched o
 2. Typing shows suggestions from the dataset as they type.
 3. Submitting shows one answer card: the destination in its cart colour, the item as the City names it, the quoted rule, the source link with its fetch date, and any official tips.
 4. "Did you mean" lists close entries when there is no exact match.
-5. "No official rule found" shows the City's email and phone, and lets the resident copy a short gap report.
+5. "No official rule found in this app" shows the City's email and phone, and lets the resident copy a short question for the City.
 6. A browse view lists every rule grouped by destination, each with its citation.
 7. A sources view lists every page fetched, with its date and hash.
 8. A language switch shows the City's official Spanish wording where it exists and says plainly when only English is published.
@@ -108,7 +108,7 @@ The explanation lists the normalised text, the dropped words, the term matched o
 
 ### Accessibility
 
-- Touch targets are at least 48 by 48 CSS pixels.
+- Buttons and links are at least 48 CSS pixels tall, and small ones at least 48 wide.
 - Every control has an accessible name, results are announced through a polite live region, and focus moves to the answer.
 - Colour is never the only signal: every destination has a text label and an icon.
 - Text contrast meets WCAG 2.2 AA, motion respects `prefers-reduced-motion`, and the layout works from 320 CSS pixels wide.
@@ -119,4 +119,4 @@ The explanation lists the normalised text, the dropped words, the term matched o
 - Engine tests: normalisation, filler words, singularisation, exact matches for every term in the dataset, typos that produce suggestions, unrelated text that produces "No official rule found", Spanish queries, and stable ordering.
 - Component tests: the answer card shows the quote, link and date; the no-match card shows the contact route.
 - Browser checks: the production build loaded in headless Chromium at 390 by 844 and 1440 by 900, with screenshots saved to `docs/screenshots/`.
-- CI runs lint, type-check, tests and build on every push, and a separate workflow deploys `dist/` to GitHub Pages.
+- CI runs lint, type-check, tests and build on every push to `main` and every pull request, and a separate workflow deploys `dist/` to GitHub Pages.
