@@ -1,5 +1,5 @@
 import type { Dataset, Quote } from './schema'
-import { normalizeForQuote, validateDataset } from './validate'
+import { normalizeForQuote, snapshotBody, validateDataset } from './validate'
 
 function fixture(): Dataset {
   const english: Quote = { sourceId: 'fixture', lang: 'en', text: 'Fictional widgets go to the test destination.' }
@@ -167,6 +167,27 @@ describe('validateDataset', () => {
     expect(validateDataset(actionOnly, readSnapshot)).toEqual([])
     const unrelated = changeRule((rule) => { rule.destination = 'no-cart' })
     expect(validateDataset(unrelated, readSnapshot).some((issue) => issue.path === 'destinations.0.label.es')).toBe(true)
+  })
+
+  it.each(['\n', '\r\n'])('strips generated headers with %j line endings', (newline) => {
+    const dataset = changeRule((rule) => {
+      rule.evidence.push({ sourceId: 'fixture', lang: 'en', text: 'Publisher: City of Long Beach' })
+    })
+    const saved = ['Publisher: City of Long Beach', '---', snapshot].join(newline)
+    expect(validateDataset(dataset, () => saved)).toContainEqual(expect.objectContaining({ path: 'rules.0.evidence.2.text' }))
+    expect(validateDataset(fixture(), () => saved)).toEqual([])
+    expect(snapshotBody(snapshot.replaceAll('\n', newline))).toBe(snapshot.replaceAll('\n', newline))
+  })
+
+  it.each(['   ', '\t\n\u00a0', '\u3000\u3000\u3000'])('rejects a normalized empty quote %j as English evidence', (text) => {
+    const dataset = changeRule((rule) => {
+      rule.evidence = [{ sourceId: 'fixture', lang: 'en', text }]
+      rule.label = { en: 'widget' }
+    })
+    expect(validateDataset(dataset, readSnapshot)).toEqual(expect.arrayContaining([
+      expect.objectContaining({ path: 'rules.0.evidence.0.text' }),
+      expect.objectContaining({ path: 'rules.0.evidence' }),
+    ]))
   })
 
   it('sorts all issues by their paths', () => {

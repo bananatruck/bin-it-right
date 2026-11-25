@@ -14,7 +14,7 @@ export function normalizeForQuote(text: string): string {
 // Snapshots start with a generated header (source, URL, fetch time, hash) ending in a "---" line.
 // Quotes are checked against the City's text below it, never against the header.
 export function snapshotBody(snapshot: string): string {
-  const lines = snapshot.split('\n')
+  const lines = snapshot.split(/\r?\n/u)
   const separator = lines.indexOf('---')
   return separator === -1 ? snapshot : lines.slice(separator + 1).join('\n')
 }
@@ -67,8 +67,11 @@ export function validateDataset(
       snapshots.set(source.snapshot, snapshot === undefined ? undefined : normalizeForQuote(snapshotBody(snapshot)))
     }
     const snapshot = snapshots.get(source.snapshot)
+    const text = normalizeForQuote(quote.text)
+    // Evidence must contain City text after whitespace folding, never an empty substring.
+    if (text === '') add(`${path}.text`, 'Quote must contain non-whitespace text')
     if (snapshot === undefined) add(`${path}.text`, `Missing snapshot "${source.snapshot}"`)
-    else if (!snapshot.includes(normalizeForQuote(quote.text))) {
+    else if (text !== '' && !snapshot.includes(text)) {
       add(`${path}.text`, `Quote does not occur in snapshot "${source.snapshot}"`)
     }
   }
@@ -83,7 +86,7 @@ export function validateDataset(
   const destinations = new Set(dataset.destinations.map((destination) => destination.id))
   const terms = new Map<string, string>()
   dataset.rules.forEach((rule, i) => {
-    if (!rule.evidence.some((quote) => quote.lang === 'en')) {
+    if (!rule.evidence.some((quote) => quote.lang === 'en' && normalizeForQuote(quote.text) !== '')) {
       add(`rules.${i}.evidence`, 'Rule must have at least one English evidence quote')
     }
     if (!destinations.has(rule.destination)) add(`rules.${i}.destination`, `Unknown destination "${rule.destination}"`)
