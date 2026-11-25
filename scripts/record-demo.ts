@@ -15,6 +15,7 @@
 //
 // Captions are neutral descriptions of what is on screen. Nothing is presented as anyone speaking.
 
+import { isMain } from './is-main.ts'
 import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
@@ -327,4 +328,4 @@ async function main(): Promise<void> {
 }
 
 // Only record when run as a script, so tests can import the helpers above.
-if (import.meta.main) await main()
+if (isMain(import.meta)) await main()

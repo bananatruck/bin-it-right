@@ -6,8 +6,10 @@ import { runInNewContext } from 'node:vm'
 
 type Handler = (event: Record<string, unknown>) => void
 
-function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
-  const stores = new Map<string, Map<string, Response>>()
+const defaultRelease = { version: 'test-release', urls: ['./', './index.html', './assets/index.js', './assets/style.css', './assets/font.woff2'] }
+
+function loadWorker(fetchImpl: (request: Request) => Promise<Response>, release = defaultRelease,
+  stores = new Map<string, Map<string, Response>>()) {
   const handlers = new Map<string, Handler>()
   const matchOptions: Array<{ ignoreVary?: boolean } | undefined> = []
   const open = (name: string) => {
@@ -19,9 +21,16 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
     const s = store
     const key = (request: Request | string) => new URL(typeof request === 'string' ? request : request.url, 'https://example.github.io/bin-it-right/').href
     return Promise.resolve({
-      put: (request: Request | string, response: Response) => { s.set(key(request), response); return Promise.resolve() },
-      match: (request: Request | string) => Promise.resolve(s.get(key(request))),
-      addAll: (requests: string[]) => { for (const r of requests) s.set(key(r), new Response(`cached ${r}`)); return Promise.resolve() },
+      put: (request: Request | string, response: Response) => { s.set(key(request), response.clone()); return Promise.resolve() },
+      match: (request: Request | string) => Promise.resolve(s.get(key(request))?.clone()),
+      addAll: async (requests: string[]) => {
+        const responses = await Promise.all(requests.map((r) => fetchImpl(new Request(key(r)))))
+        if (responses.some((response) => !response.ok)) throw new Error('Precache request failed')
+        requests.forEach((r, i) => {
+          const response = responses[i]
+          if (response !== undefined) s.set(key(r), response)
+        })
+      },
     })
   }
   const caches = {
@@ -45,7 +54,7 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
     clients: { claim: () => Promise.resolve() },
   }
   const source = readFileSync(join(import.meta.dirname, '..', '..', 'public', 'sw.js'), 'utf8')
-  runInNewContext(source, { self, caches, fetch: fetchImpl, URL, Response, Array, Promise })
+  runInNewContext(source.replace('/* BUILD_RELEASE */ null', JSON.stringify(release)), { self, caches, fetch: fetchImpl, URL, Response, Array, Promise })
   const waited: Array<Promise<unknown>> = []
   const fire = async (type: string, extra: Record<string, unknown> = {}) => {
     const waits: Array<Promise<unknown>> = []
@@ -60,6 +69,37 @@ function loadWorker(fetchImpl: (request: Request) => Promise<Response>) {
 const navigate = (url: string) => ({ url, method: 'GET', mode: 'navigate', clone: () => navigate(url) }) as unknown as Request
 
 describe('service worker (round 2 review)', () => {
+  it('stages every dependency before activation without a page message', async () => {
+    let online = true
+    const worker = loadWorker((request) => online
+      ? Promise.resolve(new Response(`release ${request.url}`))
+      : Promise.reject(new Error('offline')))
+    await worker.fire('install')
+    await worker.fire('activate')
+    online = false
+    for (const path of defaultRelease.urls) {
+      const url = new URL(path, 'https://example.github.io/bin-it-right/').href
+      const request = path.includes('assets/') ? new Request(url) : navigate(url)
+      expect(await (await worker.fire('fetch', { request }))?.text()).toBe(`release ${path.includes('assets/') ? url : new URL('index.html', url).href}`)
+    }
+  })
+
+  it('preserves the previous complete release when a background installation fails', async () => {
+    const previous = loadWorker(() => Promise.resolve(new Response('previous release')),
+      { version: 'previous', urls: defaultRelease.urls })
+    await previous.fire('install')
+    await previous.fire('activate')
+    const updated = loadWorker((request) => Promise.resolve(request.url.endsWith('style.css')
+      ? new Response('missing', { status: 404 }) : new Response('replacement')),
+    { version: 'replacement', urls: defaultRelease.urls }, previous.stores)
+    await expect(updated.fire('install')).rejects.toThrow('Precache request failed')
+    expect([...previous.stores.keys()]).toContain('bin-it-right-previous')
+    const cache = await previous.open('bin-it-right-previous')
+    for (const url of defaultRelease.urls) {
+      expect(await (await cache.match(url))?.text()).toBe('previous release')
+    }
+  })
+
   it('leaves caches of other apps on the same origin alone', async () => {
     const worker = loadWorker(() => Promise.resolve(new Response('ok')))
     await worker.open('another-app-cache')
@@ -71,15 +111,17 @@ describe('service worker (round 2 review)', () => {
   })
 
   it('does not replace the saved app page with an error page', async () => {
-    const worker = loadWorker(() => Promise.resolve(new Response('not found', { status: 404 })))
+    let broken = false
+    const worker = loadWorker(() => Promise.resolve(broken ? new Response('not found', { status: 404 }) : new Response('saved shell')))
     await worker.fire('install')
+    broken = true
     const request = navigate('https://example.github.io/bin-it-right/')
     const event = { request }
     await worker.fire('fetch', event)
     await new Promise((resolve) => setTimeout(resolve, 0))
     const [name] = [...worker.stores.keys()]
     const saved = await (await worker.open(name ?? '')).match('./index.html')
-    expect(await saved?.text()).toBe('cached ./index.html')
+    expect(await saved?.text()).toBe('saved shell')
   })
 
   it('precaches the files the page already loaded when the page asks it to', async () => {
@@ -97,7 +139,7 @@ describe('service worker (round 2 review)', () => {
   it('matches cached assets regardless of Vary, so precached files serve module requests offline', async () => {
     const worker = loadWorker(() => Promise.resolve(new Response('ok')))
     await worker.fire('install')
-    const asset = new Request('https://example.github.io/bin-it-right/assets/index.js')
+    const asset = new Request('https://example.github.io/bin-it-right/assets/uncached.js')
     await worker.fire('fetch', { request: asset })
     expect(worker.matchOptions).toContainEqual(expect.objectContaining({ ignoreVary: true }))
   })
@@ -123,20 +165,42 @@ describe('service worker (round 2 review)', () => {
       await worker.fire('message', { data: { type: 'precache', urls: [page, asset] } })
       online = false
       const script = await worker.fire('fetch', { request: new Request(asset) })
-      expect(await script?.text()).toBe(`cached ${asset}`)
+      expect(await script?.text()).toBe('fresh')
       const shell = await worker.fire('fetch', { request: navigate(page) })
-      expect(await shell?.text()).toBe(`cached ${page}`)
+      expect(await shell?.text()).toBe('fresh')
+    })
+
+    it('keeps the saved shell and assets intact when a precache batch fails', async () => {
+      let failing = false
+      const worker = loadWorker((request) => Promise.resolve(
+        failing && request.url.endsWith('missing.js')
+          ? new Response('missing', { status: 404 })
+          : new Response(failing ? 'replacement' : 'complete release'),
+      ))
+      await worker.fire('install')
+      await worker.fire('message', { data: { type: 'precache', urls: [page, asset] } })
+      failing = true
+      await expect(worker.fire('message', { data: {
+        type: 'precache', urls: [page, asset, `${asset}/missing.js`],
+      } })).rejects.toThrow('Precache request failed')
+      const [name] = [...worker.stores.keys()]
+      const cache = await worker.open(name ?? '')
+      expect(await (await cache.match('./index.html'))?.text()).toBe('complete release')
+      expect(await (await cache.match(asset))?.text()).toBe('complete release')
+      expect(await cache.match(`${asset}/missing.js`)).toBeUndefined()
     })
 
     it('does not replace the saved app page on navigation, only once its files are cached', async () => {
-      const worker = loadWorker(() => Promise.resolve(new Response('new page')))
+      let body = 'old page'
+      const worker = loadWorker(() => Promise.resolve(new Response(body)))
       await worker.fire('install')
+      body = 'new page'
       await worker.fire('fetch', { request: navigate(page) })
       const [name] = [...worker.stores.keys()]
       const cache = await worker.open(name ?? '')
-      expect(await (await cache.match('./index.html'))?.text()).toBe('cached ./index.html')
+      expect(await (await cache.match('./index.html'))?.text()).toBe('old page')
       await worker.fire('message', { data: { type: 'precache', urls: [page, asset] } })
-      expect(await (await cache.match('./index.html'))?.text()).toBe(`cached ${page}`)
+      expect(await (await cache.match('./index.html'))?.text()).toBe('new page')
     })
   })
 })

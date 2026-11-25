@@ -3,7 +3,10 @@
 // GitHub Pages serves every project of an account from one origin, so this worker only
 // ever touches caches whose names start with its own prefix.
 const PREFIX = 'bin-it-right-'
-const CACHE = `${PREFIX}v2`
+// The production build replaces this marker with its release id and complete asset list.
+const RELEASE = /* BUILD_RELEASE */ null
+if (RELEASE === null) throw new Error('Missing precache release')
+const CACHE = `${PREFIX}${RELEASE.version}`
 const SCOPE = self.registration.scope
 
 const inScope = (url) => typeof url === 'string' && url.startsWith(SCOPE)
@@ -13,7 +16,7 @@ const MATCH = { ignoreVary: true }
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(['./', './index.html'])).then(() => self.skipWaiting()),
+    caches.open(CACHE).then((cache) => cache.addAll(RELEASE.urls)).then(() => self.skipWaiting()),
   )
 })
 
@@ -32,6 +35,8 @@ const isAppPage = (url) => {
   return path === SCOPE_PATH || path === `${SCOPE_PATH}index.html`
 }
 
+// Installation stages the complete shell and dependencies before activation deletes older releases.
+// A rejected addAll keeps the previous worker active and its complete cache untouched.
 // The page sends the files it has already loaded (page, scripts, styles, fonts), so the very first
 // visit is enough to work offline. Only files inside this app's scope are cached. addAll stores all
 // of them or none, and only then does the saved app page (./index.html) move to the new version,

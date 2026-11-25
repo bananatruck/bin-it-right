@@ -1,9 +1,14 @@
 // @vitest-environment node
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { refresh } from './fetch-sources.ts'
+
+vi.mock('node:fs', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('node:fs')>()
+  return { ...actual, renameSync: vi.fn(actual.renameSync) }
+})
 
 const page = (body: string) => `<html><body><div>menu</div><p>Home »</p><p>Test</p><p>${body}</p><p>Find Us Online:</p><p>footer</p></body></html>`
 const longText = 'Rule text for the test page. '.repeat(20)
@@ -51,6 +56,22 @@ describe('refresh (round 2 review)', () => {
     expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toBe('old snapshot\n')
     expect(existsSync(join(root, 'data', 'snapshots', 'b.txt'))).toBe(false)
     expect(readFileSync(join(root, 'src', 'data', 'sources.json'), 'utf8')).toBe('[]\n')
+  })
+
+  it('restores replaced snapshots and removes new files when the manifest rename fails', async () => {
+    const actual = await vi.importActual<typeof import('node:fs')>('node:fs')
+    vi.mocked(renameSync)
+      .mockImplementationOnce(actual.renameSync)
+      .mockImplementationOnce(actual.renameSync)
+      .mockImplementationOnce(() => { throw new Error('manifest rename failed') })
+    await expect(refresh({
+      root, specs, fetchImpl: () => Promise.resolve(new Response(page(longText))), log: () => undefined,
+    })).rejects.toThrow('manifest rename failed')
+    expect(readFileSync(join(root, 'data', 'snapshots', 'a.txt'), 'utf8')).toBe('old snapshot\n')
+    expect(existsSync(join(root, 'data', 'snapshots', 'b.txt'))).toBe(false)
+    expect(readFileSync(join(root, 'src', 'data', 'sources.json'), 'utf8')).toBe('[]\n')
+    expect(readdirSync(join(root, 'data', 'snapshots'))).toEqual(['a.txt'])
+    expect(readdirSync(join(root, 'src', 'data'))).toEqual(['sources.json'])
   })
 
   it('stages every file before replacing any original (round 3 follow-up)', async () => {

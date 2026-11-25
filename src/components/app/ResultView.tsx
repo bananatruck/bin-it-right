@@ -158,18 +158,19 @@ function ContactBlock({ query }: { query: string }) {
   const { t } = useStrings()
   // "Copied" shows only while the text on the clipboard is the report on screen, so a language
   // switch or a late clipboard reply cannot confirm a different report.
-  const [copiedText, setCopiedText] = useState<string | null>(null)
+  const [copyResult, setCopyResult] = useState<{ kind: 'copied' | 'failed'; text: string } | null>(null)
   const { email, phone } = dataset.contact
   const report = t.gapReport(query)
-  const copied = copiedText === report
+  const copied = copyResult?.kind === 'copied' && copyResult.text === report
+  const failed = copyResult?.kind === 'failed' && copyResult.text === report
   const mailto = `mailto:${email}?subject=${encodeURIComponent(t.gapSubject(query))}&body=${encodeURIComponent(report)}`
   async function copy() {
     const text = report
     try {
       await navigator.clipboard.writeText(text)
-      setCopiedText(text)
+      setCopyResult({ kind: 'copied', text })
     } catch {
-      setCopiedText(null)
+      setCopyResult({ kind: 'failed', text })
     }
   }
   return (
@@ -195,6 +196,15 @@ function ContactBlock({ query }: { query: string }) {
           </button>
         </li>
       </ul>
+      {failed && (
+        <div>
+          <p role="alert">{t.copyFailed}</p>
+          <label>
+            {t.gapReportLabel}
+            <textarea className="contact__report" readOnly value={report} rows={6} onFocus={(event) => { event.currentTarget.select() }} />
+          </label>
+        </div>
+      )}
       <QuoteList quotes={dataset.contact.evidence} variant="plain" />
     </section>
   )

@@ -87,6 +87,27 @@ describe('createMatcher', () => {
     expect(matcher.search('gagt').explanation.candidates).toContainEqual({ term: 'gadget', ruleId: 'gadget', score: 0.667 })
   })
 
+  it('keeps surface aliases for fuzzy scores while sharing an exact normalized key', () => {
+    const matcher = createMatcher(fixture([rule('box', ['box', 'boxes'])]))
+    for (const query of ['box', 'boxes']) {
+      expect(matcher.search(query)).toMatchObject({ kind: 'answer', rule: { id: 'box' } })
+    }
+    const result = matcher.search('boxse')
+    expect(result).toMatchObject({ kind: 'suggestions', suggestions: [{ rule: { id: 'box' }, term: 'boxes' }] })
+    if (result.kind === 'suggestions') expect(result.suggestions[0]?.score).toBeGreaterThanOrEqual(SUGGEST_THRESHOLD)
+  })
+
+  it('keeps surface phrase and token prefixes visible through plural endings', () => {
+    const matcher = createMatcher(fixture([rule('batteries'), rule('household batteries')]))
+    for (const prefix of ['batteri', 'batterie', 'batteries']) {
+      expect(matcher.autocomplete(prefix).map((entry) => entry.rule.id)).toEqual(['batteries', 'household batteries'])
+    }
+    expect(matcher.autocomplete('household batteri').map((entry) => entry.rule.id)).toEqual(['household batteries'])
+    const aliases = createMatcher(fixture([rule('box', ['box', 'boxes'])]))
+    expect(aliases.autocomplete('boxe').map(({ rule, term }) => ({ id: rule.id, term }))).toEqual([{ id: 'box', term: 'boxes' }])
+    expect(aliases.autocomplete('box')).toHaveLength(1)
+  })
+
   it('throws with both rule ids and the normalized colliding term', () => {
     expect(() => createMatcher(fixture([
       rule('first', ['the widgets']), rule('second', ['WÍDGET']),
