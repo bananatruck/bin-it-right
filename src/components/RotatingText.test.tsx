@@ -19,12 +19,21 @@ it('keeps callbacks from suspended renders out of the committed rotation', async
     </Suspense>
   )
   const { rerender } = render(view(committed, false))
-  await act(async () => { startTransition(() => { rerender(view(uncommitted, true)) }) })
+  await act(async () => {
+    startTransition(() => { rerender(view(uncommitted, true)) })
+    await Promise.resolve()
+  })
   expect(ref.current).not.toBeNull()
-  await act(async () => { ref.current?.next() })
+  await act(async () => {
+    ref.current?.next()
+    await Promise.resolve()
+  })
   expect(committed).toHaveBeenCalledWith(1)
   expect(uncommitted).not.toHaveBeenCalled()
   rerender(view(uncommitted, false))
-  await act(async () => { ref.current?.next() })
+  await act(async () => {
+    ref.current?.next()
+    await Promise.resolve()
+  })
   expect(uncommitted).toHaveBeenCalledWith(2)
 })
